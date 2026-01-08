@@ -4,95 +4,152 @@
     xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
     layout:decorate="~{layout/default_layout}">
     <div layout:fragment="content">
-        <!-- Hero Carousel -->
-        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <!-- Full Screen Video Hero Section -->
+        <section id="video-hero" class="vh-100 position-relative overflow-hidden">
+            <!-- Video Background -->
+            <div class="video-container">
+                <video autoplay muted loop playsinline class="w-100 h-100 object-fit-cover">
+                    <source src="/video/hero-video.mp4" type="video/mp4">
+                    <!-- Fallback to animated gradient if video not available -->
+                </video>
+                <!-- Fallback animated gradient background -->
+                <div class="video-fallback"></div>
             </div>
-            <div class="carousel-inner">
-                <!-- Slide 1 - Main -->
-                <div class="carousel-item active">
-                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <rect width="100%" height="100%" fill="#0d6efd"/>
-                    </svg>
-                    <div class="container">
-                        <div class="carousel-caption text-start">
-                            <h1 class="display-4 fw-bold" th:text="${tagline}">AI·Data Consulting & IT Governance</h1>
-                            <p class="fs-5 mb-4" th:text="${lead}">공공/공공기관 특화 데이터·AI 및 Spring Boot 기반 시스템 설계·구현·운영</p>
-                            <p>
-                                <a class="btn btn-lg btn-light me-2" th:href="@{/#services}">주요 서비스</a>
-                                <a class="btn btn-lg btn-outline-light" th:href="@{/about}">자세히 보기</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Slide 2 - Company Intro -->
-                <div class="carousel-item">
-                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <rect width="100%" height="100%" fill="#198754"/>
-                    </svg>
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h1 class="display-4 fw-bold">TG Information Technology</h1>
-                            <p class="fs-5 mb-4">공공 부문 시스템 아키텍처, 보안요건 반영, 데이터 거버넌스와 AI 솔루션 통합 전문 기업</p>
-                            <p><a class="btn btn-lg btn-light" th:href="@{/about}">회사 소개 보기</a></p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Slide 3 - Services -->
-                <div class="carousel-item">
-                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <rect width="100%" height="100%" fill="#6610f2"/>
-                    </svg>
-                    <div class="container">
-                        <div class="carousel-caption text-end">
-                            <h1 class="display-4 fw-bold">전문 IT 서비스</h1>
-                            <p class="fs-5 mb-4">시스템 아키텍처 설계부터 AI 솔루션까지, 공공 부문 특화 서비스 제공</p>
-                            <p><a class="btn btn-lg btn-light" th:href="@{/services}">서비스 둘러보기</a></p>
-                        </div>
+            
+            <!-- Overlay content -->
+            <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                <div class="container text-center text-white">
+                    <h1 class="display-2 fw-bold mb-4 animate-fade-in" th:text="${tagline}">AI·Data Consulting & IT Governance</h1>
+                    <p class="lead fs-3 mb-5 animate-fade-in-delay" th:text="${lead}">공공/공공기관 특화 데이터·AI 및 Spring Boot 기반 시스템 설계·구현·운영</p>
+                    <div class="animate-fade-in-delay-2">
+                        <a class="btn btn-light btn-lg me-3 px-5 py-3" th:href="@{/#about}">자세히 보기</a>
+                        <a class="btn btn-outline-light btn-lg px-5 py-3" th:href="@{/contact}">문의하기</a>
                     </div>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
+            
+            <!-- Scroll indicator -->
+            <div class="scroll-indicator position-absolute bottom-0 start-50 translate-middle-x mb-4">
+                <div class="mouse-icon">
+                    <div class="wheel"></div>
+                </div>
+                <p class="text-white small mt-2">Scroll Down</p>
+            </div>
+        </section>
 
         <style>
-            /* Carousel styling */
-            .carousel-item {
-                height: 32rem;
+            /* Full screen video hero */
+            #video-hero {
+                min-height: 100vh;
+                background: #000;
             }
-            .carousel-item > svg {
+            
+            .video-container {
                 position: absolute;
                 top: 0;
                 left: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+            
+            .video-container video {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
                 min-width: 100%;
-                height: 32rem;
+                min-height: 100%;
+                width: auto;
+                height: auto;
+                object-fit: cover;
+                z-index: 1;
             }
-            .carousel-caption {
-                bottom: 3rem;
-                z-index: 10;
+            
+            /* Animated gradient fallback */
+            .video-fallback {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+                background-size: 400% 400%;
+                animation: gradientShift 15s ease infinite;
+                z-index: 0;
             }
-            .carousel-caption h1 {
-                text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            
+            @keyframes gradientShift {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
             }
-            .carousel-caption p {
-                text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            
+            .hero-overlay {
+                background: rgba(0, 0, 0, 0.4);
+                z-index: 2;
             }
-            @media (min-width: 40em) {
-                .carousel-caption p {
-                    margin-bottom: 1.25rem;
-                    font-size: 1.25rem;
-                    line-height: 1.4;
+            
+            /* Animations */
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
                 }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            .animate-fade-in {
+                animation: fadeInUp 1s ease-out;
+            }
+            
+            .animate-fade-in-delay {
+                animation: fadeInUp 1s ease-out 0.3s both;
+            }
+            
+            .animate-fade-in-delay-2 {
+                animation: fadeInUp 1s ease-out 0.6s both;
+            }
+            
+            /* Scroll indicator */
+            .scroll-indicator {
+                z-index: 3;
+                animation: bounce 2s infinite;
+            }
+            
+            @keyframes bounce {
+                0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+                40% { transform: translateY(-10px) translateX(-50%); }
+                60% { transform: translateY(-5px) translateX(-50%); }
+            }
+            
+            .mouse-icon {
+                width: 25px;
+                height: 40px;
+                border: 2px solid #fff;
+                border-radius: 15px;
+                margin: 0 auto;
+                position: relative;
+            }
+            
+            .wheel {
+                width: 3px;
+                height: 8px;
+                background: #fff;
+                border-radius: 2px;
+                position: absolute;
+                top: 8px;
+                left: 50%;
+                transform: translateX(-50%);
+                animation: scroll 2s infinite;
+            }
+            
+            @keyframes scroll {
+                0% { opacity: 1; top: 8px; }
+                100% { opacity: 0; top: 20px; }
             }
         </style>
 
@@ -157,40 +214,87 @@
 
             <hr class="featurette-divider">
 
-            <!-- News Section -->
-            <div class="row featurette py-5">
-                <div class="col-md-7 order-md-2">
-                    <h2 class="featurette-heading fw-normal lh-1">최신 소식 <span class="text-body-secondary">TG News</span></h2>
-                    <div class="list-group mt-4">
-                        <a href="#" class="list-group-item list-group-item-action">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">AI 기반 데이터 분석 플랫폼 구축 완료</h5>
-                                <small class="text-body-secondary">2024.12</small>
+            <!-- News Carousel Section -->
+            <div class="row py-5">
+                <div class="col-12">
+                    <h2 class="text-center mb-5">최신 소식 <span class="text-body-secondary">TG News</span></h2>
+                    
+                    <!-- News Carousel -->
+                    <div id="newsCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="News 1"></button>
+                            <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="1" aria-label="News 2"></button>
+                            <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="2" aria-label="News 3"></button>
+                        </div>
+                        <div class="carousel-inner rounded-3 shadow-lg">
+                            <!-- News Item 1 -->
+                            <div class="carousel-item active">
+                                <div class="news-slide position-relative">
+                                    <svg class="d-block w-100" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="News 1" preserveAspectRatio="xMidYMid slice" focusable="false">
+                                        <rect width="100%" height="100%" fill="#667eea"/>
+                                        <defs>
+                                            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                                <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                                            </linearGradient>
+                                        </defs>
+                                        <rect width="100%" height="100%" fill="url(#grad1)"/>
+                                    </svg>
+                                    <div class="news-caption position-absolute bottom-0 start-0 w-100 p-5 text-white" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                                        <span class="badge bg-light text-dark mb-2">2024.12</span>
+                                        <h3 class="fw-bold mb-3">AI 기반 데이터 분석 플랫폼 구축 완료</h3>
+                                        <p class="mb-0">공공기관 대상 AI 기반 데이터 분석 플랫폼 개발을 성공적으로 완료했습니다. 최신 머신러닝 기술을 활용하여 데이터 기반 의사결정을 지원합니다.</p>
+                                    </div>
+                                </div>
                             </div>
-                            <p class="mb-1">공공기관 대상 AI 기반 데이터 분석 플랫폼 개발을 성공적으로 완료했습니다.</p>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">공공기관 통합 인증 시스템 개발</h5>
-                                <small class="text-body-secondary">2023.11</small>
+                            <!-- News Item 2 -->
+                            <div class="carousel-item">
+                                <div class="news-slide position-relative">
+                                    <svg class="d-block w-100" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="News 2" preserveAspectRatio="xMidYMid slice" focusable="false">
+                                        <defs>
+                                            <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+                                                <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+                                            </linearGradient>
+                                        </defs>
+                                        <rect width="100%" height="100%" fill="url(#grad2)"/>
+                                    </svg>
+                                    <div class="news-caption position-absolute bottom-0 start-0 w-100 p-5 text-white" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                                        <span class="badge bg-light text-dark mb-2">2023.11</span>
+                                        <h3 class="fw-bold mb-3">공공기관 통합 인증 시스템 개발</h3>
+                                        <p class="mb-0">OAuth2 및 JWT 기반의 공공기관 통합 인증 시스템을 성공적으로 구축했습니다. 보안성과 편의성을 동시에 확보했습니다.</p>
+                                    </div>
+                                </div>
                             </div>
-                            <p class="mb-1">OAuth2 및 JWT 기반의 공공기관 통합 인증 시스템을 성공적으로 구축했습니다.</p>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">전자문서 관리 시스템 구축</h5>
-                                <small class="text-body-secondary">2022.09</small>
+                            <!-- News Item 3 -->
+                            <div class="carousel-item">
+                                <div class="news-slide position-relative">
+                                    <svg class="d-block w-100" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="News 3" preserveAspectRatio="xMidYMid slice" focusable="false">
+                                        <defs>
+                                            <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+                                                <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+                                            </linearGradient>
+                                        </defs>
+                                        <rect width="100%" height="100%" fill="url(#grad3)"/>
+                                    </svg>
+                                    <div class="news-caption position-absolute bottom-0 start-0 w-100 p-5 text-white" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                                        <span class="badge bg-light text-dark mb-2">2022.09</span>
+                                        <h3 class="fw-bold mb-3">전자문서 관리 시스템 구축</h3>
+                                        <p class="mb-0">공공부문 전자문서 관리 및 전결 시스템 구축 프로젝트를 완료했습니다. 업무 효율성이 크게 향상되었습니다.</p>
+                                    </div>
+                                </div>
                             </div>
-                            <p class="mb-1">공공부문 전자문서 관리 및 전결 시스템 구축 프로젝트를 완료했습니다.</p>
-                        </a>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
-                </div>
-                <div class="col-md-5 order-md-1">
-                    <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>News</title>
-                        <rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/>
-                        <text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em" text-anchor="middle" font-size="48">News</text>
-                    </svg>
                 </div>
             </div>
 
@@ -198,45 +302,6 @@
 
         </div>
         <!-- /.container (marketing) -->
-
-        <!-- Services -->
-        <div class="container marketing">
-            <div class="row featurette py-5">
-                <div class="col-md-7">
-                    <h2 class="featurette-heading fw-normal lh-1">주요 서비스 <span class="text-body-secondary">Our Services</span></h2>
-                    <p class="lead">공공 부문에 최적화된 전문 IT 서비스를 제공합니다. 설계부터 운영까지 통합 솔루션을 지원합니다.</p>
-                </div>
-                <div class="col-md-5">
-                    <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Services</title>
-                        <rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/>
-                        <text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em" text-anchor="middle" font-size="48">Services</text>
-                    </svg>
-                </div>
-            </div>
-            
-            <!-- Service Cards -->
-            <div class="row g-4 pb-5">
-                <div class="col-md-6 col-lg-3" th:each="s : ${services}">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <svg class="bd-placeholder-img" width="60" height="60" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Service" preserveAspectRatio="xMidYMid slice" focusable="false">
-                                    <rect width="100%" height="100%" fill="var(--bs-primary)" rx="8"/>
-                                </svg>
-                            </div>
-                            <h5 class="card-title" th:text="${s.title}">서비스명</h5>
-                            <p class="card-text text-muted" th:text="${s.desc}">설명</p>
-                        </div>
-                        <div class="card-footer bg-transparent border-0">
-                            <a class="btn btn-sm btn-outline-primary w-100" th:href="@{/services}">자세히 보기 &raquo;</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <hr class="featurette-divider">
-        </div>
 
         <!-- Contact CTA -->
         <div class="container marketing">
