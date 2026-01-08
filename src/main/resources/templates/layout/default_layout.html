@@ -14,11 +14,42 @@
     <link th:href="@{/css/styles.css}" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="icon" type="image/x-icon" th:href="@{/img/favicon.png}" />
+    <style>
+        /* Smooth page transitions */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            animation: fadeInPage 0.5s ease-in;
+        }
+        
+        @keyframes fadeInPage {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Smooth transition for page navigation */
+        .page-transition {
+            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+        }
+        
+        .page-transition.fade-out {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+    </style>
     <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="layoutDefault">
+    <div id="layoutDefault" class="page-transition">
         <div id="layoutDefault_content">
             <main>
                 <div th:replace="layout/header :: header"></div>
@@ -36,7 +67,8 @@
             duration: 600,
             once: true,
         });
-        // 부드러운 앵커 스크롤
+        
+        // 부드러운 앵커 스크롤 (같은 페이지 내)
         document.addEventListener('DOMContentLoaded', function(){
             document.querySelectorAll('a[href^="#"]').forEach(function(anchor){
                 anchor.addEventListener('click', function(e){
@@ -47,6 +79,24 @@
                         // collapse navbar on mobile if open
                         var nav = document.querySelector('.navbar-collapse.show');
                         if(nav){ new bootstrap.Collapse(nav).hide(); }
+                    }
+                });
+            });
+            
+            // 부드러운 페이지 전환 (다른 페이지로 이동)
+            document.querySelectorAll('a:not([href^="#"]):not([href^="http"]):not([target="_blank"])').forEach(function(link){
+                link.addEventListener('click', function(e){
+                    var href = this.getAttribute('href');
+                    // Skip if it's the current page or a special link
+                    if(href && href !== '#' && href !== '#!' && !href.startsWith('javascript:')) {
+                        e.preventDefault();
+                        var layoutDiv = document.getElementById('layoutDefault');
+                        if(layoutDiv) {
+                            layoutDiv.classList.add('fade-out');
+                        }
+                        setTimeout(function(){
+                            window.location.href = href;
+                        }, 300);
                     }
                 });
             });
