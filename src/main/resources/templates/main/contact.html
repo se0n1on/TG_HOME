@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/default_layout}">
+    <div layout:fragment="content">
+        <!-- Hero Section -->
+        <section class="page-header-ui page-header-ui-dark bg-primary text-white" style="padding:6rem 0;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12 text-center">
+                        <h1 class="display-4">Contact Us</h1>
+                        <p class="lead mb-0">TG와 함께 성공적인 프로젝트를 시작하세요</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership Team -->
+        <section class="py-6 bg-light">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2>경영진 소개</h2>
+                    <p class="text-muted">풍부한 경험과 전문성을 갖춘 경영진이 TG를 이끌어갑니다</p>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6 col-lg-4" th:each="leader, iter : ${leadership}" data-aos="fade-up" th:attr="data-aos-delay=${iter.index * 100}">
+                        <div class="card h-100 border-0 shadow-sm text-center">
+                            <div class="card-body p-4">
+                                <img th:src="@{${leader.image}}" 
+                                     alt="portrait" 
+                                     class="rounded-circle mb-3"
+                                     style="width:150px;height:150px;object-fit:cover;border:4px solid #f8f9fa;"/>
+                                <h4 th:text="${leader.name}">이름</h4>
+                                <p class="text-primary fw-bold mb-3" th:text="${leader.position}">직책</p>
+                                <p class="text-muted small" th:text="${leader.bio}">약력</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Information & Form -->
+        <section class="py-6">
+            <div class="container">
+                <div class="row gx-5">
+                    <!-- Contact Information -->
+                    <div class="col-md-5 mb-5 mb-md-0" data-aos="fade-right">
+                        <h2 class="mb-4">연락처</h2>
+                        <p class="text-muted mb-4">프로젝트 상담이나 제안 요청은 아래 연락처로 문의해 주세요</p>
+                        
+                        <div class="card border-0 shadow-sm mb-3">
+                            <div class="card-body d-flex align-items-start">
+                                <div class="badge bg-primary-soft text-primary rounded-circle p-3 me-3">
+                                    <i class="fas fa-envelope fa-lg"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-1">이메일</h6>
+                                    <p class="text-muted mb-0" th:text="${contact.email}">contact@tgin.kr</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card border-0 shadow-sm mb-3">
+                            <div class="card-body d-flex align-items-start">
+                                <div class="badge bg-primary-soft text-primary rounded-circle p-3 me-3">
+                                    <i class="fas fa-phone fa-lg"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-1">전화번호</h6>
+                                    <p class="text-muted mb-0" th:text="${contact.phone}">02-000-0000</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body d-flex align-items-start">
+                                <div class="badge bg-primary-soft text-primary rounded-circle p-3 me-3">
+                                    <i class="fas fa-map-marker-alt fa-lg"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-1">주소</h6>
+                                    <p class="text-muted mb-0" th:text="${contact.address}">서울특별시 예시구 예시로 123</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="col-md-7" data-aos="fade-left">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body p-4">
+                                <h2 class="mb-4">문의하기</h2>
+                                <form id="contactForm">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="contactName">이름 <span class="text-danger">*</span></label>
+                                        <input class="form-control" type="text" id="contactName" name="name" placeholder="이름을 입력하세요" required />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="contactEmail">이메일 <span class="text-danger">*</span></label>
+                                        <input class="form-control" type="email" id="contactEmail" name="email" placeholder="email@example.com" required />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label" for="contactMessage">내용 <span class="text-danger">*</span></label>
+                                        <textarea class="form-control" id="contactMessage" name="message" rows="5" placeholder="문의 내용을 입력하세요" required></textarea>
+                                    </div>
+                                    <div id="formMessage" class="alert d-none" role="alert"></div>
+                                    <button type="submit" class="btn btn-primary btn-lg w-100" id="submitBtn">
+                                        <span class="btn-text">전송하기</span>
+                                        <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map or Additional Info Section (Optional) -->
+        <section class="py-6 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h3 class="mb-4">방문 전 미리 연락주세요</h3>
+                        <p class="text-muted">더 나은 상담을 위해 사전 예약을 권장합니다</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script th:inline="javascript">
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const spinner = submitBtn.querySelector('.spinner-border');
+            const formMessage = document.getElementById('formMessage');
+            
+            // Disable button and show spinner
+            submitBtn.disabled = true;
+            btnText.textContent = '전송 중...';
+            spinner.classList.remove('d-none');
+            formMessage.classList.add('d-none');
+            
+            const formData = {
+                name: document.getElementById('contactName').value,
+                email: document.getElementById('contactEmail').value,
+                message: document.getElementById('contactMessage').value
+            };
+            
+            try {
+                const response = await fetch('/api/contact/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                const result = await response.json();
+                
+                // Show message
+                formMessage.classList.remove('d-none');
+                if (result.ok || result.isOk) {
+                    formMessage.classList.remove('alert-danger');
+                    formMessage.classList.add('alert-success');
+                    formMessage.textContent = result.message;
+                    // Reset form
+                    document.getElementById('contactForm').reset();
+                } else {
+                    formMessage.classList.remove('alert-success');
+                    formMessage.classList.add('alert-danger');
+                    formMessage.textContent = result.message;
+                }
+            } catch (error) {
+                formMessage.classList.remove('d-none', 'alert-success');
+                formMessage.classList.add('alert-danger');
+                formMessage.textContent = '오류가 발생했습니다. 다시 시도해주세요.';
+            } finally {
+                // Re-enable button and hide spinner
+                submitBtn.disabled = false;
+                btnText.textContent = '전송하기';
+                spinner.classList.add('d-none');
+            }
+        });
+    </script>
+</html>

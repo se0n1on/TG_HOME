@@ -57,4 +57,59 @@ public class MainService {
                 "address", "서울특별시 예시구 예시로 123"
         );
     }
+
+    // About page content
+    public Map<String, Object> getCompanyInfo() {
+        return Map.of(
+                "name", "TG",
+                "fullName", "TG Information Technology",
+                "established", "2020",
+                "employees", "50+",
+                "description", "TG는 공공 부문에 특화된 IT 컨설팅 및 시스템 개발 전문 기업입니다. " +
+                        "데이터 거버넌스, AI 솔루션, Spring Boot 기반 엔터프라이즈 애플리케이션 개발에 " +
+                        "강점을 가지고 있으며, 정부 및 공공기관의 디지털 혁신을 선도하고 있습니다."
+        );
+    }
+
+    public List<Map<String, String>> getCompanyValues() {
+        return List.of(
+                Map.of("title", "전문성", "desc", "공공 부문 특화된 기술력과 경험을 바탕으로 최고의 솔루션을 제공합니다."),
+                Map.of("title", "신뢰성", "desc", "고객과의 약속을 최우선으로 하며, 투명하고 책임감 있는 업무를 수행합니다."),
+                Map.of("title", "혁신", "desc", "최신 기술 트렌드를 반영하여 지속적으로 혁신하는 솔루션을 개발합니다."),
+                Map.of("title", "협력", "desc", "고객과의 긴밀한 협력을 통해 최적의 결과를 도출합니다.")
+        );
+    }
+
+    public List<Map<String, String>> getCompanyHistory() {
+        return List.of(
+                Map.of("year", "2024", "event", "AI 기반 데이터 분석 플랫폼 구축"),
+                Map.of("year", "2023", "event", "공공기관 통합 인증 시스템 개발"),
+                Map.of("year", "2022", "event", "전자문서 관리 시스템 구축"),
+                Map.of("year", "2020", "event", "TG 설립")
+        );
+    }
+
+    // Leadership team
+    public List<Map<String, String>> getLeadershipTeam() {
+        return List.of(
+                Map.of(
+                        "name", "김대표",
+                        "position", "대표이사 (CEO)",
+                        "image", "/img/illustrations/profiles/profile-1.png",
+                        "bio", "20년 이상의 공공 IT 프로젝트 경험을 보유한 전문가로, TG의 비전과 전략을 주도하고 있습니다."
+                ),
+                Map.of(
+                        "name", "이전무",
+                        "position", "전무이사 (Executive Director)",
+                        "image", "/img/illustrations/profiles/profile-2.png",
+                        "bio", "데이터 아키텍처 및 시스템 설계 전문가로, 주요 프로젝트의 기술적 방향을 제시합니다."
+                ),
+                Map.of(
+                        "name", "박이사",
+                        "position", "이사 (General Manager)",
+                        "image", "/img/illustrations/profiles/profile-3.png",
+                        "bio", "프로젝트 관리 및 운영 전문가로, 고객 만족을 위한 최상의 서비스를 제공합니다."
+                )
+        );
+    }
 }
