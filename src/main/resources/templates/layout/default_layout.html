@@ -15,34 +15,36 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="icon" type="image/x-icon" th:href="@{/img/favicon.png}" />
     <style>
-        /* Smooth page transitions */
+        /* Smooth page transitions with horizontal slide effect */
         html {
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
         
         body {
-            animation: fadeInPage 0.5s ease-in;
+            overflow-x: hidden;
+            animation: slideInPage 0.5s ease-out;
         }
         
-        @keyframes fadeInPage {
+        @keyframes slideInPage {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateX(100px);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateX(0);
             }
         }
         
-        /* Smooth transition for page navigation */
+        /* Smooth transition for page navigation - PowerPoint style horizontal slide */
         .page-transition {
-            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+            transition: opacity 0.4s ease-out, transform 0.4s ease-out;
         }
         
-        .page-transition.fade-out {
+        .page-transition.slide-out-left {
             opacity: 0;
-            transform: translateY(-10px);
+            transform: translateX(-100px);
         }
     </style>
     <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"></script>
@@ -83,7 +85,7 @@
                 });
             });
             
-            // 부드러운 페이지 전환 (다른 페이지로 이동)
+            // 부드러운 페이지 전환 (다른 페이지로 이동) - PowerPoint 스타일 슬라이드
             document.querySelectorAll('a:not([href^="#"]):not([href^="http"]):not([target="_blank"])').forEach(function(link){
                 link.addEventListener('click', function(e){
                     var href = this.getAttribute('href');
@@ -92,11 +94,11 @@
                         e.preventDefault();
                         var layoutDiv = document.getElementById('layoutDefault');
                         if(layoutDiv) {
-                            layoutDiv.classList.add('fade-out');
+                            layoutDiv.classList.add('slide-out-left');
                         }
                         setTimeout(function(){
                             window.location.href = href;
-                        }, 300);
+                        }, 400);
                     }
                 });
             });
