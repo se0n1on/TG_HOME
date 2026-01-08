@@ -83,16 +83,40 @@
                     <p class="text-muted">체계적이고 투명한 프로세스로 프로젝트를 진행합니다</p>
                 </div>
                 <div class="row g-4">
-                    <div class="col-md-6 col-lg-3" th:each="step, iter : ${projects}" data-aos="fade-up" th:attr="data-aos-delay=${iter.index * 100}">
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
                         <div class="text-center">
                             <div class="badge bg-primary text-white rounded-circle mb-3" style="width:60px;height:60px;display:inline-flex;align-items:center;justify-content:center;font-size:1.5rem;">
-                                <span th:text="${iter.index + 1}">1</span>
+                                <span>1</span>
                             </div>
-                            <h6>단계 <span th:text="${iter.index + 1}">1</span></h6>
+                            <h6>단계 1</h6>
                             <p class="text-muted small">요구사항 분석 및 설계</p>
                         </div>
-                        <div th:if="${!iter.last}" class="d-none d-lg-block position-absolute top-50 start-100 translate-middle">
-                            <i class="fas fa-arrow-right text-primary"></i>
+                    </div>
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                        <div class="text-center">
+                            <div class="badge bg-primary text-white rounded-circle mb-3" style="width:60px;height:60px;display:inline-flex;align-items:center;justify-content:center;font-size:1.5rem;">
+                                <span>2</span>
+                            </div>
+                            <h6>단계 2</h6>
+                            <p class="text-muted small">개발 및 구현</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-center">
+                            <div class="badge bg-primary text-white rounded-circle mb-3" style="width:60px;height:60px;display:inline-flex;align-items:center;justify-content:center;font-size:1.5rem;">
+                                <span>3</span>
+                            </div>
+                            <h6>단계 3</h6>
+                            <p class="text-muted small">테스트 및 품질 보증</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                        <div class="text-center">
+                            <div class="badge bg-primary text-white rounded-circle mb-3" style="width:60px;height:60px;display:inline-flex;align-items:center;justify-content:center;font-size:1.5rem;">
+                                <span>4</span>
+                            </div>
+                            <h6>단계 4</h6>
+                            <p class="text-muted small">배포 및 유지보수</p>
                         </div>
                     </div>
                 </div>

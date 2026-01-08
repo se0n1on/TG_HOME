@@ -165,7 +165,7 @@
                 
                 // Show message
                 formMessage.classList.remove('d-none');
-                if (result.ok || result.isOk) {
+                if (result.ok) {
                     formMessage.classList.remove('alert-danger');
                     formMessage.classList.add('alert-success');
                     formMessage.textContent = result.message;
