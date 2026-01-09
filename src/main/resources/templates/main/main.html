@@ -4,43 +4,42 @@
     xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
     layout:decorate="~{layout/default_layout}">
     <div layout:fragment="content">
-        <!-- Full Screen Video Hero Section -->
-        <section id="video-hero" class="vh-100 position-relative overflow-hidden">
+        <!-- Full Screen Video Hero Section (KEPT AS REQUESTED) -->
+        <section id="hero" class="hero-video d-flex align-items-center">
             <!-- Video Background -->
             <div class="video-container">
                 <video autoplay muted loop playsinline class="w-100 h-100 object-fit-cover">
                     <source src="/video/video.mp4" type="video/mp4">
-                    <!-- Fallback to animated gradient if video not available -->
                 </video>
                 <!-- Fallback animated gradient background -->
                 <div class="video-fallback"></div>
             </div>
             
             <!-- Overlay content -->
-            <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
-                <div class="container text-center text-white">
-                    <h1 class="display-2 fw-bold mb-4 animate-fade-in" th:text="${tagline}">AI·Data Consulting & IT Governance</h1>
-                    <p class="lead fs-3 mb-5 animate-fade-in-delay" th:text="${lead}">공공/공공기관 특화 데이터·AI 및 Spring Boot 기반 시스템 설계·구현·운영</p>
-                    <div class="animate-fade-in-delay-2">
-                        <a class="btn btn-light btn-lg me-3 px-5 py-3" th:href="@{/#about}">자세히 보기</a>
-                        <a class="btn btn-outline-light btn-lg px-5 py-3" th:href="@{/contact}">문의하기</a>
+            <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
+                <div class="container text-center text-white" data-aos="fade-up">
+                    <h1 class="hero-title mb-4" th:text="${tagline}">AI·Data Consulting & IT Governance</h1>
+                    <p class="hero-subtitle mb-5" th:text="${lead}">공공/공공기관 특화 데이터·AI 및 Spring Boot 기반 시스템 설계·구현·운영</p>
+                    <div class="hero-buttons">
+                        <a href="#about" class="btn-get-started scrollto">자세히 보기</a>
+                        <a th:href="@{/contact}" class="btn-contact">문의하기</a>
                     </div>
                 </div>
             </div>
             
             <!-- Scroll indicator -->
-            <div class="scroll-indicator position-absolute bottom-0 start-50 translate-middle-x mb-4">
-                <div class="mouse-icon">
-                    <div class="wheel"></div>
-                </div>
-                <p class="text-white small mt-2">Scroll Down</p>
-            </div>
+            <a href="#about" class="scroll-indicator scrollto">
+                <i class="bi bi-chevron-down"></i>
+            </a>
         </section>
 
         <style>
-            /* Full screen video hero */
-            #video-hero {
+            /* UpScale-inspired Hero Video Section */
+            .hero-video {
+                width: 100%;
                 min-height: 100vh;
+                position: relative;
+                padding: 120px 0 60px 0;
                 background: #000;
             }
             
@@ -51,6 +50,7 @@
                 width: 100%;
                 height: 100%;
                 overflow: hidden;
+                z-index: 1;
             }
             
             .video-container video {
@@ -63,7 +63,6 @@
                 width: auto;
                 height: auto;
                 object-fit: cover;
-                z-index: 1;
             }
             
             /* Animated gradient fallback */
@@ -86,270 +85,390 @@
             }
             
             .hero-overlay {
-                background: rgba(0, 0, 0, 0.4);
+                background: rgba(0, 0, 0, 0.5);
                 z-index: 2;
             }
             
-            /* Animations */
-            @keyframes fadeInUp {
-                from {
-                    opacity: 0;
-                    transform: translateY(30px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
+            .hero-title {
+                font-size: 48px;
+                font-weight: 700;
+                line-height: 1.2;
+                margin-bottom: 20px;
             }
             
-            .animate-fade-in {
-                animation: fadeInUp 1s ease-out;
+            .hero-subtitle {
+                font-size: 24px;
+                margin-bottom: 30px;
+                opacity: 0.9;
             }
             
-            .animate-fade-in-delay {
-                animation: fadeInUp 1s ease-out 0.3s both;
+            .hero-buttons {
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                flex-wrap: wrap;
             }
             
-            .animate-fade-in-delay-2 {
-                animation: fadeInUp 1s ease-out 0.6s both;
+            .btn-get-started,
+            .btn-contact {
+                font-weight: 500;
+                font-size: 16px;
+                letter-spacing: 1px;
+                display: inline-block;
+                padding: 14px 40px;
+                border-radius: 50px;
+                transition: 0.5s;
+                text-decoration: none;
             }
             
-            /* Scroll indicator */
+            .btn-get-started {
+                background: #1BA9AA;
+                color: #fff;
+                border: 2px solid #1BA9AA;
+            }
+            
+            .btn-get-started:hover {
+                background: transparent;
+                border-color: #fff;
+            }
+            
+            .btn-contact {
+                background: transparent;
+                color: #fff;
+                border: 2px solid #fff;
+            }
+            
+            .btn-contact:hover {
+                background: #fff;
+                color: #1BA9AA;
+            }
+            
             .scroll-indicator {
+                position: absolute;
+                bottom: 30px;
+                left: 50%;
+                transform: translateX(-50%);
                 z-index: 3;
+                font-size: 32px;
+                color: #fff;
                 animation: bounce 2s infinite;
+                text-decoration: none;
+            }
+            
+            .scroll-indicator:hover {
+                color: #1BA9AA;
             }
             
             @keyframes bounce {
-                0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
-                40% { transform: translateY(-10px) translateX(-50%); }
-                60% { transform: translateY(-5px) translateX(-50%); }
+                0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+                40% { transform: translateX(-50%) translateY(-10px); }
+                60% { transform: translateX(-50%) translateY(-5px); }
             }
             
-            .mouse-icon {
-                width: 25px;
-                height: 40px;
-                border: 2px solid #fff;
-                border-radius: 15px;
-                margin: 0 auto;
-                position: relative;
-            }
-            
-            .wheel {
-                width: 3px;
-                height: 8px;
-                background: #fff;
-                border-radius: 2px;
-                position: absolute;
-                top: 8px;
-                left: 50%;
-                transform: translateX(-50%);
-                animation: scroll 2s infinite;
-            }
-            
-            @keyframes scroll {
-                0% { opacity: 1; top: 8px; }
-                100% { opacity: 0; top: 20px; }
+            @media (max-width: 768px) {
+                .hero-title {
+                    font-size: 32px;
+                }
+                .hero-subtitle {
+                    font-size: 18px;
+                }
             }
         </style>
 
-        <!-- Company Introduction (Marketing Messages) -->
-        <div class="container marketing">
-            <!-- About Section (1st) -->
-            <div class="row featurette py-5">
-                <div class="col-md-7">
-                    <h2 class="featurette-heading fw-normal lh-1">회사 소개 <span class="text-body-secondary">TG Information Technology</span></h2>
-                    <p class="lead" th:text="${intro}">TG는 공공 부문 시스템 아키텍처, 보안요건 반영, 데이터 거버넌스와 AI 솔루션 통합에 강점을 가진 전문 컨설팅 및 개발 조직입니다.</p>
-                    <ul class="lead">
-                        <li>공공 특화 보안·아키텍처 설계</li>
-                        <li>데이터 거버넌스 및 품질관리</li>
-                        <li>AI/분석 솔루션 통합</li>
-                    </ul>
-                    <p><a class="btn btn-primary btn-lg" th:href="@{/about}">더 알아보기</a></p>
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="section-header">
+                    <h2>회사 소개</h2>
+                    <p>TG Information Technology</p>
                 </div>
-                <div class="col-md-5">
-                    <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Company</title>
-                        <rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/>
-                        <text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em" text-anchor="middle" font-size="48">회사 소개</text>
-                    </svg>
-                </div>
-            </div>
-
-            <hr class="featurette-divider">
-
-            <!-- Three columns of text (2nd - Services Icons) -->
-            <div class="row py-5">
-                <div class="col-lg-4">
-                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="var(--bs-primary)"/>
-                        <text x="50%" y="50%" fill="#fff" dy=".3em" text-anchor="middle" font-size="24">공공</text>
-                    </svg>
-                    <h3 class="fw-normal mt-3">공공 부문 특화</h3>
-                    <p>공공기관과 정부 프로젝트에 최적화된 보안·아키텍처 설계 및 구현 경험을 보유하고 있습니다.</p>
-                    <p><a class="btn btn-secondary" th:href="@{/about}">자세히 보기 &raquo;</a></p>
-                </div>
-                <div class="col-lg-4">
-                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="var(--bs-success)"/>
-                        <text x="50%" y="50%" fill="#fff" dy=".3em" text-anchor="middle" font-size="24">데이터</text>
-                    </svg>
-                    <h3 class="fw-normal mt-3">데이터 거버넌스</h3>
-                    <p>데이터 수집, 정제, 품질관리 프로세스를 수립하고 효율적인 데이터 관리 체계를 구축합니다.</p>
-                    <p><a class="btn btn-secondary" th:href="@{/services}">자세히 보기 &raquo;</a></p>
-                </div>
-                <div class="col-lg-4">
-                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="var(--bs-info)"/>
-                        <text x="50%" y="50%" fill="#fff" dy=".3em" text-anchor="middle" font-size="20">AI</text>
-                    </svg>
-                    <h3 class="fw-normal mt-3">AI 솔루션</h3>
-                    <p>운영 통계 대시보드 및 예측 모델 도입을 통해 데이터 기반 의사결정을 지원합니다.</p>
-                    <p><a class="btn btn-secondary" th:href="@{/services}">자세히 보기 &raquo;</a></p>
+                
+                <div class="row gy-4">
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                        <h3 th:text="${intro}">TG는 공공 부문 시스템 아키텍처, 보안요건 반영, 데이터 거버넌스와 AI 솔루션 통합에 강점을 가진 전문 컨설팅 및 개발 조직입니다.</h3>
+                        <img src="https://via.placeholder.com/600x400" class="img-fluid rounded-4 mb-4" alt="">
+                        <a th:href="@{/about}" class="read-more"><span>더 알아보기</span><i class="bi bi-arrow-right"></i></a>
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="content ps-0 ps-lg-5">
+                            <p class="fst-italic">
+                                공공 특화 전문 기업으로서 다음과 같은 강점을 보유하고 있습니다
+                            </p>
+                            <ul>
+                                <li><i class="bi bi-check-circle-fill"></i> 공공 특화 보안·아키텍처 설계</li>
+                                <li><i class="bi bi-check-circle-fill"></i> 데이터 거버넌스 및 품질관리</li>
+                                <li><i class="bi bi-check-circle-fill"></i> AI/분석 솔루션 통합</li>
+                            </ul>
+                            <p>
+                                우리는 고객의 디지털 혁신을 위해 최선의 노력을 다하고 있으며,
+                                공공 부문의 특수한 요구사항을 완벽하게 이해하고 있습니다.
+                            </p>
+                            
+                            <div class="position-relative mt-4">
+                                <img src="https://via.placeholder.com/600x400" class="img-fluid rounded-4" alt="">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <hr class="featurette-divider">
-
-            <!-- News Carousel Section (3rd) -->
-            <div class="row py-5">
-                <div class="col-12">
-                    <h2 class="text-center mb-5">최신 소식 <span class="text-body-secondary">TG News</span></h2>
+        <!-- Services Section -->
+        <section id="services" class="services sections-bg">
+            <div class="container" data-aos="fade-up">
+                <div class="section-header">
+                    <h2>주요 서비스</h2>
+                    <p>공공 부문에 최적화된 전문 IT 서비스를 제공합니다</p>
+                </div>
+                
+                <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-item position-relative">
+                            <div class="icon">
+                                <i class="bi bi-building"></i>
+                            </div>
+                            <h3>공공 부문 특화</h3>
+                            <p>공공기관과 정부 프로젝트에 최적화된 보안·아키텍처 설계 및 구현 경험을 보유하고 있습니다.</p>
+                            <a th:href="@{/services}" class="readmore stretched-link">더 보기 <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
                     
-                    <!-- News Carousel -->
-                    <div id="newsCarousel" class="carousel slide mx-auto" data-bs-ride="carousel" style="max-width: 800px;">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="News 1"></button>
-                            <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="1" aria-label="News 2"></button>
-                            <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="2" aria-label="News 3"></button>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-item position-relative">
+                            <div class="icon">
+                                <i class="bi bi-diagram-3"></i>
+                            </div>
+                            <h3>데이터 거버넌스</h3>
+                            <p>데이터 수집, 정제, 품질관리 프로세스를 수립하고 효율적인 데이터 관리 체계를 구축합니다.</p>
+                            <a th:href="@{/services}" class="readmore stretched-link">더 보기 <i class="bi bi-arrow-right"></i></a>
                         </div>
-                        <div class="carousel-inner rounded-3 shadow-lg">
-                            <!-- News Item 1 -->
-                            <div class="carousel-item active">
-                                <div class="news-slide position-relative">
-                                    <svg class="d-block w-100" height="700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="News 1" preserveAspectRatio="xMidYMid slice" focusable="false">
-                                        <rect width="100%" height="100%" fill="#1BA9AA"/>
-                                        <defs>
-                                            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                                <stop offset="0%" style="stop-color:#1BA9AA;stop-opacity:1" />
-                                                <stop offset="100%" style="stop-color:#496371;stop-opacity:1" />
-                                            </linearGradient>
-                                        </defs>
-                                        <rect width="100%" height="100%" fill="url(#grad1)"/>
-                                    </svg>
-                                    <div class="news-caption position-absolute bottom-0 start-0 w-100 p-5 text-white" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
-                                        <span class="badge bg-light text-dark mb-2">2024.12</span>
-                                        <h3 class="fw-bold mb-3">AI 기반 데이터 분석 플랫폼 구축 완료</h3>
-                                        <p class="mb-0">공공기관 대상 AI 기반 데이터 분석 플랫폼 개발을 성공적으로 완료했습니다. 최신 머신러닝 기술을 활용하여 데이터 기반 의사결정을 지원합니다.</p>
-                                    </div>
-                                </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-item position-relative">
+                            <div class="icon">
+                                <i class="bi bi-cpu"></i>
                             </div>
-                            <!-- News Item 2 -->
-                            <div class="carousel-item">
-                                <div class="news-slide position-relative">
-                                    <svg class="d-block w-100" height="700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="News 2" preserveAspectRatio="xMidYMid slice" focusable="false">
-                                        <defs>
-                                            <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
-                                                <stop offset="0%" style="stop-color:#496371;stop-opacity:1" />
-                                                <stop offset="100%" style="stop-color:#1BA9AA;stop-opacity:1" />
-                                            </linearGradient>
-                                        </defs>
-                                        <rect width="100%" height="100%" fill="url(#grad2)"/>
-                                    </svg>
-                                    <div class="news-caption position-absolute bottom-0 start-0 w-100 p-5 text-white" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
-                                        <span class="badge bg-light text-dark mb-2">2023.11</span>
-                                        <h3 class="fw-bold mb-3">공공기관 통합 인증 시스템 개발</h3>
-                                        <p class="mb-0">OAuth2 및 JWT 기반의 공공기관 통합 인증 시스템을 성공적으로 구축했습니다. 보안성과 편의성을 동시에 확보했습니다.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- News Item 3 -->
-                            <div class="carousel-item">
-                                <div class="news-slide position-relative">
-                                    <svg class="d-block w-100" height="700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="News 3" preserveAspectRatio="xMidYMid slice" focusable="false">
-                                        <defs>
-                                            <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
-                                                <stop offset="0%" style="stop-color:#1BA9AA;stop-opacity:1" />
-                                                <stop offset="100%" style="stop-color:#158889;stop-opacity:1" />
-                                            </linearGradient>
-                                        </defs>
-                                        <rect width="100%" height="100%" fill="url(#grad3)"/>
-                                    </svg>
-                                    <div class="news-caption position-absolute bottom-0 start-0 w-100 p-5 text-white" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
-                                        <span class="badge bg-light text-dark mb-2">2022.09</span>
-                                        <h3 class="fw-bold mb-3">전자문서 관리 시스템 구축</h3>
-                                        <p class="mb-0">공공부문 전자문서 관리 및 전결 시스템 구축 프로젝트를 완료했습니다. 업무 효율성이 크게 향상되었습니다.</p>
-                                    </div>
-                                </div>
-                            </div>
+                            <h3>AI 솔루션</h3>
+                            <p>운영 통계 대시보드 및 예측 모델 도입을 통해 데이터 기반 의사결정을 지원합니다.</p>
+                            <a th:href="@{/services}" class="readmore stretched-link">더 보기 <i class="bi bi-arrow-right"></i></a>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <hr class="featurette-divider">
-
-        </div>
-        <!-- /.container (marketing) -->
-
-        <!-- Contact CTA (4th) -->
-        <div class="container marketing">
-            <div class="row featurette py-5 bg-light rounded-3">
-                <div class="col-lg-8 mx-auto text-center">
-                    <h2 class="display-5 fw-bold">프로젝트 상담이 필요하신가요?</h2>
-                    <p class="lead mb-4">TG와 함께 공공 부문의 디지털 혁신을 시작하세요</p>
-                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                        <a class="btn btn-primary btn-lg px-4 gap-3" th:href="@{/contact}">문의하기</a>
-                        <a class="btn btn-outline-secondary btn-lg px-4" th:href="@{/services}">서비스 둘러보기</a>
-                    </div>
-                </div>
+        <!-- Call To Action Section -->
+        <section id="call-to-action" class="call-to-action">
+            <div class="container text-center" data-aos="zoom-out">
+                <h3>프로젝트 상담이 필요하신가요?</h3>
+                <p>TG와 함께 공공 부문의 디지털 혁신을 시작하세요</p>
+                <a class="cta-btn" th:href="@{/contact}">문의하기</a>
             </div>
-        </div>
+        </section>
 
         <style>
-            /* Marketing content spacing */
-            .marketing {
-                margin-top: 3rem;
-                margin-bottom: 3rem;
+            /* UpScale-inspired Section Styles */
+            section {
+                padding: 80px 0;
+                overflow: hidden;
             }
-            .marketing .col-lg-4 {
-                margin-bottom: 1.5rem;
+            
+            .section-header {
                 text-align: center;
-            }
-            .marketing .col-lg-4 p {
-                margin-right: .75rem;
-                margin-left: .75rem;
+                padding-bottom: 40px;
             }
             
-            /* Featurettes */
-            .featurette-divider {
-                margin: 5rem 0;
-            }
-            .featurette-heading {
-                letter-spacing: -.05rem;
+            .section-header h2 {
+                font-size: 13px;
+                letter-spacing: 1px;
+                font-weight: 700;
+                margin: 0;
+                color: #1BA9AA;
+                text-transform: uppercase;
             }
             
-            /* Responsive adjustments */
-            @media (min-width: 40em) {
-                .featurette-heading {
-                    font-size: 50px;
-                }
+            .section-header p {
+                margin: 10px 0 0 0;
+                padding: 0;
+                font-size: 38px;
+                line-height: 42px;
+                font-weight: 700;
+                color: #363d47;
             }
-            @media (min-width: 62em) {
-                .featurette-heading {
-                    margin-top: 7rem;
-                }
+            
+            /* About Section */
+            .about {
+                background-color: #f6f9ff;
+            }
+            
+            .about h3 {
+                font-weight: 700;
+                font-size: 26px;
+                color: #363d47;
+                margin-bottom: 20px;
+            }
+            
+            .about .content ul {
+                list-style: none;
+                padding: 0;
+            }
+            
+            .about .content ul li {
+                padding-bottom: 10px;
+            }
+            
+            .about .content ul i {
+                font-size: 20px;
+                padding-right: 4px;
+                color: #1BA9AA;
+            }
+            
+            .about .content p:last-child {
+                margin-bottom: 0;
+            }
+            
+            .about .read-more {
+                background: #1BA9AA;
+                color: #fff;
+                font-family: var(--bs-font-sans-serif);
+                font-weight: 500;
+                font-size: 16px;
+                letter-spacing: 1px;
+                padding: 12px 40px;
+                border-radius: 50px;
+                transition: 0.3s;
+                display: inline-flex;
+                align-items: center;
+                text-decoration: none;
+            }
+            
+            .about .read-more i {
+                font-size: 18px;
+                margin-left: 5px;
+                line-height: 0;
+                transition: 0.3s;
+            }
+            
+            .about .read-more:hover {
+                background: #158889;
+            }
+            
+            .about .read-more:hover i {
+                transform: translateX(5px);
+            }
+            
+            /* Services Section */
+            .services .sections-bg {
+                background-color: #f6f9ff;
+            }
+            
+            .services .service-item {
+                padding: 50px 30px;
+                transition: all ease-in-out 0.4s;
+                background: #fff;
+                height: 100%;
+                border-radius: 18px;
+                box-shadow: 0px 0 25px rgba(0, 0, 0, 0.08);
+            }
+            
+            .services .service-item .icon {
+                color: #1BA9AA;
+                background: #d4eff0;
+                margin-bottom: 25px;
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 32px;
+                transition: 0.3s;
+            }
+            
+            .services .service-item h3 {
+                color: #363d47;
+                font-weight: 700;
+                margin: 0 0 20px 0;
+                padding-bottom: 8px;
+                font-size: 22px;
+                position: relative;
+                display: inline-block;
+                border-bottom: 4px solid #eeeeee;
+                transition: 0.3s;
+            }
+            
+            .services .service-item p {
+                line-height: 24px;
+                font-size: 14px;
+                margin-bottom: 0;
+            }
+            
+            .services .service-item .readmore {
+                margin-top: 15px;
+                display: inline-block;
+                color: #1BA9AA;
+                transition: 0.3s;
+                text-decoration: none;
+            }
+            
+            .services .service-item:hover {
+                transform: translateY(-10px);
+                box-shadow: 0px 0 35px rgba(0, 0, 0, 0.15);
+            }
+            
+            .services .service-item:hover .icon {
+                background: #1BA9AA;
+                color: #fff;
+            }
+            
+            .services .service-item:hover h3 {
+                color: #1BA9AA;
+                border-color: #1BA9AA;
+            }
+            
+            .services .service-item:hover .readmore {
+                color: #158889;
+            }
+            
+            /* Call To Action Section */
+            .call-to-action {
+                background: linear-gradient(rgba(27, 169, 170, 0.9), rgba(27, 169, 170, 0.9)), url("https://via.placeholder.com/1920x600") center center;
+                background-size: cover;
+                padding: 100px 0;
+            }
+            
+            .call-to-action h3 {
+                color: #fff;
+                font-size: 28px;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+            
+            .call-to-action p {
+                color: #fff;
+                margin-bottom: 20px;
+            }
+            
+            .call-to-action .cta-btn {
+                font-family: var(--bs-font-sans-serif);
+                font-weight: 500;
+                font-size: 16px;
+                letter-spacing: 1px;
+                display: inline-block;
+                padding: 12px 40px;
+                border-radius: 50px;
+                transition: 0.5s;
+                margin: 10px;
+                border: 2px solid #fff;
+                color: #fff;
+                background: transparent;
+                text-decoration: none;
+            }
+            
+            .call-to-action .cta-btn:hover {
+                background: #fff;
+                color: #1BA9AA;
             }
         </style>
     </div>
