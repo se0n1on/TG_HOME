@@ -1,0 +1,119 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Team Section
+--------------------------------------------------------------*/
+.team {
+  .team-member-card {
+    background-color: var(--surface-color);
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    border-radius: 6px;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      border-color: color-mix(in srgb, var(--accent-color), transparent 60%);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transform: translateY(-4px);
+    }
+  }
+
+  .member-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    background-color: color-mix(in srgb, var(--default-color), transparent 95%);
+    aspect-ratio: 4/3;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+
+  .team-member-card:hover .member-image-wrapper img {
+    transform: scale(1.05);
+  }
+
+  .member-content {
+    padding: 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    h4 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--heading-color);
+    }
+
+    .position {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--accent-color);
+      margin-bottom: 8px;
+    }
+
+    .credentials {
+      font-size: 13px;
+      color: color-mix(in srgb, var(--default-color), transparent 40%);
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+
+    .bio {
+      font-size: 14px;
+      line-height: 1.6;
+      color: color-mix(in srgb, var(--default-color), transparent 20%);
+      margin-bottom: 16px;
+      flex: 1;
+    }
+  }
+
+  .member-social {
+    display: flex;
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 4px;
+      background-color: color-mix(in srgb, var(--default-color), transparent 95%);
+      color: var(--default-color);
+      transition: all 0.3s ease-in-out;
+
+      i {
+        font-size: 16px;
+      }
+
+      &:hover {
+        background-color: var(--accent-color);
+        color: var(--contrast-color);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .member-content {
+      padding: 20px;
+
+      h4 {
+        font-size: 18px;
+      }
+
+      .bio {
+        font-size: 13px;
+      }
+    }
+  }
+}

@@ -1,0 +1,126 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Why Us Section
+--------------------------------------------------------------*/
+.why-us {
+  .content {
+    margin-bottom: 32px;
+
+    h3 {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--heading-color);
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 32px;
+      color: var(--default-color);
+    }
+  }
+
+  .stats-wrapper {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+
+    .stat-item {
+      flex: 1;
+      min-width: 140px;
+
+      .stat-number {
+        font-size: 36px;
+        font-weight: 700;
+        color: var(--accent-color);
+        line-height: 1;
+        margin-bottom: 8px;
+
+        &::after {
+          content: '+';
+          margin-left: 2px;
+        }
+      }
+
+      .stat-label {
+        font-size: 14px;
+        font-weight: 500;
+        color: color-mix(in srgb, var(--default-color), transparent 30%);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+
+  .feature-item {
+    background-color: var(--surface-color);
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    border-radius: 6px;
+    padding: 24px;
+    display: flex;
+    gap: 20px;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      border-color: color-mix(in srgb, var(--accent-color), transparent 70%);
+    }
+
+    .feature-icon {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+      border-radius: 6px;
+
+      i {
+        font-size: 24px;
+        color: var(--accent-color);
+      }
+    }
+
+    .feature-content {
+      flex: 1;
+
+      h4 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: var(--heading-color);
+      }
+
+      p {
+        font-size: 15px;
+        line-height: 1.6;
+        margin: 0;
+        color: color-mix(in srgb, var(--default-color), transparent 25%);
+      }
+    }
+  }
+
+  @media (max-width: 992px) {
+    .col-lg-5 {
+      margin-bottom: 40px;
+    }
+
+    .stats-wrapper {
+      justify-content: space-between;
+    }
+  }
+}
