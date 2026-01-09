@@ -3,7 +3,8 @@
 <head>
 </head>
 <body>
-  <footer id="footer" class="footer dark-background" th:fragment="footer">
+  <th:block th:fragment="footer">
+  <footer id="footer" class="footer dark-background">
 
     <div class="container footer-top">
       <div class="row gy-4">
@@ -95,5 +96,6 @@
 
   <!-- Main JS File -->
   <script src="/js/main.js"></script>
+  </th:block>
 </body>
 </html>
