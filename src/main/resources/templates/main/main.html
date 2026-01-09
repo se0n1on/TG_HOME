@@ -4,154 +4,353 @@
     xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
     layout:decorate="~{layout/default_layout}">
     <div layout:fragment="content">
-        <!-- Hero / Home -->
-        <section id="home" class="page-header-ui page-header-ui-dark bg-primary text-white" style="padding:6rem 0;">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-7">
-                        <h1 class="display-5" th:text="${tagline}">AI·Data Consulting & IT Governance</h1>
-                        <p class="lead mb-4" th:text="${lead}">공공/공공기관 특화 데이터·AI 및 Spring Boot 기반 시스템 설계·구현·운영</p>
-                        <a class="btn btn-light btn-lg me-2" th:href="@{/#services}">주요 서비스</a>
-                        <a class="btn btn-outline-light btn-lg" th:href="@{/#contact}">문의하기</a>
+        <!-- Full Screen Video Hero Section -->
+        <section id="video-hero" class="vh-100 position-relative overflow-hidden">
+            <!-- Video Background -->
+            <div class="video-container">
+                <video autoplay muted loop playsinline class="w-100 h-100 object-fit-cover">
+                    <source src="/video/video.mp4" type="video/mp4">
+                    <!-- Fallback to animated gradient if video not available -->
+                </video>
+                <!-- Fallback animated gradient background -->
+                <div class="video-fallback"></div>
+            </div>
+            
+            <!-- Overlay content -->
+            <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                <div class="container text-center text-white">
+                    <h1 class="display-2 fw-bold mb-4 animate-fade-in" th:text="${tagline}">AI·Data Consulting & IT Governance</h1>
+                    <p class="lead fs-3 mb-5 animate-fade-in-delay" th:text="${lead}">공공/공공기관 특화 데이터·AI 및 Spring Boot 기반 시스템 설계·구현·운영</p>
+                    <div class="animate-fade-in-delay-2">
+                        <a class="btn btn-light btn-lg me-3 px-5 py-3" th:href="@{/#about}">자세히 보기</a>
+                        <a class="btn btn-outline-light btn-lg px-5 py-3" th:href="@{/contact}">문의하기</a>
                     </div>
-                    <div class="col-lg-5 d-none d-lg-block">
-                        <div class="card bg-white text-dark p-3">
-                            <h5>간단 소개</h5>
-                            <p th:text="${intro}">TG는 공공 부문 ...</p>
-                            <a class="btn btn-sm btn-primary" th:href="@{/#about}">자세히 보기</a>
+                </div>
+            </div>
+            
+            <!-- Scroll indicator -->
+            <div class="scroll-indicator position-absolute bottom-0 start-50 translate-middle-x mb-4">
+                <div class="mouse-icon">
+                    <div class="wheel"></div>
+                </div>
+                <p class="text-white small mt-2">Scroll Down</p>
+            </div>
+        </section>
+
+        <style>
+            /* Full screen video hero */
+            #video-hero {
+                min-height: 100vh;
+                background: #000;
+            }
+            
+            .video-container {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+            
+            .video-container video {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                min-width: 100%;
+                min-height: 100%;
+                width: auto;
+                height: auto;
+                object-fit: cover;
+                z-index: 1;
+            }
+            
+            /* Animated gradient fallback */
+            .video-fallback {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, #1BA9AA 0%, #496371 50%, #1BA9AA 100%);
+                background-size: 400% 400%;
+                animation: gradientShift 15s ease infinite;
+                z-index: 0;
+            }
+            
+            @keyframes gradientShift {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+            
+            .hero-overlay {
+                background: rgba(0, 0, 0, 0.4);
+                z-index: 2;
+            }
+            
+            /* Animations */
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            .animate-fade-in {
+                animation: fadeInUp 1s ease-out;
+            }
+            
+            .animate-fade-in-delay {
+                animation: fadeInUp 1s ease-out 0.3s both;
+            }
+            
+            .animate-fade-in-delay-2 {
+                animation: fadeInUp 1s ease-out 0.6s both;
+            }
+            
+            /* Scroll indicator */
+            .scroll-indicator {
+                z-index: 3;
+                animation: bounce 2s infinite;
+            }
+            
+            @keyframes bounce {
+                0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+                40% { transform: translateY(-10px) translateX(-50%); }
+                60% { transform: translateY(-5px) translateX(-50%); }
+            }
+            
+            .mouse-icon {
+                width: 25px;
+                height: 40px;
+                border: 2px solid #fff;
+                border-radius: 15px;
+                margin: 0 auto;
+                position: relative;
+            }
+            
+            .wheel {
+                width: 3px;
+                height: 8px;
+                background: #fff;
+                border-radius: 2px;
+                position: absolute;
+                top: 8px;
+                left: 50%;
+                transform: translateX(-50%);
+                animation: scroll 2s infinite;
+            }
+            
+            @keyframes scroll {
+                0% { opacity: 1; top: 8px; }
+                100% { opacity: 0; top: 20px; }
+            }
+        </style>
+
+        <!-- Company Introduction (Marketing Messages) -->
+        <div class="container marketing">
+            <!-- About Section (1st) -->
+            <div class="row featurette py-5">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading fw-normal lh-1">회사 소개 <span class="text-body-secondary">TG Information Technology</span></h2>
+                    <p class="lead" th:text="${intro}">TG는 공공 부문 시스템 아키텍처, 보안요건 반영, 데이터 거버넌스와 AI 솔루션 통합에 강점을 가진 전문 컨설팅 및 개발 조직입니다.</p>
+                    <ul class="lead">
+                        <li>공공 특화 보안·아키텍처 설계</li>
+                        <li>데이터 거버넌스 및 품질관리</li>
+                        <li>AI/분석 솔루션 통합</li>
+                    </ul>
+                    <p><a class="btn btn-primary btn-lg" th:href="@{/about}">더 알아보기</a></p>
+                </div>
+                <div class="col-md-5">
+                    <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <title>Company</title>
+                        <rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/>
+                        <text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em" text-anchor="middle" font-size="48">회사 소개</text>
+                    </svg>
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <!-- Three columns of text (2nd - Services Icons) -->
+            <div class="row py-5">
+                <div class="col-lg-4">
+                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="var(--bs-primary)"/>
+                        <text x="50%" y="50%" fill="#fff" dy=".3em" text-anchor="middle" font-size="24">공공</text>
+                    </svg>
+                    <h3 class="fw-normal mt-3">공공 부문 특화</h3>
+                    <p>공공기관과 정부 프로젝트에 최적화된 보안·아키텍처 설계 및 구현 경험을 보유하고 있습니다.</p>
+                    <p><a class="btn btn-secondary" th:href="@{/about}">자세히 보기 &raquo;</a></p>
+                </div>
+                <div class="col-lg-4">
+                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="var(--bs-success)"/>
+                        <text x="50%" y="50%" fill="#fff" dy=".3em" text-anchor="middle" font-size="24">데이터</text>
+                    </svg>
+                    <h3 class="fw-normal mt-3">데이터 거버넌스</h3>
+                    <p>데이터 수집, 정제, 품질관리 프로세스를 수립하고 효율적인 데이터 관리 체계를 구축합니다.</p>
+                    <p><a class="btn btn-secondary" th:href="@{/services}">자세히 보기 &raquo;</a></p>
+                </div>
+                <div class="col-lg-4">
+                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="var(--bs-info)"/>
+                        <text x="50%" y="50%" fill="#fff" dy=".3em" text-anchor="middle" font-size="20">AI</text>
+                    </svg>
+                    <h3 class="fw-normal mt-3">AI 솔루션</h3>
+                    <p>운영 통계 대시보드 및 예측 모델 도입을 통해 데이터 기반 의사결정을 지원합니다.</p>
+                    <p><a class="btn btn-secondary" th:href="@{/services}">자세히 보기 &raquo;</a></p>
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <!-- News Carousel Section (3rd) -->
+            <div class="row py-5">
+                <div class="col-12">
+                    <h2 class="text-center mb-5">최신 소식 <span class="text-body-secondary">TG News</span></h2>
+                    
+                    <!-- News Carousel -->
+                    <div id="newsCarousel" class="carousel slide mx-auto" data-bs-ride="carousel" style="max-width: 800px;">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="News 1"></button>
+                            <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="1" aria-label="News 2"></button>
+                            <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="2" aria-label="News 3"></button>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About -->
-        <section id="about" class="py-6">
-            <div class="container">
-                <div class="row gx-5 align-items-center">
-                    <div class="col-md-6" data-aos="fade-right">
-                        <h2>회사 소개</h2>
-                        <p class="lead" th:text="${intro}">회사 소개 텍스트</p>
-                        <ul>
-                            <li>공공 특화 보안·아키텍처 설계</li>
-                            <li>데이터 거버넌스 및 품질관리</li>
-                            <li>AI/분석 솔루션 통합</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6" data-aos="fade-left">
-                        <img th:src="@{/img/placeholder-about.jpg}" alt="about" style="width:100%;border-radius:8px"/>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services -->
-        <section id="services" class="bg-light py-6">
-            <div class="container">
-                <div class="text-center mb-5">
-                    <h2>주요 서비스</h2>
-                    <p class="text-muted">설계부터 운영까지 통합 서비스를 제공합니다.</p>
-                </div>
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-3" th:each="s : ${services}" data-aos="zoom-in">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h5 th:text="${s.title}">서비스명</h5>
-                                <p class="text-muted" th:text="${s.desc}">설명</p>
+                        <div class="carousel-inner rounded-3 shadow-lg">
+                            <!-- News Item 1 -->
+                            <div class="carousel-item active">
+                                <div class="news-slide position-relative">
+                                    <svg class="d-block w-100" height="700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="News 1" preserveAspectRatio="xMidYMid slice" focusable="false">
+                                        <rect width="100%" height="100%" fill="#1BA9AA"/>
+                                        <defs>
+                                            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" style="stop-color:#1BA9AA;stop-opacity:1" />
+                                                <stop offset="100%" style="stop-color:#496371;stop-opacity:1" />
+                                            </linearGradient>
+                                        </defs>
+                                        <rect width="100%" height="100%" fill="url(#grad1)"/>
+                                    </svg>
+                                    <div class="news-caption position-absolute bottom-0 start-0 w-100 p-5 text-white" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                                        <span class="badge bg-light text-dark mb-2">2024.12</span>
+                                        <h3 class="fw-bold mb-3">AI 기반 데이터 분석 플랫폼 구축 완료</h3>
+                                        <p class="mb-0">공공기관 대상 AI 기반 데이터 분석 플랫폼 개발을 성공적으로 완료했습니다. 최신 머신러닝 기술을 활용하여 데이터 기반 의사결정을 지원합니다.</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-footer bg-transparent">
-                                <a class="btn btn-sm btn-outline-primary" href="#">상세보기</a>
+                            <!-- News Item 2 -->
+                            <div class="carousel-item">
+                                <div class="news-slide position-relative">
+                                    <svg class="d-block w-100" height="700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="News 2" preserveAspectRatio="xMidYMid slice" focusable="false">
+                                        <defs>
+                                            <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" style="stop-color:#496371;stop-opacity:1" />
+                                                <stop offset="100%" style="stop-color:#1BA9AA;stop-opacity:1" />
+                                            </linearGradient>
+                                        </defs>
+                                        <rect width="100%" height="100%" fill="url(#grad2)"/>
+                                    </svg>
+                                    <div class="news-caption position-absolute bottom-0 start-0 w-100 p-5 text-white" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                                        <span class="badge bg-light text-dark mb-2">2023.11</span>
+                                        <h3 class="fw-bold mb-3">공공기관 통합 인증 시스템 개발</h3>
+                                        <p class="mb-0">OAuth2 및 JWT 기반의 공공기관 통합 인증 시스템을 성공적으로 구축했습니다. 보안성과 편의성을 동시에 확보했습니다.</p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects / Portfolio -->
-        <section id="projects" class="py-6">
-            <div class="container">
-                <div class="text-center mb-5">
-                    <h2>포트폴리오</h2>
-                    <p class="text-muted">최근 수행된 주요 프로젝트</p>
-                </div>
-                <div class="row g-4">
-                    <div class="col-md-4" th:each="p : ${projects}" data-aos="fade-up">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h5 th:text="${p.title}">프로젝트</h5>
-                                <p class="text-muted" th:text="${p.desc}">프로젝트 설명</p>
+                            <!-- News Item 3 -->
+                            <div class="carousel-item">
+                                <div class="news-slide position-relative">
+                                    <svg class="d-block w-100" height="700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="News 3" preserveAspectRatio="xMidYMid slice" focusable="false">
+                                        <defs>
+                                            <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" style="stop-color:#1BA9AA;stop-opacity:1" />
+                                                <stop offset="100%" style="stop-color:#158889;stop-opacity:1" />
+                                            </linearGradient>
+                                        </defs>
+                                        <rect width="100%" height="100%" fill="url(#grad3)"/>
+                                    </svg>
+                                    <div class="news-caption position-absolute bottom-0 start-0 w-100 p-5 text-white" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                                        <span class="badge bg-light text-dark mb-2">2022.09</span>
+                                        <h3 class="fw-bold mb-3">전자문서 관리 시스템 구축</h3>
+                                        <p class="mb-0">공공부문 전자문서 관리 및 전결 시스템 구축 프로젝트를 완료했습니다. 업무 효율성이 크게 향상되었습니다.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Process -->
-        <section id="process" class="bg-white py-6">
-            <div class="container">
-                <div class="text-center mb-5">
-                    <h2>프로젝트 진행 방식</h2>
-                    <p class="text-muted">요구분석부터 운영까지 체계적인 프로세스를 제공합니다.</p>
-                </div>
-                <div class="row g-4">
-                    <div class="col-md-3" th:each="step,iter : ${processSteps}" data-aos="fade-up">
-                        <div class="text-center p-4">
-                            <div class="badge bg-primary text-white rounded-pill mb-3" th:text="${iter.index + 1}">1</div>
-                            <h6 th:text="${step}">단계명</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+            <hr class="featurette-divider">
 
-        <!-- Clients -->
-        <section id="clients" class="py-6 bg-light">
-            <div class="container">
-                <div class="text-center mb-4">
-                    <h2>주요 고객</h2>
-                </div>
-                <div class="d-flex flex-wrap justify-content-center gap-4 align-items-center">
-                    <div th:each="c : ${clients}">
-                        <div class="card p-3" style="width:120px;height:60px;display:flex;align-items:center;justify-content:center;">
-                            <span th:text="${c}">Client</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
+        <!-- /.container (marketing) -->
 
-        <!-- Contact -->
-        <section id="contact" class="py-6">
-            <div class="container">
-                <div class="row gx-5">
-                    <div class="col-md-6" data-aos="fade-right">
-                        <h2>문의하기</h2>
-                        <p class="text-muted">프로젝트 상담이나 제안 요청은 아래 연락처로 문의해 주세요.</p>
-                        <p><strong>이메일:</strong> <span th:text="${contact.email}">contact@tgin.kr</span></p>
-                        <p><strong>전화:</strong> <span th:text="${contact.phone}">02-000-0000</span></p>
-                        <p><strong>주소:</strong> <span th:text="${contact.address}">서울특별시 예시구 예시로 123</span></p>
-                    </div>
-                    <div class="col-md-6" data-aos="fade-left">
-                        <form>
-                            <div class="mb-3">
-                                <label class="form-label">이름</label>
-                                <input class="form-control" type="text" placeholder="이름" />
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">이메일</label>
-                                <input class="form-control" type="email" placeholder="email@domain" />
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">내용</label>
-                                <textarea class="form-control" rows="4" placeholder="문의 내용을 입력하세요"></textarea>
-                            </div>
-                            <button type="button" class="btn btn-primary">전송 (샘플)</button>
-                        </form>
+        <!-- Contact CTA (4th) -->
+        <div class="container marketing">
+            <div class="row featurette py-5 bg-light rounded-3">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="display-5 fw-bold">프로젝트 상담이 필요하신가요?</h2>
+                    <p class="lead mb-4">TG와 함께 공공 부문의 디지털 혁신을 시작하세요</p>
+                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                        <a class="btn btn-primary btn-lg px-4 gap-3" th:href="@{/contact}">문의하기</a>
+                        <a class="btn btn-outline-secondary btn-lg px-4" th:href="@{/services}">서비스 둘러보기</a>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+
+        <style>
+            /* Marketing content spacing */
+            .marketing {
+                margin-top: 3rem;
+                margin-bottom: 3rem;
+            }
+            .marketing .col-lg-4 {
+                margin-bottom: 1.5rem;
+                text-align: center;
+            }
+            .marketing .col-lg-4 p {
+                margin-right: .75rem;
+                margin-left: .75rem;
+            }
+            
+            /* Featurettes */
+            .featurette-divider {
+                margin: 5rem 0;
+            }
+            .featurette-heading {
+                letter-spacing: -.05rem;
+            }
+            
+            /* Responsive adjustments */
+            @media (min-width: 40em) {
+                .featurette-heading {
+                    font-size: 50px;
+                }
+            }
+            @media (min-width: 62em) {
+                .featurette-heading {
+                    margin-top: 7rem;
+                }
+            }
+        </style>
     </div>
 </html>

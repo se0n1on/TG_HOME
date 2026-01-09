@@ -11,9 +11,9 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 :root {
-  --bs-blue: #0061f2;
+  --bs-blue: #1BA9AA;
   --bs-indigo: #5800e8;
-  --bs-purple: #6900c7;
+  --bs-purple: #496371;
   --bs-pink: #e30059;
   --bs-red: #e81500;
   --bs-orange: #f76400;
@@ -34,8 +34,8 @@
   --bs-gray-700: #4a515b;
   --bs-gray-800: #363d47;
   --bs-gray-900: #212832;
-  --bs-primary: #0061f2;
-  --bs-secondary: #6900c7;
+  --bs-primary: #1BA9AA;
+  --bs-secondary: #496371;
   --bs-success: #00ac69;
   --bs-info: #00cfd5;
   --bs-warning: #f4a100;
@@ -50,9 +50,9 @@
   --bs-green: #00ac69;
   --bs-teal: #00ba94;
   --bs-cyan: #00cfd5;
-  --bs-blue: #0061f2;
+  --bs-blue: #1BA9AA;
   --bs-indigo: #5800e8;
-  --bs-purple: #6900c7;
+  --bs-purple: #496371;
   --bs-pink: #e30059;
   --bs-red-soft: #f1e0e3;
   --bs-orange-soft: #f3e7e3;
@@ -60,18 +60,18 @@
   --bs-green-soft: #daefed;
   --bs-teal-soft: #daf0f2;
   --bs-cyan-soft: #daf2f8;
-  --bs-blue-soft: #dae7fb;
+  --bs-blue-soft: #d4eff0;
   --bs-indigo-soft: #e3ddfa;
-  --bs-purple-soft: #e4ddf7;
+  --bs-purple-soft: #dce2e6;
   --bs-pink-soft: #f1ddec;
-  --bs-primary-soft: #dae7fb;
-  --bs-secondary-soft: #e4ddf7;
+  --bs-primary-soft: #d4eff0;
+  --bs-secondary-soft: #dce2e6;
   --bs-success-soft: #daefed;
   --bs-info-soft: #daf2f8;
   --bs-warning-soft: #f2eee3;
   --bs-danger-soft: #f1e0e3;
-  --bs-primary-rgb: 0, 97, 242;
-  --bs-secondary-rgb: 105, 0, 199;
+  --bs-primary-rgb: 27, 169, 170;
+  --bs-secondary-rgb: 73, 99, 113;
   --bs-success-rgb: 0, 172, 105;
   --bs-info-rgb: 0, 207, 213;
   --bs-warning-rgb: 244, 161, 0;
@@ -86,9 +86,9 @@
   --bs-green-rgb: 0, 172, 105;
   --bs-teal-rgb: 0, 186, 148;
   --bs-cyan-rgb: 0, 207, 213;
-  --bs-blue-rgb: 0, 97, 242;
+  --bs-blue-rgb: 27, 169, 170;
   --bs-indigo-rgb: 88, 0, 232;
-  --bs-purple-rgb: 105, 0, 199;
+  --bs-purple-rgb: 73, 99, 113;
   --bs-pink-rgb: 227, 0, 89;
   --bs-red-soft-rgb: 241, 224, 227;
   --bs-orange-soft-rgb: 243, 231, 227;
@@ -96,12 +96,12 @@
   --bs-green-soft-rgb: 218, 239, 237;
   --bs-teal-soft-rgb: 218, 240, 242;
   --bs-cyan-soft-rgb: 218, 242, 248;
-  --bs-blue-soft-rgb: 218, 231, 251;
+  --bs-blue-soft-rgb: 212, 239, 240;
   --bs-indigo-soft-rgb: 227, 221, 250;
-  --bs-purple-soft-rgb: 228, 221, 247;
+  --bs-purple-soft-rgb: 220, 226, 230;
   --bs-pink-soft-rgb: 241, 221, 236;
-  --bs-primary-soft-rgb: 218, 231, 251;
-  --bs-secondary-soft-rgb: 228, 221, 247;
+  --bs-primary-soft-rgb: 212, 239, 240;
+  --bs-secondary-soft-rgb: 220, 226, 230;
   --bs-success-soft-rgb: 218, 239, 237;
   --bs-info-soft-rgb: 218, 242, 248;
   --bs-warning-soft-rgb: 242, 238, 227;
@@ -129,8 +129,8 @@
   --bs-border-radius-xl: 1rem;
   --bs-border-radius-2xl: 2rem;
   --bs-border-radius-pill: 50rem;
-  --bs-link-color: #0061f2;
-  --bs-link-hover-color: #004ec2;
+  --bs-link-color: #1BA9AA;
+  --bs-link-hover-color: #158889;
   --bs-code-color: #e30059;
   --bs-highlight-bg: #fdeccc;
 }
