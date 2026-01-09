@@ -198,4 +198,43 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+  /**
+   * Toggle service details expansion
+   */
+  window.toggleServiceDetails = function(button) {
+    const serviceCard = button.closest('.service-card');
+    const serviceDetails = serviceCard.querySelector('.service-details');
+    const icon = button.querySelector('i');
+    const allCards = document.querySelectorAll('.service-card');
+    
+    // Close all other cards
+    allCards.forEach(card => {
+      if (card !== serviceCard && card.classList.contains('expanded')) {
+        const otherDetails = card.querySelector('.service-details');
+        const otherButton = card.querySelector('.learn-more');
+        const otherIcon = otherButton.querySelector('i');
+        
+        card.classList.remove('expanded');
+        otherDetails.style.display = 'none';
+        otherButton.innerHTML = 'Learn More <i class="bi bi-arrow-right"></i>';
+      }
+    });
+    
+    // Toggle current card
+    if (serviceCard.classList.contains('expanded')) {
+      serviceCard.classList.remove('expanded');
+      serviceDetails.style.display = 'none';
+      button.innerHTML = 'Learn More <i class="bi bi-arrow-right"></i>';
+    } else {
+      serviceCard.classList.add('expanded');
+      serviceDetails.style.display = 'block';
+      button.innerHTML = 'Show Less <i class="bi bi-arrow-up"></i>';
+      
+      // Smooth scroll to make sure the expanded card is visible
+      setTimeout(() => {
+        serviceCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 300);
+    }
+  };
+
 })();
