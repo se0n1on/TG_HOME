@@ -4,92 +4,104 @@
     xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
     layout:decorate="~{layout/default_layout}">
     <div layout:fragment="content">
-        <!-- Hero Section -->
-        <section class="page-header-ui page-header-ui-dark bg-primary text-white" style="padding:6rem 0;">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-12 text-center">
-                        <h1 class="display-4">회사 소개</h1>
-                        <p class="lead mb-0">TG는 공공 부문에 특화된 IT 컨설팅 및 시스템 개발 전문 기업입니다</p>
+        <!-- Page Title -->
+        <div class="breadcrumbs">
+            <div class="page-header d-flex align-items-center" style="background-image: url('https://via.placeholder.com/1920x400');">
+                <div class="container position-relative">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-6 text-center">
+                            <h2>About</h2>
+                            <p>TG는 공공 부문에 특화된 IT 컨설팅 및 시스템 개발 전문 기업입니다</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+            <nav>
+                <div class="container">
+                    <ol>
+                        <li><a th:href="@{/}">Home</a></li>
+                        <li>About</li>
+                    </ol>
+                </div>
+            </nav>
+        </div>
 
-        <!-- Company Overview -->
-        <section class="py-6">
-            <div class="container">
-                <div class="row gx-5 align-items-center">
-                    <div class="col-md-6" data-aos="fade-right">
-                        <h2 class="mb-4" th:text="${companyInfo.fullName}">TG Information Technology</h2>
-                        <p class="lead text-muted mb-4" th:text="${companyInfo.description}">회사 설명</p>
-                        <div class="row g-3">
-                            <div class="col-6">
-                                <div class="card text-center p-3 bg-light">
-                                    <h3 class="text-primary mb-0" th:text="${companyInfo.established}">2020</h3>
-                                    <small class="text-muted">설립년도</small>
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="row gy-4">
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                        <h3 th:text="${companyInfo.fullName}">TG Information Technology</h3>
+                        <img src="https://via.placeholder.com/600x400" class="img-fluid rounded-4 mb-4" alt="">
+                        <p th:text="${companyInfo.description}">회사 설명</p>
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
+                        <div class="content ps-0 ps-lg-5">
+                            <p class="fst-italic">
+                                우리는 고객의 디지털 혁신을 위해 최선의 노력을 다하고 있습니다
+                            </p>
+                            <ul>
+                                <li><i class="bi bi-check-circle-fill"></i> 전문적인 기술력과 풍부한 경험</li>
+                                <li><i class="bi bi-check-circle-fill"></i> 공공 부문에 특화된 솔루션</li>
+                                <li><i class="bi bi-check-circle-fill"></i> 고객 중심의 맞춤형 서비스</li>
+                            </ul>
+                            
+                            <div class="row gy-4">
+                                <div class="col-md-6">
+                                    <div class="stats-item text-center">
+                                        <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter" th:text="${companyInfo.established}">2020</span>
+                                        <p>설립년도</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="card text-center p-3 bg-light">
-                                    <h3 class="text-primary mb-0" th:text="${companyInfo.employees}">50+</h3>
-                                    <small class="text-muted">임직원</small>
+                                <div class="col-md-6">
+                                    <div class="stats-item text-center">
+                                        <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter" th:text="${companyInfo.employees}">50+</span>
+                                        <p>임직원</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6" data-aos="fade-left">
-                        <img th:src="@{/img/illustrations/creativity.svg}" alt="about" style="width:100%;max-width:500px;margin:auto;display:block;"/>
-                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Core Values -->
-        <section class="py-6 bg-light">
-            <div class="container">
-                <div class="text-center mb-5">
+        <!-- Values Section -->
+        <section id="values" class="values sections-bg">
+            <div class="container" data-aos="fade-up">
+                <header class="section-header">
                     <h2>핵심 가치</h2>
-                    <p class="text-muted">우리의 비전과 사명을 이끄는 핵심 가치들입니다</p>
-                </div>
+                    <p>우리의 비전과 사명을 이끄는 핵심 가치들입니다</p>
+                </header>
+                
                 <div class="row g-4">
-                    <div class="col-md-6 col-lg-3" th:each="value : ${values}" data-aos="zoom-in">
-                        <div class="card h-100 border-0 shadow-sm">
-                            <div class="card-body text-center">
-                                <div class="badge bg-primary-soft text-primary rounded-pill mb-3" style="font-size:1.2rem;padding:0.5rem 1rem;">
-                                    <i class="fas fa-check"></i>
-                                </div>
-                                <h5 th:text="${value.title}">가치</h5>
-                                <p class="text-muted small mb-0" th:text="${value.desc}">설명</p>
-                            </div>
+                    <div class="col-lg-3" th:each="value : ${values}" data-aos="fade-up" data-aos-delay="100">
+                        <div class="box">
+                            <img src="https://via.placeholder.com/200x200" class="img-fluid" alt="">
+                            <h3 th:text="${value.title}">가치</h3>
+                            <p th:text="${value.desc}">설명</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Company History -->
-        <section class="py-6">
-            <div class="container">
-                <div class="text-center mb-5">
+        <!-- Timeline Section -->
+        <section id="timeline" class="timeline">
+            <div class="container" data-aos="fade-up">
+                <header class="section-header">
                     <h2>연혁</h2>
-                    <p class="text-muted">TG의 성장과 발전의 역사</p>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="timeline">
-                            <div class="timeline-item" th:each="history, iter : ${history}" data-aos="fade-up" th:attr="data-aos-delay=${iter.index * 100}">
-                                <div class="row g-4 align-items-center">
-                                    <div class="col-md-3 text-md-end">
-                                        <div class="badge bg-primary text-white rounded-pill px-3 py-2" th:text="${history.year}">2020</div>
-                                    </div>
-                                    <div class="col-md-9">
-                                        <div class="card border-0 shadow-sm">
-                                            <div class="card-body">
-                                                <p class="mb-0" th:text="${history.event}">이벤트</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                    <p>TG의 성장과 발전의 역사</p>
+                </header>
+                
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="timeline-container">
+                            <div class="timeline-item" th:each="item : ${history}" data-aos="fade-up">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-year" th:text="${item.year}">2020</div>
+                                    <p th:text="${item.event}">이벤트</p>
                                 </div>
                             </div>
                         </div>
@@ -98,14 +110,323 @@
             </div>
         </section>
 
-        <!-- Call to Action -->
-        <section class="py-6 bg-primary text-white">
-            <div class="container text-center">
-                <h2 class="mb-4">함께 성장할 파트너를 찾고 계신가요?</h2>
-                <p class="lead mb-4">TG와 함께 공공 부문의 디지털 혁신을 이루어가세요</p>
-                <a class="btn btn-light btn-lg me-2" th:href="@{/contact}">문의하기</a>
-                <a class="btn btn-outline-light btn-lg" th:href="@{/services}">서비스 보기</a>
+        <!-- Call To Action Section -->
+        <section id="call-to-action" class="call-to-action">
+            <div class="container text-center" data-aos="zoom-out">
+                <h3>함께 성장할 파트너를 찾고 계신가요?</h3>
+                <p>TG와 함께 공공 부문의 디지털 혁신을 이루어가세요</p>
+                <a class="cta-btn" th:href="@{/contact}">문의하기</a>
             </div>
         </section>
+
+        <style>
+            /* UpScale-inspired About Page Styles */
+            .breadcrumbs .page-header {
+                padding: 140px 0 60px 0;
+                min-height: 30vh;
+                position: relative;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            
+            .breadcrumbs .page-header:before {
+                content: "";
+                background-color: rgba(27, 169, 170, 0.8);
+                position: absolute;
+                inset: 0;
+            }
+            
+            .breadcrumbs .page-header h2 {
+                font-size: 56px;
+                font-weight: 500;
+                color: #fff;
+                font-family: var(--bs-font-sans-serif);
+            }
+            
+            .breadcrumbs .page-header p {
+                color: rgba(255, 255, 255, 0.8);
+            }
+            
+            .breadcrumbs nav {
+                background-color: #f6f9ff;
+                padding: 20px 0;
+            }
+            
+            .breadcrumbs nav ol {
+                display: flex;
+                flex-wrap: wrap;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                font-size: 16px;
+                font-weight: 600;
+                color: #1BA9AA;
+            }
+            
+            .breadcrumbs nav ol a {
+                color: #363d47;
+                transition: 0.3s;
+                text-decoration: none;
+            }
+            
+            .breadcrumbs nav ol a:hover {
+                text-decoration: underline;
+            }
+            
+            .breadcrumbs nav ol li + li {
+                padding-left: 10px;
+            }
+            
+            .breadcrumbs nav ol li + li::before {
+                display: inline-block;
+                padding-right: 10px;
+                color: #4278cc;
+                content: "/";
+            }
+            
+            /* About Section */
+            .about {
+                padding: 60px 0;
+            }
+            
+            .about h3 {
+                font-weight: 700;
+                font-size: 32px;
+                margin-bottom: 20px;
+                color: #363d47;
+            }
+            
+            .about .content ul {
+                list-style: none;
+                padding: 0;
+            }
+            
+            .about .content ul li {
+                padding: 10px 0;
+                display: flex;
+                align-items: flex-start;
+            }
+            
+            .about .content ul i {
+                font-size: 24px;
+                padding-right: 4px;
+                color: #1BA9AA;
+                line-height: 0;
+                margin-right: 10px;
+                margin-top: 4px;
+            }
+            
+            .about .content .stats-item {
+                padding: 30px;
+                width: 100%;
+            }
+            
+            .about .content .stats-item span {
+                font-size: 48px;
+                display: block;
+                color: #1BA9AA;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+            
+            .about .content .stats-item p {
+                padding: 0;
+                margin: 0;
+                font-family: var(--bs-font-sans-serif);
+                font-size: 15px;
+                font-weight: 600;
+                color: #363d47;
+            }
+            
+            /* Values Section */
+            .values .sections-bg {
+                background-color: #f6f9ff;
+            }
+            
+            .values {
+                padding: 60px 0;
+                background-color: #f6f9ff;
+            }
+            
+            .values .box {
+                padding: 30px;
+                box-shadow: 0px 0 5px rgba(1, 41, 112, 0.08);
+                text-align: center;
+                transition: 0.3s;
+                height: 100%;
+                background: #fff;
+                border-radius: 10px;
+            }
+            
+            .values .box img {
+                padding: 30px 50px;
+                transition: 0.5s;
+                transform: scale(1.1);
+            }
+            
+            .values .box h3 {
+                font-size: 24px;
+                color: #363d47;
+                font-weight: 700;
+                margin-bottom: 18px;
+            }
+            
+            .values .box:hover {
+                box-shadow: 0px 0 30px rgba(1, 41, 112, 0.15);
+            }
+            
+            .values .box:hover img {
+                transform: scale(1);
+            }
+            
+            /* Timeline Section */
+            .timeline {
+                padding: 60px 0;
+            }
+            
+            .timeline .section-header {
+                text-align: center;
+                padding-bottom: 40px;
+            }
+            
+            .timeline .section-header h2 {
+                font-size: 13px;
+                letter-spacing: 1px;
+                font-weight: 700;
+                margin: 0;
+                color: #1BA9AA;
+                text-transform: uppercase;
+            }
+            
+            .timeline .section-header p {
+                margin: 10px 0 0 0;
+                padding: 0;
+                font-size: 38px;
+                line-height: 42px;
+                font-weight: 700;
+                color: #363d47;
+            }
+            
+            .timeline-container {
+                position: relative;
+                padding: 20px 0;
+            }
+            
+            .timeline-container::before {
+                content: '';
+                position: absolute;
+                left: 50%;
+                top: 0;
+                bottom: 0;
+                width: 2px;
+                background: #1BA9AA;
+                transform: translateX(-50%);
+            }
+            
+            .timeline-item {
+                position: relative;
+                margin-bottom: 50px;
+                width: 100%;
+            }
+            
+            .timeline-dot {
+                position: absolute;
+                left: 50%;
+                top: 0;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background: #1BA9AA;
+                border: 4px solid #fff;
+                box-shadow: 0 0 0 3px #d4eff0;
+                transform: translateX(-50%);
+                z-index: 1;
+            }
+            
+            .timeline-content {
+                position: relative;
+                width: 45%;
+                padding: 20px;
+                background: #fff;
+                border-radius: 10px;
+                box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content {
+                margin-left: auto;
+                margin-right: 0;
+            }
+            
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 0;
+                margin-right: auto;
+            }
+            
+            .timeline-year {
+                display: inline-block;
+                padding: 5px 15px;
+                background: #1BA9AA;
+                color: #fff;
+                border-radius: 20px;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+            
+            @media (max-width: 768px) {
+                .timeline-container::before {
+                    left: 0;
+                }
+                
+                .timeline-dot {
+                    left: 0;
+                }
+                
+                .timeline-content {
+                    width: 100%;
+                    margin-left: 30px !important;
+                }
+            }
+            
+            /* Call To Action */
+            .call-to-action {
+                background: linear-gradient(rgba(27, 169, 170, 0.9), rgba(27, 169, 170, 0.9)), url("https://via.placeholder.com/1920x600") center center;
+                background-size: cover;
+                padding: 100px 0;
+            }
+            
+            .call-to-action h3 {
+                color: #fff;
+                font-size: 28px;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+            
+            .call-to-action p {
+                color: #fff;
+                margin-bottom: 20px;
+            }
+            
+            .call-to-action .cta-btn {
+                font-family: var(--bs-font-sans-serif);
+                font-weight: 500;
+                font-size: 16px;
+                letter-spacing: 1px;
+                display: inline-block;
+                padding: 12px 40px;
+                border-radius: 50px;
+                transition: 0.5s;
+                margin: 10px;
+                border: 2px solid #fff;
+                color: #fff;
+                background: transparent;
+                text-decoration: none;
+            }
+            
+            .call-to-action .cta-btn:hover {
+                background: #fff;
+                color: #1BA9AA;
+            }
+        </style>
     </div>
 </html>

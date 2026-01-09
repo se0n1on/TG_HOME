@@ -2,74 +2,197 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <div th:fragment="footer">
     <div id="layoutDefault_footer">
-        <footer class="footer pt-10 pb-5 mt-auto bg-light footer-light">
-            <div class="container px-5">
-                <!--<div class="row gx-5">
-                    <div class="col-lg-3">
-                        <div class="footer-brand">SB UI Kit Pro</div>
-                        <div class="mb-3">Design made easy</div>
-                        <div class="icon-list-social mb-5">
-                            <a class="icon-list-social-link" href="#!"><i class="fab fa-instagram"></i></a>
-                            <a class="icon-list-social-link" href="#!"><i class="fab fa-facebook"></i></a>
-                            <a class="icon-list-social-link" href="#!"><i class="fab fa-github"></i></a>
-                            <a class="icon-list-social-link" href="#!"><i class="fab fa-twitter"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-9">
-                        <div class="row gx-5">
-                            <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-                                <div class="text-uppercase-expanded text-xs mb-4">Product</div>
-                                <ul class="list-unstyled mb-0">
-                                    <li class="mb-2"><a href="#!">Landing</a></li>
-                                    <li class="mb-2"><a href="#!">Pages</a></li>
-                                    <li class="mb-2"><a href="#!">Sections</a></li>
-                                    <li class="mb-2"><a href="#!">Documentation</a></li>
-                                    <li><a href="#!">Changelog</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-                                <div class="text-uppercase-expanded text-xs mb-4">Technical</div>
-                                <ul class="list-unstyled mb-0">
-                                    <li class="mb-2"><a href="#!">Documentation</a></li>
-                                    <li class="mb-2"><a href="#!">Changelog</a></li>
-                                    <li class="mb-2"><a href="#!">Theme Customizer</a></li>
-                                    <li><a href="#!">UI Kit</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
-                                <div class="text-uppercase-expanded text-xs mb-4">Includes</div>
-                                <ul class="list-unstyled mb-0">
-                                    <li class="mb-2"><a href="#!">Utilities</a></li>
-                                    <li class="mb-2"><a href="#!">Components</a></li>
-                                    <li class="mb-2"><a href="#!">Layouts</a></li>
-                                    <li class="mb-2"><a href="#!">Code Samples</a></li>
-                                    <li class="mb-2"><a href="#!">Products</a></li>
-                                    <li class="mb-2"><a href="#!">Affiliates</a></li>
-                                    <li><a href="#!">Updates</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-3 col-md-6">
-                                <div class="text-uppercase-expanded text-xs mb-4">Legal</div>
-                                <ul class="list-unstyled mb-0">
-                                    <li class="mb-2"><a href="#!">Privacy Policy</a></li>
-                                    <li class="mb-2"><a href="#!">Terms and Conditions</a></li>
-                                    <li><a href="#!">License</a></li>
-                                </ul>
+        <!-- UpScale-inspired Footer -->
+        <footer id="footer" class="footer">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row gy-4">
+                        <div class="col-lg-5 col-md-12 footer-info">
+                            <a th:href="@{/}" class="logo d-flex align-items-center">
+                                <span>TG Information Technology</span>
+                            </a>
+                            <p>공공 부문에 특화된 AI·데이터 컨설팅 및 IT 거버넌스 전문 기업입니다. 혁신적인 솔루션으로 디지털 전환을 선도합니다.</p>
+                            <div class="social-links mt-3">
+                                <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="facebook"><i class="fab fa-facebook"></i></a>
+                                <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
                             </div>
                         </div>
+                        
+                        <div class="col-lg-2 col-6 footer-links">
+                            <h4>Quick Links</h4>
+                            <ul>
+                                <li><i class="fas fa-chevron-right"></i> <a th:href="@{/}">Home</a></li>
+                                <li><i class="fas fa-chevron-right"></i> <a th:href="@{/about}">About</a></li>
+                                <li><i class="fas fa-chevron-right"></i> <a th:href="@{/services}">Services</a></li>
+                                <li><i class="fas fa-chevron-right"></i> <a th:href="@{/contact}">Contact</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="col-lg-2 col-6 footer-links">
+                            <h4>Our Services</h4>
+                            <ul>
+                                <li><i class="fas fa-chevron-right"></i> <a href="#">데이터 거버넌스</a></li>
+                                <li><i class="fas fa-chevron-right"></i> <a href="#">AI 솔루션</a></li>
+                                <li><i class="fas fa-chevron-right"></i> <a href="#">시스템 구축</a></li>
+                                <li><i class="fas fa-chevron-right"></i> <a href="#">컨설팅</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+                            <h4>Contact Us</h4>
+                            <p>
+                                서울특별시<br/>
+                                대한민국<br/><br/>
+                                <strong>Phone:</strong> +82 2-0000-0000<br/>
+                                <strong>Email:</strong> contact@tgin.kr<br/>
+                            </p>
+                        </div>
                     </div>
-                </div>-->
-                <hr class="my-5" />
-                <div class="row gx-5 align-items-center">
-                    <div class="col-md-6 small">&copy; 2020 - TG. All Rights Reserved</div>
-                    <div class="col-md-6 text-md-end small">
-                        <a href="#!">Privacy Policy</a>
-                        &middot;
-                        <a href="#!">Terms &amp; Conditions</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="copyright">
+                        &copy; Copyright <strong><span>TG Information Technology</span></strong>. All Rights Reserved
                     </div>
                 </div>
             </div>
         </footer>
     </div>
+    
+    <style>
+        /* UpScale-inspired Footer Styles */
+        .footer {
+            font-size: 14px;
+            background-color: #1f1f24;
+            color: #fff;
+        }
+        
+        .footer .footer-top {
+            padding: 60px 0 30px 0;
+            background: #1f1f24;
+        }
+        
+        .footer .footer-top .footer-info {
+            margin-bottom: 30px;
+        }
+        
+        .footer .footer-top .footer-info .logo {
+            line-height: 0;
+            margin-bottom: 15px;
+        }
+        
+        .footer .footer-top .footer-info .logo span {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #fff;
+            font-family: var(--bs-font-sans-serif);
+        }
+        
+        .footer .footer-top .footer-info p {
+            font-size: 14px;
+            line-height: 24px;
+            margin-bottom: 0;
+            font-family: var(--bs-font-sans-serif);
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .footer .footer-top .social-links a {
+            font-size: 18px;
+            display: inline-block;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 0;
+            margin-right: 10px;
+            transition: 0.3s;
+        }
+        
+        .footer .footer-top .social-links a:hover {
+            color: #1BA9AA;
+        }
+        
+        .footer .footer-top h4 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+        
+        .footer .footer-top h4::after {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 40px;
+            height: 2px;
+            background: #1BA9AA;
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer .footer-top .footer-links {
+            margin-bottom: 30px;
+        }
+        
+        .footer .footer-top .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer .footer-top .footer-links ul i {
+            padding-right: 8px;
+            color: #1BA9AA;
+            font-size: 12px;
+            line-height: 0;
+        }
+        
+        .footer .footer-top .footer-links ul li {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer .footer-top .footer-links ul li:first-child {
+            padding-top: 0;
+        }
+        
+        .footer .footer-top .footer-links ul a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: 0.3s;
+            display: inline-block;
+            line-height: 1;
+            text-decoration: none;
+        }
+        
+        .footer .footer-top .footer-links ul a:hover {
+            color: #fff;
+        }
+        
+        .footer .footer-top .footer-contact p {
+            line-height: 26px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .footer .footer-bottom {
+            padding: 30px 0;
+            background-color: #151519;
+            color: #fff;
+        }
+        
+        .footer .copyright {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .footer .copyright strong {
+            color: #fff;
+        }
+    </style>
 </div>
 </html>
