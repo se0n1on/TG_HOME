@@ -292,9 +292,9 @@
       // Show details container
       detailsContainer.style.display = 'block';
       
-      // Smooth scroll to details
+      // Smooth scroll to details - using 'nearest' to avoid excessive scrolling
       setTimeout(() => {
-        detailsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        detailsContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }, 100);
     }
   };
