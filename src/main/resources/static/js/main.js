@@ -199,42 +199,122 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
   /**
+   * Service projects data
+   */
+  const serviceProjects = {
+    'strategic-consulting': [
+      'Enterprise Digital Transformation (2024)',
+      'Global Market Entry Strategy (2023)',
+      'Business Process Optimization (2023)',
+      'Corporate Restructuring Initiative (2022)',
+      'Strategic Partnership Development (2022)'
+    ],
+    'risk-management': [
+      'Financial Risk Assessment Platform (2024)',
+      'Cybersecurity Enhancement Program (2023)',
+      'Operational Risk Framework (2023)',
+      'Compliance Management System (2022)',
+      'Crisis Management Solution (2022)'
+    ],
+    'business-solutions': [
+      'CRM System Implementation (2024)',
+      'Supply Chain Optimization (2023)',
+      'Business Intelligence Platform (2023)',
+      'Workflow Automation Solution (2022)',
+      'Customer Service Portal (2022)'
+    ],
+    'financial-planning': [
+      'Financial Forecasting Model (2024)',
+      'Investment Portfolio Optimization (2023)',
+      'Budget Management System (2023)',
+      'Cash Flow Analysis Tool (2022)',
+      'Tax Optimization Strategy (2022)'
+    ],
+    'team-development': [
+      'Leadership Training Program (2024)',
+      'Performance Management Framework (2023)',
+      'Employee Engagement Initiative (2023)',
+      'Skills Development Workshop (2022)',
+      'Team Building Retreat (2022)'
+    ],
+    'innovation-strategy': [
+      'AI Innovation Lab Setup (2024)',
+      'R&D Strategy Development (2023)',
+      'Product Innovation Pipeline (2023)',
+      'Technology Scouting Program (2022)',
+      'Innovation Workshop Series (2022)'
+    ]
+  };
+
+  /**
    * Toggle service details expansion
    */
   window.toggleServiceDetails = function(button) {
+    const serviceId = button.getAttribute('data-service');
     const serviceCard = button.closest('.service-card');
-    const serviceDetails = serviceCard.querySelector('.service-details');
-    const icon = button.querySelector('i');
+    const detailsContainer = document.getElementById('service-details-container');
+    const projectsList = document.getElementById('service-projects-list');
+    const detailsTitle = document.getElementById('service-details-title');
     const allCards = document.querySelectorAll('.service-card');
+    const allButtons = document.querySelectorAll('.learn-more');
     
-    // Close all other cards
-    allCards.forEach(card => {
-      if (card !== serviceCard && card.classList.contains('expanded')) {
-        const otherDetails = card.querySelector('.service-details');
-        const otherButton = card.querySelector('.learn-more');
-        const otherIcon = otherButton.querySelector('i');
-        
-        card.classList.remove('expanded');
-        otherDetails.style.display = 'none';
-        otherButton.innerHTML = 'Learn More <i class="bi bi-arrow-right"></i>';
-      }
+    // Check if this service is already active
+    const isActive = serviceCard.classList.contains('active');
+    
+    // Remove active state from all cards and reset buttons
+    allCards.forEach(card => card.classList.remove('active'));
+    allButtons.forEach(btn => {
+      btn.innerHTML = 'Learn More <i class="bi bi-arrow-right"></i>';
     });
     
-    // Toggle current card
-    if (serviceCard.classList.contains('expanded')) {
-      serviceCard.classList.remove('expanded');
-      serviceDetails.style.display = 'none';
-      button.innerHTML = 'Learn More <i class="bi bi-arrow-right"></i>';
+    if (isActive) {
+      // Close details if clicking the same service
+      detailsContainer.style.display = 'none';
     } else {
-      serviceCard.classList.add('expanded');
-      serviceDetails.style.display = 'block';
+      // Mark current card as active
+      serviceCard.classList.add('active');
       button.innerHTML = 'Show Less <i class="bi bi-arrow-up"></i>';
       
-      // Smooth scroll to make sure the expanded card is visible
+      // Get service title
+      const serviceTitle = serviceCard.querySelector('h3').textContent;
+      detailsTitle.textContent = serviceTitle + ' - Key Projects & Achievements';
+      
+      // Populate projects list
+      projectsList.innerHTML = '';
+      if (serviceProjects[serviceId]) {
+        serviceProjects[serviceId].forEach(project => {
+          const li = document.createElement('li');
+          li.innerHTML = '<i class="bi bi-check-circle-fill"></i> ' + project;
+          projectsList.appendChild(li);
+        });
+      }
+      
+      // Show details container
+      detailsContainer.style.display = 'block';
+      
+      // Smooth scroll to details
       setTimeout(() => {
-        serviceCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }, 300);
+        detailsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
     }
+  };
+
+  /**
+   * Close service details
+   */
+  window.closeServiceDetails = function() {
+    const detailsContainer = document.getElementById('service-details-container');
+    const allCards = document.querySelectorAll('.service-card');
+    const allButtons = document.querySelectorAll('.learn-more');
+    
+    // Remove active state and reset buttons
+    allCards.forEach(card => card.classList.remove('active'));
+    allButtons.forEach(btn => {
+      btn.innerHTML = 'Learn More <i class="bi bi-arrow-right"></i>';
+    });
+    
+    // Hide details container
+    detailsContainer.style.display = 'none';
   };
 
 })();
