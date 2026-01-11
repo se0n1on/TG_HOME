@@ -273,7 +273,7 @@
     } else {
       // Mark current card as active
       serviceCard.classList.add('active');
-      button.innerHTML = 'Show Less <i class="bi bi-arrow-up"></i>';
+      button.innerHTML = 'Close <i class="bi bi-x-lg"></i>';
       
       // Get service title
       const serviceTitle = serviceCard.querySelector('h3').textContent;
@@ -310,7 +310,7 @@
     // Remove active state and reset buttons
     allCards.forEach(card => card.classList.remove('active'));
     allButtons.forEach(btn => {
-      btn.innerHTML = 'Learn More <i class="bi bi-arrow-right"></i>';
+      btn.innerHTML = 'Learn More <i class="bi bi-arrow-down"></i>';
     });
     
     // Hide details container
