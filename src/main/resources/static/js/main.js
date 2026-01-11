@@ -202,42 +202,42 @@
    * Service projects data
    */
   const serviceProjects = {
-    'strategic-consulting': [
+    'ai-con': [
       'Enterprise Digital Transformation (2024)',
       'Global Market Entry Strategy (2023)',
       'Business Process Optimization (2023)',
       'Corporate Restructuring Initiative (2022)',
       'Strategic Partnership Development (2022)'
     ],
-    'risk-management': [
+    'data-con': [
       'Financial Risk Assessment Platform (2024)',
       'Cybersecurity Enhancement Program (2023)',
       'Operational Risk Framework (2023)',
       'Compliance Management System (2022)',
       'Crisis Management Solution (2022)'
     ],
-    'business-solutions': [
+    'smart-farm-city': [
       'CRM System Implementation (2024)',
       'Supply Chain Optimization (2023)',
       'Business Intelligence Platform (2023)',
       'Workflow Automation Solution (2022)',
       'Customer Service Portal (2022)'
     ],
-    'financial-planning': [
+    'it-gov': [
       'Financial Forecasting Model (2024)',
       'Investment Portfolio Optimization (2023)',
       'Budget Management System (2023)',
       'Cash Flow Analysis Tool (2022)',
       'Tax Optimization Strategy (2022)'
     ],
-    'team-development': [
+    'global-con': [
       'Leadership Training Program (2024)',
       'Performance Management Framework (2023)',
       'Employee Engagement Initiative (2023)',
       'Skills Development Workshop (2022)',
       'Team Building Retreat (2022)'
     ],
-    'innovation-strategy': [
+    'soft-dist': [
       'AI Innovation Lab Setup (2024)',
       'R&D Strategy Development (2023)',
       'Product Innovation Pipeline (2023)',
@@ -247,7 +247,7 @@
   };
 
   const serviceAreas = {
-    'strategic-consulting': [
+    'ai-con': [
       'AI Enterprise Application Consulting',
       'AI Governance Consulting & Solution',
       'AI Certification Consulting',
@@ -256,7 +256,7 @@
       'AI Security Consulting',
       'AI Data Classification Consulting'
     ],
-    'risk-management': [
+    'data-con': [
       'DATA Consulting',
       'Data Governance Consulting & Solution',
       'Data Standard Consulting & Solution',
@@ -265,7 +265,7 @@
       'AI Data Consulting & Solution',
       'Public Data Consulting & My Data Consulting'
     ],
-    'business-solutions': [
+    'smart-farm-city': [
       'Smart Farm Consulting',
       'Smart Farm Data Analysis',
       'IoT, Big Data, and AI Agricultural Solutions',
@@ -274,7 +274,7 @@
       'Smart City Data Collection & Analysis',
       'Smart City Governance Consulting'
     ],
-    'financial-planning': [
+    'it-gov': [
       'IT Governance Consulting & Solution',
       'Enterprise Architecture Consulting & Solution',
       'E-Government Performance Management',
@@ -283,7 +283,7 @@
       'IT Resource Management (ITRMS)',
       'Service Management (ITSM)'
     ],
-    'team-development': [
+    'global-con': [
       'Official Development Assistance IT Consulting',
       'Public IT Governance (Multiple Countries)',
       'Mongolia Employment Service System',
@@ -291,7 +291,7 @@
       'Vietnam Court Management System',
       'Smart City Framework Development (Kazakhstan, Kenya, Qatar)'
     ],
-    'innovation-strategy': [
+    'soft-dist': [
       'Software Solution Sales',
       'Technical Architect Consulting',
       'Functional Technology Solutions Design',
