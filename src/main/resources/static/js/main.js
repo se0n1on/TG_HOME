@@ -307,6 +307,7 @@
     const serviceId = button.getAttribute('data-service');
     const serviceCard = button.closest('.service-card');
     const detailsContainer = document.getElementById('service-details-container');
+    const detailsImg = document.getElementById('service-details-image');
     const projectsList = document.getElementById('service-projects-list');
     const areasList = document.getElementById('service-areas-list');
     const detailsTitle = document.getElementById('service-details-title');
@@ -329,6 +330,8 @@
       // Mark current card as active
       serviceCard.classList.add('active');
       button.innerHTML = 'Close <i class="bi bi-x-lg"></i>';
+
+      detailsImg.src = '/img/services/' + serviceId + '.jpg';
       
       // Get service title
       const serviceTitle = serviceCard.querySelector('h3').textContent;
