@@ -246,6 +246,60 @@
     ]
   };
 
+  const serviceAreas = {
+    'strategic-consulting': [
+      'AI Enterprise Application Consulting',
+      'AI Governance Consulting & Solution',
+      'AI Certification Consulting',
+      'AI Data Reliability Verification Consulting',
+      'AI Reliability Consulting',
+      'AI Security Consulting',
+      'AI Data Classification Consulting'
+    ],
+    'risk-management': [
+      'DATA Consulting',
+      'Data Governance Consulting & Solution',
+      'Data Standard Consulting & Solution',
+      'Data Quality Consulting & Solution',
+      'Big Data Analysis Consulting & Big Data Platform',
+      'AI Data Consulting & Solution',
+      'Public Data Consulting & My Data Consulting'
+    ],
+    'business-solutions': [
+      'Smart Farm Consulting',
+      'Smart Farm Data Analysis',
+      'IoT, Big Data, and AI Agricultural Solutions',
+      'Smart Farms in Developing Countries',
+      'Smart City & Data Center Strategic Planning',
+      'Smart City Data Collection & Analysis',
+      'Smart City Governance Consulting'
+    ],
+    'financial-planning': [
+      'IT Governance Consulting & Solution',
+      'Enterprise Architecture Consulting & Solution',
+      'E-Government Performance Management',
+      'E-Government Pre-Consultation',
+      'IT Project Management (PMS)',
+      'IT Resource Management (ITRMS)',
+      'Service Management (ITSM)'
+    ],
+    'team-development': [
+      'Official Development Assistance IT Consulting',
+      'Public IT Governance (Multiple Countries)',
+      'Mongolia Employment Service System',
+      'Smart Farm Implementation (Vietnam, Uzbekistan, Rwanda, Malaysia)',
+      'Vietnam Court Management System',
+      'Smart City Framework Development (Kazakhstan, Kenya, Qatar)'
+    ],
+    'innovation-strategy': [
+      'Software Solution Sales',
+      'Technical Architect Consulting',
+      'Functional Technology Solutions Design',
+      'Technical Solution Process Management',
+      'Hands-on Technical Solutions Development'
+    ]
+  };
+
   /**
    * Toggle service details expansion
    */
@@ -254,6 +308,7 @@
     const serviceCard = button.closest('.service-card');
     const detailsContainer = document.getElementById('service-details-container');
     const projectsList = document.getElementById('service-projects-list');
+    const areasList = document.getElementById('service-areas-list');
     const detailsTitle = document.getElementById('service-details-title');
     const allCards = document.querySelectorAll('.service-card');
     const allButtons = document.querySelectorAll('.learn-more');
@@ -277,9 +332,20 @@
       
       // Get service title
       const serviceTitle = serviceCard.querySelector('h3').textContent;
-      detailsTitle.textContent = serviceTitle + ' - Key Projects & Achievements';
+      detailsTitle.textContent = serviceTitle;
       
-      // Populate projects list
+      // Populate service areas list (What We Do)
+      areasList.innerHTML = '';
+      if (serviceAreas[serviceId]) {
+        serviceAreas[serviceId].forEach(area => {
+          const areaItem = document.createElement('div');
+          areaItem.className = 'service-area-item';
+          areaItem.innerHTML = '<i class="bi bi-check-circle"></i> <span>' + area + '</span>';
+          areasList.appendChild(areaItem);
+        });
+      }
+      
+      // Populate projects list (What We Did)
       projectsList.innerHTML = '';
       if (serviceProjects[serviceId]) {
         serviceProjects[serviceId].forEach(project => {

@@ -197,15 +197,35 @@
             <div id="service-details-container" class="service-details-container" style="display: none;">
                 <div class="service-details-card">
                     <div class="service-details-header">
-                        <h3 id="service-details-title">Key Projects & Achievements</h3>
+                        <h3 id="service-details-title"></h3>
                         <button class="close-details" onclick="closeServiceDetails()">
                             <i class="bi bi-x-lg"></i>
                         </button>
                     </div>
-                    <div class="service-details-content">
-                        <ul id="service-projects-list" class="projects-list">
-                            <!-- Projects will be dynamically inserted here -->
-                        </ul>
+                    <div class="service-details-body">
+                        <!-- What We Do Section -->
+                        <div class="service-areas-section">
+                            <h4 class="section-subtitle">
+                                <i class="bi bi-lightbulb"></i> What We Do
+                            </h4>
+                            <div id="service-areas-list" class="service-areas-list">
+                                <!-- Business areas will be dynamically inserted here -->
+                            </div>
+                        </div>
+                        
+                        <hr class="section-divider">
+                        
+                        <!-- What We Did Section -->
+                        <div class="service-projects-section">
+                            <h4 class="section-subtitle">
+                                <i class="bi bi-trophy"></i> What We Did
+                            </h4>
+                            <div class="service-details-content">
+                                <ul id="service-projects-list" class="projects-list">
+                                    <!-- Projects will be dynamically inserted here -->
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
