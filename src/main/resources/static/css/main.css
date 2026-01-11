@@ -1588,6 +1588,15 @@ section,
   margin: 0;
 }
 
+.services .service-details-header .service-header-image {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 .services .service-details-header .close-details {
   background: color-mix(in srgb, var(--default-color), transparent 95%);
   border: none;
