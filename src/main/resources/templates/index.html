@@ -1111,131 +1111,173 @@
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-            <div class="row gy-5">
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-member-card">
-                        <div class="member-image-wrapper">
-                            <img src="/img/person/person-m-7.webp" class="img-fluid" alt="Walter White" loading="lazy">
-                        </div>
-                        <div class="member-content">
-                            <h4>Walter White</h4>
-                            <span class="position">Chief Executive Officer</span>
-                            <p class="credentials">MBA, Harvard Business School</p>
-                            <p class="bio">Over 20 years of leadership experience in strategic planning and business
-                                development. Specializes in driving organizational growth and operational excellence
-                                across global markets.</p>
-                            <div class="member-social">
-                                <a href="" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                                <a href="" aria-label="Email"><i class="bi bi-envelope"></i></a>
+            <!-- Management Team (운영진) -->
+            <div class="team-group">
+                <h3 class="team-group-title">운영진 (Management)</h3>
+                <div class="team-carousel-wrapper">
+                    <button class="carousel-btn prev" onclick="moveCarousel('management', -1)" aria-label="Previous">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <div class="team-carousel" id="management-carousel">
+                        <div class="team-carousel-track">
+                            <div class="carousel-slide">
+                                <div class="team-member-card">
+                                    <div class="member-image-wrapper">
+                                        <img src="/img/person/person-m-7.webp" class="img-fluid" alt="Walter White" loading="lazy">
+                                    </div>
+                                    <div class="member-content">
+                                        <h4>Walter White</h4>
+                                        <span class="position">Chief Executive Officer</span>
+                                        <p class="credentials">MBA, Harvard Business School</p>
+                                        <p class="bio">Over 20 years of leadership experience in strategic planning and business
+                                            development. Specializes in driving organizational growth and operational excellence
+                                            across global markets.</p>
+                                        <div class="member-social">
+                                            <a href="" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                                            <a href="" aria-label="Email"><i class="bi bi-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <div class="team-member-card">
+                                    <div class="member-image-wrapper">
+                                        <img src="/img/person/person-f-8.webp" class="img-fluid" alt="Sarah Johnson" loading="lazy">
+                                    </div>
+                                    <div class="member-content">
+                                        <h4>Sarah Johnson</h4>
+                                        <span class="position">Chief Financial Officer</span>
+                                        <p class="credentials">CPA, CFA</p>
+                                        <p class="bio">Expert in financial strategy and risk management with proven track record in
+                                            optimizing financial performance. Led successful initiatives resulting in 40% revenue
+                                            growth.</p>
+                                        <div class="member-social">
+                                            <a href="" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                                            <a href="" aria-label="Email"><i class="bi bi-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div><!-- End Team Member -->
+                    <button class="carousel-btn next" onclick="moveCarousel('management', 1)" aria-label="Next">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="carousel-indicators" id="management-indicators"></div>
+            </div><!-- End Management Team -->
 
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-member-card">
-                        <div class="member-image-wrapper">
-                            <img src="/img/person/person-f-8.webp" class="img-fluid" alt="Sarah Johnson" loading="lazy">
-                        </div>
-                        <div class="member-content">
-                            <h4>Sarah Johnson</h4>
-                            <span class="position">Chief Financial Officer</span>
-                            <p class="credentials">CPA, CFA</p>
-                            <p class="bio">Expert in financial strategy and risk management with proven track record in
-                                optimizing financial performance. Led successful initiatives resulting in 40% revenue
-                                growth.</p>
-                            <div class="member-social">
-                                <a href="" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                                <a href="" aria-label="Email"><i class="bi bi-envelope"></i></a>
+            <!-- Board of Directors (이사진) -->
+            <div class="team-group">
+                <h3 class="team-group-title">이사진 (Board of Directors)</h3>
+                <div class="team-carousel-wrapper">
+                    <button class="carousel-btn prev" onclick="moveCarousel('directors', -1)" aria-label="Previous">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <div class="team-carousel" id="directors-carousel">
+                        <div class="team-carousel-track">
+                            <div class="carousel-slide">
+                                <div class="team-member-card">
+                                    <div class="member-image-wrapper">
+                                        <img src="/img/person/person-m-6.webp" class="img-fluid" alt="William Anderson" loading="lazy">
+                                    </div>
+                                    <div class="member-content">
+                                        <h4>William Anderson</h4>
+                                        <span class="position">Chief Technology Officer</span>
+                                        <p class="credentials">Ph.D. Computer Science, MIT</p>
+                                        <p class="bio">Technology visionary with extensive experience in digital transformation and
+                                            enterprise architecture. Drives innovation through cutting-edge solutions and strategic
+                                            technology partnerships.</p>
+                                        <div class="member-social">
+                                            <a href="" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                                            <a href="" aria-label="Email"><i class="bi bi-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <div class="team-member-card">
+                                    <div class="member-image-wrapper">
+                                        <img src="/img/person/person-f-4.webp" class="img-fluid" alt="Amanda Jepson" loading="lazy">
+                                    </div>
+                                    <div class="member-content">
+                                        <h4>Amanda Jepson</h4>
+                                        <span class="position">VP of Operations</span>
+                                        <p class="credentials">PMP, Six Sigma Black Belt</p>
+                                        <p class="bio">Seasoned operations leader focused on process optimization and quality
+                                            management. Implemented systems that improved efficiency by 35% while maintaining
+                                            exceptional service standards.</p>
+                                        <div class="member-social">
+                                            <a href="" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                                            <a href="" aria-label="Email"><i class="bi bi-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div><!-- End Team Member -->
+                    <button class="carousel-btn next" onclick="moveCarousel('directors', 1)" aria-label="Next">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="carousel-indicators" id="directors-indicators"></div>
+            </div><!-- End Board of Directors -->
 
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-member-card">
-                        <div class="member-image-wrapper">
-                            <img src="/img/person/person-m-6.webp" class="img-fluid" alt="William Anderson"
-                                 loading="lazy">
-                        </div>
-                        <div class="member-content">
-                            <h4>William Anderson</h4>
-                            <span class="position">Chief Technology Officer</span>
-                            <p class="credentials">Ph.D. Computer Science, MIT</p>
-                            <p class="bio">Technology visionary with extensive experience in digital transformation and
-                                enterprise architecture. Drives innovation through cutting-edge solutions and strategic
-                                technology partnerships.</p>
-                            <div class="member-social">
-                                <a href="" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                                <a href="" aria-label="Email"><i class="bi bi-envelope"></i></a>
+            <!-- Consultants (컨설턴트) -->
+            <div class="team-group">
+                <h3 class="team-group-title">컨설턴트 (Consultants)</h3>
+                <div class="team-carousel-wrapper">
+                    <button class="carousel-btn prev" onclick="moveCarousel('consultants', -1)" aria-label="Previous">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <div class="team-carousel" id="consultants-carousel">
+                        <div class="team-carousel-track">
+                            <div class="carousel-slide">
+                                <div class="team-member-card">
+                                    <div class="member-image-wrapper">
+                                        <img src="/img/person/person-m-11.webp" class="img-fluid" alt="Michael Chen" loading="lazy">
+                                    </div>
+                                    <div class="member-content">
+                                        <h4>Michael Chen</h4>
+                                        <span class="position">VP of Business Development</span>
+                                        <p class="credentials">MBA, Wharton School</p>
+                                        <p class="bio">Strategic partnership expert with demonstrated success in market expansion
+                                            and client acquisition. Built relationships with Fortune 500 companies resulting in
+                                            multi-million dollar contracts.</p>
+                                        <div class="member-social">
+                                            <a href="" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                                            <a href="" aria-label="Email"><i class="bi bi-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <div class="team-member-card">
+                                    <div class="member-image-wrapper">
+                                        <img src="/img/person/person-f-12.webp" class="img-fluid" alt="Jennifer Martinez" loading="lazy">
+                                    </div>
+                                    <div class="member-content">
+                                        <h4>Jennifer Martinez</h4>
+                                        <span class="position">Chief Marketing Officer</span>
+                                        <p class="credentials">MA Marketing, Northwestern University</p>
+                                        <p class="bio">Data-driven marketing strategist specializing in brand positioning and
+                                            digital transformation. Led campaigns that increased market share by 25% and enhanced
+                                            brand recognition globally.</p>
+                                        <div class="member-social">
+                                            <a href="" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                                            <a href="" aria-label="Email"><i class="bi bi-envelope"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div><!-- End Team Member -->
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-member-card">
-                        <div class="member-image-wrapper">
-                            <img src="/img/person/person-f-4.webp" class="img-fluid" alt="Amanda Jepson" loading="lazy">
-                        </div>
-                        <div class="member-content">
-                            <h4>Amanda Jepson</h4>
-                            <span class="position">VP of Operations</span>
-                            <p class="credentials">PMP, Six Sigma Black Belt</p>
-                            <p class="bio">Seasoned operations leader focused on process optimization and quality
-                                management. Implemented systems that improved efficiency by 35% while maintaining
-                                exceptional service standards.</p>
-                            <div class="member-social">
-                                <a href="" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                                <a href="" aria-label="Email"><i class="bi bi-envelope"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- End Team Member -->
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-member-card">
-                        <div class="member-image-wrapper">
-                            <img src="/img/person/person-m-11.webp" class="img-fluid" alt="Michael Chen" loading="lazy">
-                        </div>
-                        <div class="member-content">
-                            <h4>Michael Chen</h4>
-                            <span class="position">VP of Business Development</span>
-                            <p class="credentials">MBA, Wharton School</p>
-                            <p class="bio">Strategic partnership expert with demonstrated success in market expansion
-                                and client acquisition. Built relationships with Fortune 500 companies resulting in
-                                multi-million dollar contracts.</p>
-                            <div class="member-social">
-                                <a href="" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                                <a href="" aria-label="Email"><i class="bi bi-envelope"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- End Team Member -->
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="team-member-card">
-                        <div class="member-image-wrapper">
-                            <img src="/img/person/person-f-12.webp" class="img-fluid" alt="Jennifer Martinez"
-                                 loading="lazy">
-                        </div>
-                        <div class="member-content">
-                            <h4>Jennifer Martinez</h4>
-                            <span class="position">Chief Marketing Officer</span>
-                            <p class="credentials">MA Marketing, Northwestern University</p>
-                            <p class="bio">Data-driven marketing strategist specializing in brand positioning and
-                                digital transformation. Led campaigns that increased market share by 25% and enhanced
-                                brand recognition globally.</p>
-                            <div class="member-social">
-                                <a href="" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                                <a href="" aria-label="Email"><i class="bi bi-envelope"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- End Team Member -->
-
-            </div>
+                    <button class="carousel-btn next" onclick="moveCarousel('consultants', 1)" aria-label="Next">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="carousel-indicators" id="consultants-indicators"></div>
+            </div><!-- End Consultants -->
 
         </div>
 

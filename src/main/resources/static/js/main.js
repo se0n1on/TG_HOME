@@ -647,4 +647,137 @@
     detailsContainer.style.display = 'none';
   };
 
+  /**
+   * Team Carousel Functionality
+   */
+  const carouselStates = {
+    management: { currentIndex: 0, totalSlides: 0 },
+    directors: { currentIndex: 0, totalSlides: 0 },
+    consultants: { currentIndex: 0, totalSlides: 0 }
+  };
+
+  function initCarousel(carouselId) {
+    const carousel = document.getElementById(`${carouselId}-carousel`);
+    if (!carousel) return;
+
+    const track = carousel.querySelector('.team-carousel-track');
+    const slides = track.querySelectorAll('.carousel-slide');
+    const indicatorsContainer = document.getElementById(`${carouselId}-indicators`);
+    
+    carouselStates[carouselId].totalSlides = slides.length;
+    
+    // Create indicators
+    if (indicatorsContainer && slides.length > 1) {
+      indicatorsContainer.innerHTML = '';
+      for (let i = 0; i < slides.length; i++) {
+        const indicator = document.createElement('button');
+        indicator.className = 'carousel-indicator';
+        indicator.setAttribute('aria-label', `Go to slide ${i + 1}`);
+        if (i === 0) indicator.classList.add('active');
+        indicator.addEventListener('click', () => goToSlide(carouselId, i));
+        indicatorsContainer.appendChild(indicator);
+      }
+    }
+    
+    updateCarousel(carouselId);
+  }
+
+  function updateCarousel(carouselId) {
+    const carousel = document.getElementById(`${carouselId}-carousel`);
+    if (!carousel) return;
+
+    const track = carousel.querySelector('.team-carousel-track');
+    const state = carouselStates[carouselId];
+    const offset = -state.currentIndex * 100;
+    
+    track.style.transform = `translateX(${offset}%)`;
+    
+    // Update indicators
+    const indicators = document.querySelectorAll(`#${carouselId}-indicators .carousel-indicator`);
+    indicators.forEach((indicator, index) => {
+      if (index === state.currentIndex) {
+        indicator.classList.add('active');
+      } else {
+        indicator.classList.remove('active');
+      }
+    });
+    
+    // Update button states
+    const wrapper = carousel.closest('.team-carousel-wrapper');
+    const prevBtn = wrapper.querySelector('.carousel-btn.prev');
+    const nextBtn = wrapper.querySelector('.carousel-btn.next');
+    
+    if (prevBtn) {
+      prevBtn.disabled = state.currentIndex === 0;
+    }
+    if (nextBtn) {
+      nextBtn.disabled = state.currentIndex === state.totalSlides - 1;
+    }
+  }
+
+  function goToSlide(carouselId, index) {
+    const state = carouselStates[carouselId];
+    if (index >= 0 && index < state.totalSlides) {
+      state.currentIndex = index;
+      updateCarousel(carouselId);
+    }
+  }
+
+  window.moveCarousel = function(carouselId, direction) {
+    const state = carouselStates[carouselId];
+    const newIndex = state.currentIndex + direction;
+    
+    if (newIndex >= 0 && newIndex < state.totalSlides) {
+      state.currentIndex = newIndex;
+      updateCarousel(carouselId);
+    }
+  };
+
+  // Initialize all carousels on page load
+  window.addEventListener('load', () => {
+    initCarousel('management');
+    initCarousel('directors');
+    initCarousel('consultants');
+  });
+
+  // Touch support for carousels
+  function addTouchSupport(carouselId) {
+    const carousel = document.getElementById(`${carouselId}-carousel`);
+    if (!carousel) return;
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    carousel.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    carousel.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe(carouselId);
+    }, { passive: true });
+    
+    function handleSwipe(carouselId) {
+      const swipeThreshold = 50;
+      const diff = touchStartX - touchEndX;
+      
+      if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0) {
+          // Swipe left - next slide
+          moveCarousel(carouselId, 1);
+        } else {
+          // Swipe right - previous slide
+          moveCarousel(carouselId, -1);
+        }
+      }
+    }
+  }
+
+  // Add touch support on load
+  window.addEventListener('load', () => {
+    addTouchSupport('management');
+    addTouchSupport('directors');
+    addTouchSupport('consultants');
+  });
+
 })();

@@ -2655,6 +2655,141 @@ section,
   }
 }
 
+/* Team Carousel Styles */
+.team .team-group {
+  margin-bottom: 60px;
+}
+
+.team .team-group:last-child {
+  margin-bottom: 0;
+}
+
+.team .team-group-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin-bottom: 30px;
+  text-align: center;
+  padding-bottom: 15px;
+  border-bottom: 2px solid color-mix(in srgb, var(--accent-color), transparent 70%);
+}
+
+.team .team-carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.team .team-carousel {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.team .team-carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.team .carousel-slide {
+  min-width: 100%;
+  padding: 0 10px;
+}
+
+.team .carousel-btn {
+  background: var(--accent-color);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--contrast-color);
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.team .carousel-btn:hover {
+  background: color-mix(in srgb, var(--accent-color), black 15%);
+  transform: scale(1.1);
+}
+
+.team .carousel-btn:disabled {
+  background: color-mix(in srgb, var(--default-color), transparent 85%);
+  cursor: not-allowed;
+  transform: none;
+}
+
+.team .carousel-btn i {
+  font-size: 24px;
+}
+
+.team .carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.team .carousel-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--default-color), transparent 70%);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.team .carousel-indicator.active {
+  background: var(--accent-color);
+  width: 30px;
+  border-radius: 5px;
+}
+
+.team .carousel-indicator:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 30%);
+}
+
+@media (max-width: 992px) {
+  .team .team-carousel-wrapper {
+    gap: 15px;
+  }
+
+  .team .carousel-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .team .carousel-btn i {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .team .team-group-title {
+    font-size: 20px;
+  }
+
+  .team .carousel-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .team .carousel-btn i {
+    font-size: 18px;
+  }
+
+  .team .team-carousel-wrapper {
+    gap: 10px;
+  }
+}
+
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
