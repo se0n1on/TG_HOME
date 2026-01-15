@@ -1191,7 +1191,7 @@ section,
 }
 
 .about .grid-item.grid-large {
-  grid-row: span 2;
+  grid-column: span 2;
 }
 
 .about .grid-item.grid-large img {
