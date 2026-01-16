@@ -780,4 +780,67 @@
     addTouchSupport('consultants');
   });
 
+  // News Modal Functions
+  window.openNewsModal = function(imageUrl, category, title, year, description = '') {
+    const modal = document.getElementById('newsModal');
+    const modalImage = document.getElementById('newsModalImage');
+    const modalCategory = document.getElementById('newsModalCategory');
+    const modalTitle = document.getElementById('newsModalTitle');
+    const modalYear = document.getElementById('newsModalYear');
+    const modalDescription = document.getElementById('newsModalDescription');
+
+    modalImage.src = imageUrl;
+    modalImage.alt = title;
+    modalCategory.textContent = category;
+    modalTitle.textContent = title;
+    modalYear.textContent = year;
+    modalDescription.textContent = description || 'TG is proud to announce this achievement.';
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeNewsModal = function() {
+    const modal = document.getElementById('newsModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  // Close modal when clicking outside the content
+  window.addEventListener('click', function(event) {
+    const modal = document.getElementById('newsModal');
+    if (event.target === modal) {
+      closeNewsModal();
+    }
+  });
+
+  // Close modal on Escape key
+  window.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      closeNewsModal();
+    }
+  });
+
+  // Initialize news card click handlers
+  window.addEventListener('load', () => {
+    const newsCards = document.querySelectorAll('.portfolio-item .portfolio-wrapper');
+    newsCards.forEach(card => {
+      card.addEventListener('click', function() {
+        const image = this.querySelector('.portfolio-image img');
+        const category = this.querySelector('.portfolio-category');
+        const title = this.querySelector('.portfolio-header h3');
+        const year = this.querySelector('.portfolio-year');
+
+        if (image && category && title && year) {
+          openNewsModal(
+            image.src,
+            category.textContent,
+            title.textContent,
+            year.textContent
+          );
+        }
+      });
+    });
+  });
+
 })();
