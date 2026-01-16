@@ -1996,6 +1996,8 @@ section,
   flex-direction: column;
   transition: all 0.3s ease;
   cursor: pointer;
+  position: relative;
+  z-index: 1;
 }
 
 .portfolio .portfolio-wrapper:hover {
@@ -2833,6 +2835,25 @@ section,
   
   .team .team-members-row .team-member-card:not(:last-child) {
     margin-bottom: 20px;
+  }
+}
+
+/* Extra small mobile devices (iPhone SE, 12 Pro, etc.) - Fix carousel card overlap */
+@media (max-width: 390px) {
+  .team .carousel-slide {
+    padding: 0 2px;
+  }
+  
+  .team .team-members-row {
+    gap: 15px;
+  }
+  
+  .team .team-members-row .team-member-card {
+    margin-bottom: 25px !important;
+  }
+  
+  .team .carousel-track {
+    gap: 20px;
   }
 }
 
