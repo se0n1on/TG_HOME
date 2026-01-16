@@ -119,35 +119,65 @@
   /**
    * Init isotope layout and filters
    */
-  document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
-    let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
-    let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
-    let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
+  // Store isotope instances globally
+  window.isotopeInstances = window.isotopeInstances || {};
+  
+  function initIsotopeLayout() {
+    document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
+      let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
+      let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
+      let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
+      
+      // Get a unique ID for this isotope layout
+      const layoutId = isotopeItem.id || 'isotope-' + Math.random().toString(36).substr(2, 9);
+      if (!isotopeItem.id) isotopeItem.id = layoutId;
 
-    let initIsotope;
-    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
-      initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
-        itemSelector: '.isotope-item',
-        layoutMode: layout,
-        filter: filter,
-        sortBy: sort
-      });
-    });
-
-    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
-      filters.addEventListener('click', function() {
-        isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
-        this.classList.add('filter-active');
-        initIsotope.arrange({
-          filter: this.getAttribute('data-filter')
+      imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
+        // Store the isotope instance
+        window.isotopeInstances[layoutId] = new Isotope(isotopeItem.querySelector('.isotope-container'), {
+          itemSelector: '.isotope-item',
+          layoutMode: layout,
+          filter: filter,
+          sortBy: sort
         });
-        if (typeof aosInit === 'function') {
-          aosInit();
-        }
-      }, false);
-    });
+        
+        // Re-layout after a short delay to ensure proper sizing
+        setTimeout(() => {
+          if (window.isotopeInstances[layoutId]) {
+            window.isotopeInstances[layoutId].layout();
+          }
+        }, 100);
+      });
 
-  });
+      isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
+        filters.addEventListener('click', function() {
+          isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
+          this.classList.add('filter-active');
+          
+          if (window.isotopeInstances[layoutId]) {
+            window.isotopeInstances[layoutId].arrange({
+              filter: this.getAttribute('data-filter')
+            });
+            
+            // Force layout recalculation
+            setTimeout(() => {
+              if (window.isotopeInstances[layoutId]) {
+                window.isotopeInstances[layoutId].layout();
+              }
+            }, 50);
+          }
+          
+          if (typeof aosInit === 'function') {
+            aosInit();
+          }
+        }, false);
+      });
+
+    });
+  }
+  
+  // Initialize on load
+  initIsotopeLayout();
 
   /**
    * Frequently Asked Questions Toggle
@@ -854,14 +884,34 @@
         container.appendChild(newsItem);
       });
       
-      // Re-initialize isotope if it exists
-      if (typeof Isotope !== 'undefined') {
-        const isotopeLayout = document.querySelector('.isotope-layout');
+      // Re-initialize isotope properly
+      if (typeof Isotope !== 'undefined' && typeof imagesLoaded !== 'undefined') {
+        const layoutId = 'news-isotope-layout';
+        const isotopeLayout = document.getElementById(layoutId);
+        
         if (isotopeLayout) {
-          new Isotope(container, {
-            itemSelector: '.portfolio-item',
-            layoutMode: 'masonry',
-            filter: '*'
+          // Destroy existing isotope instance if it exists
+          if (window.isotopeInstances && window.isotopeInstances[layoutId]) {
+            window.isotopeInstances[layoutId].destroy();
+          }
+          
+          // Wait for images to load before initializing isotope
+          imagesLoaded(container, function() {
+            // Create new isotope instance
+            window.isotopeInstances = window.isotopeInstances || {};
+            window.isotopeInstances[layoutId] = new Isotope(container, {
+              itemSelector: '.isotope-item',
+              layoutMode: 'masonry',
+              filter: '*',
+              sortBy: 'original-order'
+            });
+            
+            // Force layout after a short delay
+            setTimeout(() => {
+              if (window.isotopeInstances[layoutId]) {
+                window.isotopeInstances[layoutId].layout();
+              }
+            }, 100);
           });
         }
       }
