@@ -2825,6 +2825,15 @@ section,
     flex: 0 1 100%;
     max-width: 100%;
   }
+  
+  /* Fix mobile carousel slide spacing */
+  .team .carousel-slide {
+    padding: 0 5px;
+  }
+  
+  .team .team-members-row .team-member-card:not(:last-child) {
+    margin-bottom: 20px;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -3009,6 +3018,8 @@ section,
   border-radius: 6px;
   overflow: hidden;
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  width: 100%;
+  margin-top: 24px;
 }
 
 .contact .map-container iframe {
@@ -3018,6 +3029,27 @@ section,
 }
 
 @media (min-width: 992px) {
+  .contact .map-container iframe {
+    height: 250px;
+  }
+}
+
+/* Mobile optimization for contact section */
+@media (max-width: 767px) {
+  .contact .row {
+    flex-direction: column;
+  }
+  
+  .contact .col-lg-3 {
+    width: 100% !important;
+    margin-bottom: 20px;
+  }
+  
+  .contact .map-container {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
   .contact .map-container iframe {
     height: 250px;
   }

@@ -821,8 +821,61 @@
     }
   });
 
+  // Load news from JSON and render dynamically
+  async function loadNewsFromJSON() {
+    try {
+      const response = await fetch('/data/news.json');
+      const newsData = await response.json();
+      
+      const container = document.querySelector('.isotope-container');
+      if (!container || newsData.length === 0) return;
+      
+      // Clear existing news items (keep template structure)
+      container.innerHTML = '';
+      
+      // Render each news item
+      newsData.forEach(news => {
+        const newsItem = document.createElement('div');
+        newsItem.className = `col-lg-6 portfolio-item isotope-item ${news.filter}`;
+        newsItem.innerHTML = `
+          <div class="portfolio-wrapper">
+            <div class="portfolio-image">
+              <img src="${news.imagePath}" alt="${news.category}" class="img-fluid" loading="lazy">
+              <div class="portfolio-category">${news.category}</div>
+            </div>
+            <div class="portfolio-content">
+              <div class="portfolio-header">
+                <h3>${news.title}</h3>
+                <span class="portfolio-year">${news.year}</span>
+              </div>
+            </div>
+          </div>
+        `;
+        container.appendChild(newsItem);
+      });
+      
+      // Re-initialize isotope if it exists
+      if (typeof Isotope !== 'undefined') {
+        const isotopeLayout = document.querySelector('.isotope-layout');
+        if (isotopeLayout) {
+          new Isotope(container, {
+            itemSelector: '.portfolio-item',
+            layoutMode: 'masonry',
+            filter: '*'
+          });
+        }
+      }
+      
+      // Re-initialize news card click handlers
+      initializeNewsCardHandlers();
+      
+    } catch (error) {
+      console.error('Error loading news data:', error);
+    }
+  }
+
   // Initialize news card click handlers
-  window.addEventListener('load', () => {
+  function initializeNewsCardHandlers() {
     const newsCards = document.querySelectorAll('.portfolio-item .portfolio-wrapper');
     newsCards.forEach(card => {
       card.addEventListener('click', function() {
@@ -841,6 +894,11 @@
         }
       });
     });
+  }
+
+  // Load news on page load
+  window.addEventListener('load', () => {
+    loadNewsFromJSON();
   });
 
 })();
