@@ -2820,40 +2820,56 @@ section,
   }
 
   .team .team-members-row {
-    gap: 20px;
+    gap: 15px;
   }
 
   .team .team-members-row .team-member-card {
     flex: 0 1 100%;
-    max-width: 100%;
+    max-width: 320px; /* Reduced from 100% to prevent overflow */
+    min-width: 250px; /* Reduced to fit smaller screens better */
   }
   
   /* Fix mobile carousel slide spacing */
   .team .carousel-slide {
-    padding: 0 5px;
+    padding: 0 3px; /* Reduced from 5px for better spacing */
   }
   
   .team .team-members-row .team-member-card:not(:last-child) {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
   }
 }
 
 /* Extra small mobile devices (iPhone SE, 12 Pro, etc.) - Fix carousel card overlap */
 @media (max-width: 390px) {
   .team .carousel-slide {
-    padding: 0 2px;
+    padding: 0 2px; /* Minimal padding to prevent overlap */
   }
   
   .team .team-members-row {
-    gap: 15px;
+    gap: 12px; /* Reduced gap */
   }
   
   .team .team-members-row .team-member-card {
-    margin-bottom: 25px !important;
+    max-width: 280px; /* Further reduced card width */
+    min-width: 240px; /* Reduced minimum width */
+    margin-bottom: 20px !important; /* Consistent spacing */
   }
   
   .team .carousel-track {
-    gap: 20px;
+    gap: 15px; /* Reduced from 20px */
+  }
+  
+  /* Reduce card content padding on very small screens */
+  .team .member-content {
+    padding: 18px; /* Reduced from 24px */
+  }
+  
+  .team .member-content h4 {
+    font-size: 18px; /* Slightly smaller name */
+  }
+  
+  .team .member-content .position {
+    font-size: 13px; /* Slightly smaller position text */
   }
 }
 
