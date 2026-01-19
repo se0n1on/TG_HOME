@@ -4633,19 +4633,21 @@ section,
   gap: 6px;
 }
 
-/* Hide desktop menu on tablets and smaller devices - only show on iPad Pro (1024px+) and desktop */
+/* Hide desktop menu and hamburger on all phones/tablets - desktop nav only on web (1024px+) */
 @media (max-width: 1023px) {
   .navmenu ul {
     display: none !important;
   }
   
+  /* Completely hide hamburger menu on phones and tablets */
   .mobile-nav-toggle {
-    display: block !important;
+    display: none !important;
   }
 }
 
-/* Mobile language toggle and desktop language selector visibility */
+/* Language selector visibility: mobile toggle on small phones, desktop selector on iPad+ */
 @media (max-width: 767px) {
+  /* Small phones: show mobile language toggle (right-aligned) */
   .mobile-language-toggle {
     display: flex;
   }
@@ -4656,8 +4658,14 @@ section,
 }
 
 @media (min-width: 768px) {
+  /* iPad and larger: show desktop language selector (right-aligned), hide mobile toggle */
   .mobile-language-toggle {
     display: none;
+  }
+  
+  .language-selector {
+    display: block;
+    margin-left: auto;
   }
 }
 
