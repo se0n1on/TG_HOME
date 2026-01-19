@@ -4667,8 +4667,9 @@ section,
 /*--------------------------------------------------------------
 # Portfolio/News Section - Scrollable Container
 --------------------------------------------------------------*/
+/* Shows exactly 2 rows of news cards (4 cards total at 2 per row) before scrolling */
 .isotope-container {
-  max-height: 1500px;
+  max-height: 900px; /* Approximately 2 rows of cards */
   overflow-y: auto;
   overflow-x: hidden;
   padding-right: 15px;
@@ -4701,14 +4702,16 @@ section,
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  /* On tablet, cards stack but still show ~2 rows */
   .isotope-container {
-    max-height: 1200px;
+    max-height: 900px;
   }
 }
 
 @media (max-width: 576px) {
+  /* On mobile, cards are full width, show ~2 cards before scrolling */
   .isotope-container {
-    max-height: 1000px;
+    max-height: 700px;
     padding-right: 10px;
   }
 }

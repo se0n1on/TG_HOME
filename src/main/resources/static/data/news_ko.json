@@ -1,30 +1,380 @@
 [
   {
-    "category": "글로벌 & ODA 프로젝트",
-    "filter": "filter-global",
-    "imagePath": "https://tgin.kr/wp-content/uploads/2024/02/20240126_162452-scaled.jpg",
-    "title": "TG, 탄자니아 수도 이전 세미나 참석",
+    "category": "파트너십 및 협력",
+    "filter": "filter-partnership",
+    "imagePath": "http://localhost:9080/img/news/202502.jpg",
+    "title": "KCC I&C와 제로 트러스트 기반 업무협약 체결",
+    "year": "2025"
+  },
+  {
+    "category": "포럼 및 행사",
+    "filter": "filter-forum",
+    "imagePath": "http://localhost:9080/img/news/202402.jpg",
+    "title": "탄자니아 수도 이전 세미나 참석",
     "year": "2024"
   },
   {
-    "category": "글로벌 & ODA 프로젝트",
+    "category": "포럼 및 행사",
+    "filter": "filter-forum",
+    "imagePath": "http://localhost:9080/img/news/202410.jpg",
+    "title": "한-미주 디지털 정부 포럼",
+    "year": "2024"
+  },
+  {
+    "category": "파트너십 및 협력",
+    "filter": "filter-partnership",
+    "imagePath": "http://localhost:9080/img/news/202405.jpg",
+    "title": "태국 마이타키안 청소년 학교 개교식",
+    "year": "2024"
+  },
+  {
+    "category": "스마트시티/팜 및 디지털 혁신",
+    "filter": "filter-smartcity",
+    "imagePath": "http://localhost:9080/img/news/202308 (1).jpg",
+    "title": "베트남 달랏 스마트팜 개장식",
+    "year": "2023"
+  },
+  {
+    "category": "포럼 및 행사",
+    "filter": "filter-forum",
+    "imagePath": "http://localhost:9080/img/news/202312.jpg",
+    "title": "TG 후원 오픈소스 소프트웨어 페스티벌",
+    "year": "2023"
+  },
+  {
+    "category": "글로벌 및 ODA 프로젝트",
     "filter": "filter-global",
-    "imagePath": "https://tgin.kr/wp-content/uploads/2022/02/20220105%EC%BA%84%EB%B3%B4%EB%94%94%EC%95%84.png",
+    "imagePath": "http://localhost:9080/img/news/202111.png",
     "title": "캄보디아 전자정부 협력센터 개소식",
     "year": "2022"
   },
   {
-    "category": "글로벌 & ODA 프로젝트",
-    "filter": "filter-global",
-    "imagePath": "https://tgin.kr/wp-content/uploads/kboard_attached/2/202205/628f187ded9c75588930.jpg",
-    "title": "나이지리아 전자정부 포털 및 EA 포털 구축 사업 착수 회의",
+    "category": "포럼 및 행사",
+    "filter": "filter-forum",
+    "imagePath": "http://localhost:9080/img/news/202207 (1).jpg",
+    "title": "공공데이터 2022 오픈데이터 포럼",
     "year": "2022"
   },
   {
-    "category": "스마트시티/팜 & 디지털 혁신",
-    "filter": "filter-smartcity",
-    "imagePath": "https://tgin.kr/wp-content/uploads/kboard_attached/2/202301/63b376600cc007508623.jpg",
-    "title": "농림축산식품교육문화정보원 주최 AI 스마트농업 경진대회",
+    "category": "포럼 및 행사",
+    "filter": "filter-forum",
+    "imagePath": "http://localhost:9080/img/news/202207 (4).jpg",
+    "title": "오픈 SW 기반 온북 프로젝트 설명회",
     "year": "2022"
+  },
+  {
+    "category": "스마트시티/팜 및 디지털 혁신",
+    "filter": "filter-smartcity",
+    "imagePath": "http://localhost:9080/img/news/202301 (1).jpg",
+    "title": "농림축산식품교육문화정보원 주최 AI 스마트 농업 경진대회",
+    "year": "2022"
+  },
+  {
+    "category": "수상 및 사회공헌",
+    "filter": "filter-awards",
+    "imagePath": "http://localhost:9080/img/news/202301 (1).png",
+    "title": "중소기업 데이터 활용 우수사례",
+    "year": "2022"
+  },
+  {
+    "category": "스마트시티/팜 및 디지털 혁신",
+    "filter": "filter-smartcity",
+    "imagePath": "http://localhost:9080/img/news/202102.jpg",
+    "title": "말레이시아 스마트팜 중간 보고",
+    "year": "2021"
+  },
+  {
+    "category": "수상 및 사회공헌",
+    "filter": "filter-awards",
+    "imagePath": "http://localhost:9080/img/news/202108 (1).png",
+    "title": "스마트시티 SOC-ICT 장관상 수상",
+    "year": "2021"
+  },
+  {
+    "category": "스마트시티/팜 및 디지털 혁신",
+    "filter": "filter-smartcity",
+    "imagePath": "http://localhost:9080/img/news/202108 (2).png",
+    "title": "스마트팜 빅데이터 컨설팅",
+    "year": "2021"
+  },
+  {
+    "category": "글로벌 및 ODA 프로젝트",
+    "filter": "filter-global",
+    "imagePath": "http://localhost:9080/img/news/202008 (8).png",
+    "title": "몽골 공공 고용서비스 ISP",
+    "year": "2020"
+  },
+  {
+    "category": "글로벌 및 ODA 프로젝트",
+    "filter": "filter-global",
+    "imagePath": "http://localhost:9080/img/news/202008 (23).png",
+    "title": "인도 항만 물류 컨설팅",
+    "year": "2020"
+  },
+  {
+    "category": "글로벌 및 ODA 프로젝트",
+    "filter": "filter-global",
+    "imagePath": "http://localhost:9080/img/news/202008 (17).png",
+    "title": "캄보디아 ICT 마스터플랜",
+    "year": "2020"
+  },
+  {
+    "category": "글로벌 및 ODA 프로젝트",
+    "filter": "filter-global",
+    "imagePath": "http://localhost:9080/img/news/202008 (5).png",
+    "title": "몽골 워크넷 구축 프로젝트",
+    "year": "2020"
+  },
+  {
+    "category": "글로벌 및 ODA 프로젝트",
+    "filter": "filter-global",
+    "imagePath": "http://localhost:9080/img/news/202008 (1).png",
+    "title": "몽골 워크넷 구축 프로젝트",
+    "year": "2020"
+  },
+  {
+    "category": "포럼 및 행사",
+    "filter": "filter-forum",
+    "imagePath": "http://localhost:9080/img/news/202008 (68).jpg",
+    "title": "몽골 워크넷 구축 착수보고회",
+    "year": "2020"
+  },
+  {
+    "category": "스마트시티/팜 및 디지털 혁신",
+    "filter": "filter-smartcity",
+    "imagePath": "http://localhost:9080/img/news/202008 (86).jpg",
+    "title": "터키 스마트시티 컨설팅",
+    "year": "2020"
+  },
+  {
+    "category": "스마트시티/팜 및 디지털 혁신",
+    "filter": "filter-smartcity",
+    "imagePath": "http://localhost:9080/img/news/202008 (65).jpg",
+    "title": "터키 스마트시티 컨설팅",
+    "year": "2020"
+  },
+  {
+    "category": "스마트시티/팜 및 디지털 혁신",
+    "filter": "filter-smartcity",
+    "imagePath": "http://localhost:9080/img/news/202008 (38).jpg",
+    "title": "터키 스마트시티 컨설팅",
+    "year": "2020"
+  },
+  {
+    "category": "스마트시티/팜 및 디지털 혁신",
+    "filter": "filter-smartcity",
+    "imagePath": "http://localhost:9080/img/news/202008 (11).png",
+    "title": "터키 스마트시티 컨설팅",
+    "year": "2020"
+  },
+  {
+    "category": "글로벌 및 ODA 프로젝트",
+    "filter": "filter-global",
+    "imagePath": "http://localhost:9080/img/news/202008 (50).jpg",
+    "title": "페루 물류 컨설팅",
+    "year": "2019"
+  },
+  {
+    "category": "글로벌 및 ODA 프로젝트",
+    "filter": "filter-global",
+    "imagePath": "http://localhost:9080/img/news/202008 (71).jpg",
+    "title": "캄팔라 전자정부 로드맵 컨설팅",
+    "year": "2019"
+  },
+  {
+    "category": "글로벌 및 ODA 프로젝트",
+    "filter": "filter-global",
+    "imagePath": "http://localhost:9080/img/news/202008 (14).jpg",
+    "title": "페루 물류 컨설팅",
+    "year": "2019"
+  },
+  {
+    "category": "글로벌 및 ODA 프로젝트",
+    "filter": "filter-global",
+    "imagePath": "http://localhost:9080/img/news/202008 (11).jpg",
+    "title": "Vietnam People’s Court e-Procedure Consulting",
+    "year": "2019"
+  },
+  {
+    "category": "글로벌 및 ODA 프로젝트",
+    "filter": "filter-global",
+    "imagePath": "http://localhost:9080/img/news/202008 (80).jpg",
+    "title": "우즈베키스탄 전자판결 시스템 완료 (세계은행 지원)",
+    "year": "2019"
+  },
+  {
+    "category": "스마트시티/팜 및 디지털 혁신",
+    "filter": "filter-smartcity",
+    "imagePath": "http://localhost:9080/img/news/202008 (14).png",
+    "title": "블록체인 기반 공공행정 혁신 컨설팅",
+    "year": "2019"
+  },
+  {
+    "category": "글로벌 및 ODA 프로젝트",
+    "filter": "filter-global",
+    "imagePath": "http://localhost:9080/img/news/202008 (47).jpg",
+    "title": "케냐 정부 전자정부 컨설팅",
+    "year": "2019"
+  },
+  {
+    "category": "글로벌 및 ODA 프로젝트",
+    "filter": "filter-global",
+    "imagePath": "http://localhost:9080/img/news/202008 (8).jpg",
+    "title": "탄자니아 주민정보시스템 평가",
+    "year": "2019"
+  },
+  {
+    "category": "글로벌 및 ODA 프로젝트",
+    "filter": "filter-global",
+    "imagePath": "http://localhost:9080/img/news/202008 (5).jpg",
+    "title": "탄자니아 주민정보시스템 평가 2",
+    "year": "2019"
+  },
+  {
+    "category": "글로벌 및 ODA 프로젝트",
+    "filter": "filter-global",
+    "imagePath": "http://localhost:9080/img/news/202008 (2).jpg",
+    "title": "탄자니아 주민정보시스템 평가 1",
+    "year": "2019"
+  },
+  {
+    "category": "글로벌 및 ODA 프로젝트",
+    "filter": "filter-global",
+    "imagePath": "http://localhost:9080/img/news/202008 (2).png",
+    "title": "마다가스카르 주민정보시스템 컨설팅 1",
+    "year": "2019"
+  },
+  {
+    "category": "글로벌 및 ODA 프로젝트",
+    "filter": "filter-global",
+    "imagePath": "http://localhost:9080/img/news/202008 (44).jpg",
+    "title": "마다가스카르 주민정보시스템 컨설팅 2",
+    "year": "2019"
+  },
+  {
+    "category": "글로벌 및 ODA 프로젝트",
+    "filter": "filter-global",
+    "imagePath": "http://localhost:9080/img/news/202008 (41).jpg",
+    "title": "우간다 수도 전자정부 컨설팅",
+    "year": "2019"
+  },
+  {
+    "category": "포럼 및 행사",
+    "filter": "filter-forum",
+    "imagePath": "http://localhost:9080/img/news/202008 (26).jpg",
+    "title": "TG 연례 직원 워크샵",
+    "year": "2018"
+  },
+  {
+    "category": "글로벌 및 ODA 프로젝트",
+    "filter": "filter-global",
+    "imagePath": "http://localhost:9080/img/news/202008 (1).jpeg",
+    "title": "요르단 정부 EA 기획 참여",
+    "year": "2018"
+  },
+  {
+    "category": "글로벌 및 ODA 프로젝트",
+    "filter": "filter-global",
+    "imagePath": "http://localhost:9080/img/news/202008 (62).jpg",
+    "title": "이란 EA 위원회 대표단 서울 방문",
+    "year": "2018"
+  },
+  {
+    "category": "글로벌 및 ODA 프로젝트",
+    "filter": "filter-global",
+    "imagePath": "http://localhost:9080/img/news/202008 (59).jpg",
+    "title": "베트남 EAMS 도입 타당성 조사 착수",
+    "year": "2018"
+  },
+  {
+    "category": "글로벌 및 ODA 프로젝트",
+    "filter": "filter-global",
+    "imagePath": "http://localhost:9080/img/news/202008 (56).jpg",
+    "title": "파라과이 민원24 로드맵 개발",
+    "year": "2018"
+  },
+  {
+    "category": "포럼 및 행사",
+    "filter": "filter-forum",
+    "imagePath": "http://localhost:9080/img/news/202008 (83).jpg",
+    "title": "TG 대표이사, 이슈메이커 신문과 경영 철학 공유",
+    "year": "2018"
+  },
+  {
+    "category": "수상 및 사회공헌",
+    "filter": "filter-awards",
+    "imagePath": "http://localhost:9080/img/news/202008 (20).png",
+    "title": "서울시 강소기업 인증",
+    "year": "2018"
+  },
+  {
+    "category": "글로벌 및 ODA 프로젝트",
+    "filter": "filter-global",
+    "imagePath": "http://localhost:9080/img/news/202008 (23).jpg",
+    "title": "우즈베키스탄 ICT 공무원 대상 NIA-KOICA 업무협의",
+    "year": "2018"
+  },
+  {
+    "category": "글로벌 및 ODA 프로젝트",
+    "filter": "filter-global",
+    "imagePath": "http://localhost:9080/img/news/202008 (20).jpg",
+    "title": "잠비아 대사와 전자정부 논의",
+    "year": "2018"
+  },
+  {
+    "category": "글로벌 및 ODA 프로젝트",
+    "filter": "filter-global",
+    "imagePath": "http://localhost:9080/img/news/202008 (17).jpg",
+    "title": "파라과이 ICT 정책기관 민원24 방문",
+    "year": "2018"
+  },
+  {
+    "category": "수상 및 사회공헌",
+    "filter": "filter-awards",
+    "imagePath": "http://localhost:9080/img/news/202008 (53).jpg",
+    "title": "행정안전부 장관상 수상",
+    "year": "2018"
+  },
+  {
+    "category": "연구 및 전략",
+    "filter": "filter-research",
+    "imagePath": "http://localhost:9080/img/news/202008 (89).jpg",
+    "title": "개발도상국 대상 EA 참조모델",
+    "year": "2018"
+  },
+  {
+    "category": "글로벌 및 ODA 프로젝트",
+    "filter": "filter-global",
+    "imagePath": "http://localhost:9080/img/news/202008 (77).jpg",
+    "title": "베트남 정보통신부 EAMS 컨설팅",
+    "year": "2018"
+  },
+  {
+    "category": "글로벌 및 ODA 프로젝트",
+    "filter": "filter-global",
+    "imagePath": "http://localhost:9080/img/news/202008 (74).jpg",
+    "title": "파라과이 민원24 지식공유 프로그램",
+    "year": "2018"
+  },
+  {
+    "category": "글로벌 및 ODA 프로젝트",
+    "filter": "filter-global",
+    "imagePath": "http://localhost:9080/img/news/202008 (32).jpg",
+    "title": "보츠와나 EA 구축 1",
+    "year": "2016"
+  },
+  {
+    "category": "글로벌 및 ODA 프로젝트",
+    "filter": "filter-global",
+    "imagePath": "http://localhost:9080/img/news/202008 (35).jpg",
+    "title": "보츠와나 EA 구축 2",
+    "year": "2016"
+  },
+  {
+    "category": "글로벌 및 ODA 프로젝트",
+    "filter": "filter-global",
+    "imagePath": "http://localhost:9080/img/news/202008 (29).jpg",
+    "title": "베트남 하노이 EA 세미나",
+    "year": "2016"
   }
 ]
