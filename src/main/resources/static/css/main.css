@@ -8,6 +8,9 @@
 
 @charset "UTF-8";
 
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap');
+
 /*--------------------------------------------------------------
 # Font & Color Variables
 # Help: https://bootstrapmade.com/color-system/
@@ -17,6 +20,22 @@
   --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --heading-font: "Nunito",  sans-serif;
   --nav-font: "Nunito",  sans-serif;
+  --korean-font: "Noto Sans KR", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+}
+
+/* Korean language specific font */
+html[lang="ko"] body,
+html[lang="ko"] h1,
+html[lang="ko"] h2,
+html[lang="ko"] h3,
+html[lang="ko"] h4,
+html[lang="ko"] h5,
+html[lang="ko"] h6,
+html[lang="ko"] p,
+html[lang="ko"] span,
+html[lang="ko"] a,
+html[lang="ko"] li {
+  font-family: var(--korean-font);
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
@@ -4643,4 +4662,53 @@ section,
 .mobile-language-toggle .separator {
   color: rgba(255, 255, 255, 0.5);
   font-weight: 300;
+}
+
+/*--------------------------------------------------------------
+# Portfolio/News Section - Scrollable Container
+--------------------------------------------------------------*/
+.isotope-container {
+  max-height: 1500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 15px;
+}
+
+/* Scrollbar styling for webkit browsers */
+.isotope-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.isotope-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.isotope-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.isotope-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Firefox scrollbar */
+.isotope-container {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .isotope-container {
+    max-height: 2000px;
+  }
+}
+
+@media (max-width: 576px) {
+  .isotope-container {
+    max-height: 2500px;
+    padding-right: 10px;
+  }
 }

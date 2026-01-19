@@ -229,15 +229,41 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
   /**
-   * Service projects data
+   * Service Data - Loaded from JSON
    */
-  const serviceProjects = {
-    'ai-con': [
-		'Consulting Project for Efficient Management of Future-Oriented National Health Insurance Big Data (National Health Insurance Service)',
-		'ISP Study for the Transportation Vulnerable Mobility Convenience Information Management System (Ministry of Land, Infrastructure and Transport)',
-		'Mid- to Long-Term Information Strategy Planning Consulting Project for KORAD (Korea Radioactive Waste Agency)',
-		'ISP Consulting for Next-Generation HIS Implementation (Yonsei Medical Center)',
-		'ISP/ISMP Consulting Project for Advancement of the Inter-Ministerial Integrated Research Support System (IRIS)',
+  let servicesData = null;
+
+  async function loadServicesData() {
+    if (servicesData) return servicesData;
+    
+    const htmlLang = document.documentElement.getAttribute('lang');
+    const currentPage = window.location.pathname;
+    const pageFilename = currentPage.substring(currentPage.lastIndexOf('/') + 1);
+    
+    const isKorean = htmlLang === 'ko' || 
+                    pageFilename === 'index_ko.html' || 
+                    currentPage.includes('index_ko');
+    
+    const jsonFile = isKorean ? '/data/services_ko.json' : '/data/services.json';
+    
+    try {
+      const response = await fetch(jsonFile);
+      servicesData = await response.json();
+      return servicesData;
+    } catch (error) {
+      console.error('Failed to load services data:', error);
+      return {};
+    }
+  }
+
+  // Temporary placeholder - will be replaced by JSON data
+  const serviceProjects = {};
+  const serviceAreas = {};
+
+  /**
+   * Toggle service details expansion
+   */
+  window.toggleServiceDetails = async function(button) {
 		'IT Consulting for Next-Generation ERP System Implementation (National Federation of Taxi Transport Associations)',
 		'BPR/ISP for Next-Generation Information System 구축 (Korea Student Aid Foundation)',
 		'Information Strategy Planning (ISP) for LX Metaverse Platform',
@@ -591,10 +617,17 @@
     ]
   };
 
+  // Temporary placeholder - will be replaced by JSON data
+  const serviceProjects = {};
+  const serviceAreas = {};
+
   /**
    * Toggle service details expansion
    */
-  window.toggleServiceDetails = function(button) {
+  window.toggleServiceDetails = async function(button) {
+    // Load services data if not already loaded
+    const data = await loadServicesData();
+    
     const serviceId = button.getAttribute('data-service');
     const serviceCard = button.closest('.service-card');
     const detailsContainer = document.getElementById('service-details-container');
@@ -628,10 +661,10 @@
       const serviceTitle = serviceCard.querySelector('h3').textContent;
       detailsTitle.textContent = serviceTitle;
       
-      // Populate service areas list (What We Do)
+      // Populate service areas list (What We Do) from JSON data
       areasList.innerHTML = '';
-      if (serviceAreas[serviceId]) {
-        serviceAreas[serviceId].forEach(area => {
+      if (data[serviceId] && data[serviceId].areas) {
+        data[serviceId].areas.forEach(area => {
           const areaItem = document.createElement('div');
           areaItem.className = 'service-area-item';
           areaItem.innerHTML = '<i class="bi bi-check-circle"></i> <span>' + area + '</span>';
@@ -639,10 +672,10 @@
         });
       }
       
-      // Populate projects list (What We Did)
+      // Populate projects list (What We Did) from JSON data
       projectsList.innerHTML = '';
-      if (serviceProjects[serviceId]) {
-        serviceProjects[serviceId].forEach(project => {
+      if (data[serviceId] && data[serviceId].projects) {
+        data[serviceId].projects.forEach(project => {
           const li = document.createElement('li');
           li.innerHTML = '<i class="bi bi-check-circle-fill"></i> ' + project;
           projectsList.appendChild(li);
