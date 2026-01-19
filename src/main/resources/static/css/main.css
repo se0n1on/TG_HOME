@@ -4675,6 +4675,18 @@ section,
   padding-right: 15px;
 }
 
+/* Fix portfolio item width to ensure 2 cards per row - overrides isotope's inline styles */
+.portfolio .portfolio-item {
+  width: 50% !important; /* Force 2 columns */
+  float: left;
+}
+
+@media (max-width: 992px) {
+  .portfolio .portfolio-item {
+    width: 100% !important; /* Stack on smaller screens */
+  }
+}
+
 /* Scrollbar styling for webkit browsers */
 .isotope-container::-webkit-scrollbar {
   width: 8px;
