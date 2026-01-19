@@ -4528,10 +4528,12 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Language Selector (Desktop)
---------------------------------------------------------------*/
+# Unified Language Selector (All Devices - Like UpScale "Get Started" Button)
+---------------------------------------------------------------*/
+/* Language selector always visible and right-aligned on all devices */
 .language-selector {
   margin-left: auto;
+  display: block;
 }
 
 .language-dropdown {
@@ -4616,21 +4618,23 @@ section,
   color: #0e66e9;
 }
 
+/* Mobile optimization - smaller sizing on phones */
+@media (max-width: 767px) {
+  .language-btn {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+  
+  .language-btn i {
+    font-size: 14px;
+  }
+}
+
 /*--------------------------------------------------------------
-# Mobile Language Toggle
---------------------------------------------------------------*/
+# Mobile Language Toggle - REMOVED (Unified selector used instead)
+---------------------------------------------------------------*/
 .mobile-language-toggle {
-  display: none;
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  background: var(--heading-color);
-  padding: 8px 16px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  z-index: 1001;
-  align-items: center;
-  gap: 6px;
+  display: none !important;
 }
 
 /* Hide desktop menu and hamburger on all phones/tablets - desktop nav only on web (1024px+) */
@@ -4643,62 +4647,13 @@ section,
   .mobile-nav-toggle {
     display: none !important;
   }
-}
-
-/* Language selector visibility: mobile toggle on small phones, desktop selector on iPad+ */
-@media (max-width: 767px) {
-  /* Small phones: show mobile language toggle (right-aligned) */
-  .mobile-language-toggle {
-    display: flex;
-  }
   
-  .language-selector {
-    display: none;
-  }
-}
-
-@media (min-width: 768px) {
-  /* iPad and larger: show desktop language selector (right-aligned), hide mobile toggle */
-  .mobile-language-toggle {
-    display: none;
-  }
-  
+  /* Language selector stays visible and right-aligned */
   .language-selector {
     display: block;
     margin-left: auto;
   }
 }
-
-.mobile-language-toggle .lang-option {
-  color: var(--default-color);
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 600;
-  transition: all 0.2s ease;
-  padding: 4px 8px;
-  border-radius: 4px;
-  opacity: 0.7;
-}
-
-.mobile-language-toggle .lang-option:hover {
-  opacity: 1;
-  background: rgba(var(--accent-color-rgb), 0.1);
-  color: var(--accent-color);
-}
-
-.mobile-language-toggle .lang-option.active {
-  opacity: 1;
-  color: var(--accent-color);
-  font-weight: 700;
-}
-
-.mobile-language-toggle .separator {
-  color: var(--default-color);
-  opacity: 0.3;
-  font-weight: 300;
-  font-size: 12px;
-}
-
 /*--------------------------------------------------------------
 # Portfolio/News Section - Scrollable Container
 --------------------------------------------------------------*/
