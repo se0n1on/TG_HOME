@@ -4669,21 +4669,37 @@ section,
 --------------------------------------------------------------*/
 /* Shows exactly 2 rows of news cards (4 cards total at 2 per row) before scrolling */
 .isotope-container {
-  max-height: 900px; /* Approximately 2 rows of cards */
+  max-height: none; /* Don't limit height by default */
   overflow-y: auto;
   overflow-x: hidden;
-  padding-right: 15px;
+}
+
+/* Only apply max-height when there are more than 4 items */
+.isotope-container:has(.portfolio-item:nth-child(5)) {
+  max-height: 900px; /* Approximately 2 rows of cards - only show when 5+ items */
 }
 
 /* Fix portfolio item width to ensure 2 cards per row - overrides isotope's inline styles */
-.portfolio .portfolio-item {
-  width: 50% !important; /* Force 2 columns */
-  float: left;
+.portfolio .portfolio-item.isotope-item {
+  width: calc(50% - 24px) !important; /* Force 2 columns on desktop, accounting for padding */
+  float: left !important;
+  margin: 0 !important;
+  padding: 0 12px 24px 12px !important;
 }
 
-@media (max-width: 992px) {
-  .portfolio .portfolio-item {
-    width: 100% !important; /* Stack on smaller screens */
+@media (max-width: 991px) {
+  .portfolio .portfolio-item.isotope-item {
+    width: 100% !important; /* Stack on tablets and mobile */
+  }
+  
+  .isotope-container:has(.portfolio-item:nth-child(3)) {
+    max-height: 900px; /* Show scrollbar after 2 items on tablet/mobile */
+  }
+}
+
+@media (max-width: 576px) {
+  .isotope-container:has(.portfolio-item:nth-child(3)) {
+    max-height: 700px; /* Smaller max-height on mobile */
   }
 }
 
@@ -4710,20 +4726,4 @@ section,
 .isotope-container {
   scrollbar-width: thin;
   scrollbar-color: #888 #f1f1f1;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  /* On tablet, cards stack but still show ~2 rows */
-  .isotope-container {
-    max-height: 900px;
-  }
-}
-
-@media (max-width: 576px) {
-  /* On mobile, cards are full width, show ~2 cards before scrolling */
-  .isotope-container {
-    max-height: 700px;
-    padding-right: 10px;
-  }
 }
