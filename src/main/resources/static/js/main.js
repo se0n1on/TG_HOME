@@ -248,6 +248,9 @@
     
     try {
       const response = await fetch(jsonFile);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
       servicesData = await response.json();
       return servicesData;
     } catch (error) {

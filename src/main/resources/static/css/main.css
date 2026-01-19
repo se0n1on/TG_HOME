@@ -4702,13 +4702,13 @@ section,
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .isotope-container {
-    max-height: 2000px;
+    max-height: 1200px;
   }
 }
 
 @media (max-width: 576px) {
   .isotope-container {
-    max-height: 2500px;
+    max-height: 1000px;
     padding-right: 10px;
   }
 }
