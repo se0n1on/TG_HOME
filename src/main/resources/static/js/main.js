@@ -854,9 +854,16 @@
   // Load news from JSON and render dynamically
   async function loadNewsFromJSON() {
     try {
-      // Detect current page and load appropriate JSON file
+      // Detect current page language - check multiple sources for robustness
+      const htmlLang = document.documentElement.lang;
       const currentPage = window.location.pathname;
-      const isKorean = currentPage.includes('index_ko.html');
+      const pageFilename = currentPage.substring(currentPage.lastIndexOf('/') + 1);
+      
+      // Determine if Korean version based on multiple checks
+      const isKorean = htmlLang === 'ko' || 
+                      pageFilename === 'index_ko.html' || 
+                      currentPage.includes('index_ko');
+      
       const jsonFile = isKorean ? '/data/news_ko.json' : '/data/news.json';
       
       const response = await fetch(jsonFile);
