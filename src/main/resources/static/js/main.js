@@ -854,7 +854,12 @@
   // Load news from JSON and render dynamically
   async function loadNewsFromJSON() {
     try {
-      const response = await fetch('/data/news.json');
+      // Detect current page and load appropriate JSON file
+      const currentPage = window.location.pathname;
+      const isKorean = currentPage.includes('index_ko.html');
+      const jsonFile = isKorean ? '/data/news_ko.json' : '/data/news.json';
+      
+      const response = await fetch(jsonFile);
       const newsData = await response.json();
       
       const container = document.querySelector('.isotope-container');
