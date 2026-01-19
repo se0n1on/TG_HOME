@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 //import tg.home.main.entity.MainVO;
-import tg.home.main.service.MainService;
+//import tg.home.main.service.MainService;
 
 import java.util.Locale;
 
