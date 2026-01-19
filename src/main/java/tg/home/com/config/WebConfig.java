@@ -24,19 +24,19 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addInterceptor(httpInterceptor()).addPathPatterns("/**");
     }
     
-    @Bean
-    public ResourceBundleMessageSource messageSource() {
-        ResourceBundleMessageSource source = new ResourceBundleMessageSource();
-        
-        source.setBasenames("messages/messages");
-        source.setDefaultEncoding("UTF-8");
-        return source;
-    }
+//    @Bean
+//    public ResourceBundleMessageSource messageSource() {
+//        ResourceBundleMessageSource source = new ResourceBundleMessageSource();
+//
+//        source.setBasenames("messages/messages");
+//        source.setDefaultEncoding("UTF-8");
+//        return source;
+//    }
     
-    @Bean
-    public LocaleResolver localeResolver() {
-        AcceptHeaderLocaleResolver resolver = new AcceptHeaderLocaleResolver();
-        resolver.setDefaultLocale(Locale.KOREAN);
-        return resolver;
-    }
+//    @Bean
+//    public LocaleResolver localeResolver() {
+//        AcceptHeaderLocaleResolver resolver = new AcceptHeaderLocaleResolver();
+//        resolver.setDefaultLocale(Locale.KOREAN);
+//        return resolver;
+//    }
 }
