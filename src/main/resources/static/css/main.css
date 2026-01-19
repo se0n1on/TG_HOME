@@ -217,6 +217,11 @@ h6 {
     margin: 0 15px 0 0;
     padding: 6px 20px;
   }
+  
+  .header .language-selector {
+    order: 2;
+    margin-left: auto;
+  }
 
   .header .navmenu {
     order: 3;
@@ -4526,7 +4531,7 @@ section,
 # Language Selector (Desktop)
 --------------------------------------------------------------*/
 .language-selector {
-  margin-left: 400px;
+  margin-left: auto;
 }
 
 .language-dropdown {
@@ -4628,12 +4633,30 @@ section,
   gap: 6px;
 }
 
+/* Hide desktop menu on tablets and smaller devices - only show on iPad Pro (1024px+) and desktop */
+@media (max-width: 1023px) {
+  .navmenu ul {
+    display: none !important;
+  }
+  
+  .mobile-nav-toggle {
+    display: block !important;
+  }
+}
+
+/* Mobile language toggle and desktop language selector visibility */
 @media (max-width: 767px) {
   .mobile-language-toggle {
     display: flex;
   }
   
   .language-selector {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-language-toggle {
     display: none;
   }
 }
