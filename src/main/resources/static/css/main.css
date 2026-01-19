@@ -211,16 +211,13 @@ h6 {
   .header .logo {
     order: 1;
   }
-
-  .header .btn-getstarted {
+  
+  .header .language-selector {
+    /*order: 2;
+    margin-left: auto;*/
     order: 2;
     margin: 0 15px 0 0;
     padding: 6px 20px;
-  }
-  
-  .header .language-selector {
-    order: 2;
-    margin-left: auto;
   }
 
   .header .navmenu {
@@ -4532,7 +4529,6 @@ section,
 ---------------------------------------------------------------*/
 /* Language selector always visible and right-aligned on all devices */
 .language-selector {
-  margin-left: auto;
   display: block;
 }
 
@@ -4630,30 +4626,6 @@ section,
   }
 }
 
-/*--------------------------------------------------------------
-# Mobile Language Toggle - REMOVED (Unified selector used instead)
----------------------------------------------------------------*/
-.mobile-language-toggle {
-  display: none !important;
-}
-
-/* Hide desktop menu and hamburger on all phones/tablets - desktop nav only on web (1024px+) */
-@media (max-width: 1023px) {
-  .navmenu ul {
-    display: none !important;
-  }
-  
-  /* Completely hide hamburger menu on phones and tablets */
-  .mobile-nav-toggle {
-    display: none !important;
-  }
-  
-  /* Language selector stays visible and right-aligned */
-  .language-selector {
-    display: block;
-    margin-left: auto;
-  }
-}
 /*--------------------------------------------------------------
 # Portfolio/News Section - Scrollable Container
 --------------------------------------------------------------*/
