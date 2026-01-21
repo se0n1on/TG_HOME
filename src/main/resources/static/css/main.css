@@ -819,24 +819,16 @@ section,
   z-index: 3;
   padding: 140px 0 60px 0;
   opacity: 0;
-  animation: fadeInOutHero 8s ease-in-out forwards;
+  animation: fadeInHero 1.5s ease-in-out 3s forwards;
 }
 
-@keyframes fadeInOutHero {
-  0% {
+@keyframes fadeInHero {
+  from {
     opacity: 0;
     transform: translateY(20px);
   }
-  18.75% {
+  to {
     opacity: 1;
-    transform: translateY(0);
-  }
-  62.5% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
     transform: translateY(0);
   }
 }

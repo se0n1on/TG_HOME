@@ -294,11 +294,9 @@
   "global-con": {
     "areas": [
       "Official Development Assistance IT Consulting",
-      "Public IT Governance (Multiple Countries)",
-      "Mongolia Employment Service System",
-      "Smart Farm Implementation (Vietnam, Uzbekistan, Rwanda, Malaysia)",
-      "Vietnam Court Management System",
-      "Smart City Framework Development (Kazakhstan, Kenya, Qatar)"
+      "IT Governance",
+      "Smart Farm Implementation",
+      "Smart City Implementation"
     ],
     "projects": [
       "PMC Consulting Service for Rwanda Integrated Employment Information System Construction Project",
