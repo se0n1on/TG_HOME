@@ -819,16 +819,24 @@ section,
   z-index: 3;
   padding: 140px 0 60px 0;
   opacity: 0;
-  animation: fadeInHero 1.5s ease-in-out 3s forwards;
+  animation: fadeInOutHero 8s ease-in-out forwards;
 }
 
-@keyframes fadeInHero {
-  from {
+@keyframes fadeInOutHero {
+  0% {
     opacity: 0;
     transform: translateY(20px);
   }
-  to {
+  18.75% {  /* 1.5s / 8s = 18.75% - fade in complete */
     opacity: 1;
+    transform: translateY(0);
+  }
+  62.5% {   /* 5s / 8s = 62.5% - stay visible until 5 seconds */
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {    /* fade out by 8 seconds */
+    opacity: 0;
     transform: translateY(0);
   }
 }
