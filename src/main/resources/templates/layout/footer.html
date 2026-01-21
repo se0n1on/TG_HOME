@@ -116,8 +116,50 @@
   <script src="/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 
+  <!-- Vimeo Player API -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
+
   <!-- Main JS File -->
   <script src="/js/main.js"></script>
+  
+  <!-- Hero Text Animation on Video Loop Script -->
+  <script>
+    // Wait for page load
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get the hero video iframe element
+      const iframe = document.getElementById('hero-video-player');
+      
+      if (iframe) {
+        // Initialize Vimeo Player
+        const player = new Vimeo.Player(iframe);
+        
+        // Get the hero info element
+        const heroInfo = document.querySelector('.hero .info');
+        
+        if (heroInfo) {
+          // Listen for the timeupdate event to detect when video loops
+          let lastTime = 0;
+          
+          player.on('timeupdate', function(data) {
+            // Detect when video restarts (currentTime is less than lastTime)
+            // This happens when the video loops back to the beginning
+            if (data.seconds < lastTime && lastTime > 70) { // 70 seconds threshold to avoid false positives
+              // Restart the animation by removing and re-adding the class
+              heroInfo.style.animation = 'none';
+              
+              // Force reflow
+              void heroInfo.offsetWidth;
+              
+              // Reapply animation
+              heroInfo.style.animation = '';
+            }
+            
+            lastTime = data.seconds;
+          });
+        }
+      }
+    });
+  </script>
   </th:block>
 </body>
 </html>
