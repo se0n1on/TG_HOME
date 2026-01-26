@@ -1,0 +1,1691 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>AI / 데이터 컨설팅, 솔루션 – TG</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Favicons -->
+    <link href="/img/favicon.png" rel="icon">
+    <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/vendor/aos/aos.css" rel="stylesheet">
+    <link href="/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="/css/main.css" rel="stylesheet">
+
+    <!-- =======================================================
+    * Template Name: UpScale
+    * Template URL: https://bootstrapmade.com/upscale-bootstrap-business-template/
+    * Updated: Nov 07 2025 with Bootstrap v5.3.8
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body class="index-page">
+
+<div th:replace="~{layout/header :: header}"></div>
+
+<main class="main">
+
+    <!-- Hero Section -->
+    <section id="home" class="hero section dark-background">
+
+        <div class="info d-flex align-items-center">
+            <div class="container">
+                <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-lg-8 text-center">
+                        <h2>TG에 오신 것을 환영합니다</h2>
+                        <p>DATA & DX 컨설팅, 데이터 관리 & AI 거버넌스,<br/>AI 솔루션, IT 거버넌스 전문기업</p>
+                        <br/>
+                        <p>TG는 IT Governance를 의미합니다.</p>
+                        <a href="#services" class="btn-get-started">자세히 알아보기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-video">
+		 	<iframe
+			  src="https://player.vimeo.com/video/1156688304?autoplay=1&muted=1&loop=1&background=1"
+			  frameborder="0"
+			  allow="autoplay; fullscreen;"
+			  allowfullscreen
+			  style="
+			    width:100%;
+			    height:100%;
+			    border:0;
+			    transform: scale(1.2);
+			    transform-origin: center center;
+			  ">
+			</iframe>
+		</div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>서비스</h2>
+            <p>데이터 & ISP 컨설팅 전문기업 "TG"</p>
+        </div><!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row gy-4">
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card" data-service-id="ai-con">
+                        <div class="service-card-content">
+                            <div class="icon-wrapper">
+                                <i class="bi bi-graph-up-arrow"></i>
+                            </div>
+                            <h3>AI 컨설팅 & 솔루션</h3>
+                            <p>
+                                공공 및 글로벌 프로젝트에서 검증된 실용적인 비즈니스 혁신 도구로서의 AI를 제공합니다.
+                            </p>
+                            <a href="javascript:void(0);" class="learn-more" onclick="toggleServiceDetails(this)" data-service="ai-con">
+                                자세히 보기 <i class="bi bi-arrow-down"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card" data-service-id="data-con">
+                        <div class="service-card-content">
+                            <div class="icon-wrapper">
+                                <i class="bi bi-shield-check"></i>
+                            </div>
+                            <h3>데이터 컨설팅 & 솔루션</h3>
+                            <p>
+                                데이터 자산을 전략, 정책 및 가치 중심 서비스로 전환합니다.
+                            </p>
+                            <a href="javascript:void(0);" class="learn-more" onclick="toggleServiceDetails(this)" data-service="data-con">
+                                자세히 보기 <i class="bi bi-arrow-down"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card" data-service-id="smart-farm-city">
+                        <div class="service-card-content">
+                            <div class="icon-wrapper">
+                                <i class="bi bi-briefcase"></i>
+                            </div>
+                            <h3>스마트팜 & 스마트시티 컨설팅</h3>
+                            <p>
+                                지속 가능하고 데이터 기반의 스마트팜 및 스마트시티 전략을 설계합니다.
+                            </p>
+                            <a href="javascript:void(0);" class="learn-more" onclick="toggleServiceDetails(this)" data-service="smart-farm-city">
+                                자세히 보기 <i class="bi bi-arrow-down"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card" data-service-id="it-gov">
+                        <div class="service-card-content">
+                            <div class="icon-wrapper">
+                                <i class="bi bi-pie-chart"></i>
+                            </div>
+                            <h3>IT 거버넌스 컨설팅 & 솔루션</h3>
+                            <p>
+                                실행 중심의 거버넌스 컨설팅을 통해 비즈니스 전략과 IT를 연계합니다.
+                            </p>
+                            <a href="javascript:void(0);" class="learn-more" onclick="toggleServiceDetails(this)" data-service="it-gov">
+                                자세히 보기 <i class="bi bi-arrow-down"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card" data-service-id="global-con">
+                        <div class="service-card-content">
+                            <div class="icon-wrapper">
+                                <i class="bi bi-people"></i>
+                            </div>
+                            <h3>글로벌 컨설팅</h3>
+                            <p>
+                                풍부한 ODA 및 글로벌 프로젝트 경험을 통해 현지 최적화된 디지털 전략을 제공합니다.
+                            </p>
+                            <a href="javascript:void(0);" class="learn-more" onclick="toggleServiceDetails(this)" data-service="global-con">
+                                자세히 보기 <i class="bi bi-arrow-down"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card" data-service-id="soft-dist">
+                        <div class="service-card-content">
+                            <div class="icon-wrapper">
+                                <i class="bi bi-lightbulb"></i>
+                            </div>
+                            <h3>소프트웨어 유통</h3>
+                            <p>
+                                신뢰할 수 있는 구현 및 운영 지원으로 검증된 소프트웨어 솔루션을 제공합니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Service Details Section (Initially Hidden) -->
+            <div id="service-details-container" class="service-details-container" style="display: none;">
+                <div class="service-details-card">
+                    <div class="service-details-header">
+                        <img id="service-details-image" src="#" alt="Service Image" class="service-header-image">
+                        <h3 id="service-details-title"></h3>
+                        <button class="close-details" onclick="closeServiceDetails()">
+                            <i class="bi bi-x-lg"></i>
+                        </button>
+                    </div>
+                    <div class="service-details-body">
+                        <!-- What We Do Section -->
+                        <div class="service-areas-section">
+                            <h4 class="section-subtitle">
+                                <i class="bi bi-lightbulb"></i> 주요 업무
+                            </h4>
+                            <div id="service-areas-list" class="service-areas-list">
+                                <!-- Business areas will be dynamically inserted here -->
+                            </div>
+                        </div>
+                        
+                        <hr class="section-divider">
+                        
+                        <!-- What We Did Section -->
+                        <div class="service-projects-section">
+                            <h4 class="section-subtitle">
+                                <i class="bi bi-trophy"></i> 주요 프로젝트
+                            </h4>
+                            <div class="service-details-content">
+                                <ul id="service-projects-list" class="projects-list">
+                                    <!-- Projects will be dynamically inserted here -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Featured Services Section -->
+    <!--<section id="featured-services" class="featured-services section">
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row g-4">
+
+                <div class="col-lg-6">
+                    <div class="service-card">
+                        <div class="service-header">
+                            <div class="icon-wrapper">
+                                <i class="bi bi-activity"></i>
+                            </div>
+                            <h3><a href="" class="stretched-link">AI Consulting & Soulution</a></h3>
+                        </div>
+                        &lt;!&ndash;<p>Real-time insights into your application's performance metrics. Monitor user engagement, system uptime, and optimization opportunities with comprehensive dashboards and detailed reports.</p>&ndash;&gt;
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>AI Enterprise Application Consulting</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>AI Governance Consulting & Solution</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>AI Certification Consulting</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>AI Data Reliability Verification Consulting</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>AI Reliability Consulting</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>AI Security Consulting</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>AI Data Classification Consulting</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="service-card">
+                        <div class="service-header">
+                            <div class="icon-wrapper">
+                                <i class="bi bi-bounding-box-circles"></i>
+                            </div>
+                            <h3><a href="" class="stretched-link">DATA Consulting &amp; Solution</a></h3>
+                        </div>
+                        &lt;!&ndash;<p>Streamline your workflows with smart automation tools. Reduce manual tasks, increase
+                            productivity, and focus on strategic initiatives while our platform handles routine
+                            operations efficiently.</p>&ndash;&gt;
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>DATA Consulting</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>Data Governance Consulting & Solution</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>Data Standard Consulting & Solution</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>Data Quality Consulting & Solution</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>Big Data Analysis Consulting & Big Data Platform</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>AI Data Consulting & Solution</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>Public Data Consulting My Data Consulting</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="service-card">
+                        <div class="service-header">
+                            <div class="icon-wrapper">
+                                <i class="bi bi-calendar4-week"></i>
+                            </div>
+                            <h3><a href="" class="stretched-link">Smart Farm &amp; Smart City Consulting</a></h3>
+                        </div>
+                        &lt;!&ndash;<p>Enhance team productivity with unified collaboration features. Share files, communicate in
+                            real-time, manage projects, and keep everyone aligned on goals and deliverables.</p>&ndash;&gt;
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>Smart Farm Consulting</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>Smart Farm Data Analysis (Temperature, Relative Humidity, Light Intensity, Carbon Dioxide, Soil, etc.)</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>Setting an Optimal Environment for IoT, Big Data, and AI Agricultural Products</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>Establishment of Smart Farms in Developing Countries</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>Smart City & Data Center Strategic Plan Consulting</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>Smart City Data Collection, Linkage, & Analysis Plan</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>Smart City Organization and Governance Consulting</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>Smart City Service Design</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="service-card">
+                        <div class="service-header">
+                            <div class="icon-wrapper">
+                                <i class="bi bi-broadcast"></i>
+                            </div>
+                            <h3><a href="" class="stretched-link">IT Governance Consulting &amp; Solution</a></h3>
+                        </div>
+                        &lt;!&ndash;<p>Enterprise-grade security with full compliance standards. Protect your data with end-to-end
+                            encryption, regular audits, and comprehensive security protocols that meet industry
+                            requirements.</p>&ndash;&gt;
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>IT Governance Consulting & Solution</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>Enterprise Architecture Consulting & Solution</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>E-Government Performance Management, E-Government Pre-Consultation, Operational Performance Measurement Consulting & Solution</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>IT Project Management (PMS), IT Resource Management (ITRMS), Service Management (ITSM), Operation performance (OPMS) and IT Portal Consulting & Solution</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="service-card">
+                        <div class="service-header">
+                            <div class="icon-wrapper">
+                                <i class="bi bi-broadcast"></i>
+                            </div>
+                            <h3><a href="" class="stretched-link">Global Consulting</a></h3>
+                        </div>
+                        &lt;!&ndash;<p>Enterprise-grade security with full compliance standards. Protect your data with end-to-end
+                            encryption, regular audits, and comprehensive security protocols that meet industry
+                            requirements.</p>&ndash;&gt;
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>Official Development Assistance IT Consulting and System Development</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>Public IT Governance for Botswana, Cambodia, Indonesia, Jordan, Kenya, Paraguay, Uganda, and Vietnam</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>Mongolia Employment Service System</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>Smart Farm Consulting and Implementation for Vietnam, Uzbekistan, Rwanda, and Malaysia</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>Vietnam Court Management System</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>Smart City Framework Development for Kazakhstan, Kenya, and Qatar</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="service-card">
+                        <div class="service-header">
+                            <div class="icon-wrapper">
+                                <i class="bi bi-broadcast"></i>
+                            </div>
+                            <h3><a href="" class="stretched-link">Software Distribution</a></h3>
+                        </div>
+                        &lt;!&ndash;<p>Enterprise-grade security with full compliance standards. Protect your data with end-to-end
+                            encryption, regular audits, and comprehensive security protocols that meet industry
+                            requirements.</p>&ndash;&gt;
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>Software Solution Sales</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>Technical Architect Consulting</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>Designing Functional Technology Solutions</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>Follow up the Technical Solution Processes and Lead the Project to Success</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-check-circle"></i>
+                                <span>Hands-on Involvement in Efficiently Creating Technical Solutions as per Business Requirements</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>--><!-- /Featured Services Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section light-background">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>회사 소개</h2>
+            <p>
+            	TG는 15년 이상의 공공 및 글로벌 컨설팅 경험을 보유한 디지털 컨설팅 전문기업으로,<br>
+				AI와 데이터를 실질적인 비즈니스 및 운영 혁신에 연결합니다.<br>
+				스마트시티와 스마트팜부터 IT 거버넌스 및 글로벌 컨설팅까지,<br>
+				기술, 전략, 그리고 사람을 연결하는 실행 중심 솔루션을 제공합니다.<br>
+			</p>
+        </div><!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row gy-5 align-items-center">
+
+                <div class="col-lg-5 order-2 order-lg-1">
+                    <div class="content">
+                        <h3>대표이사 인사말</h3>
+                        <p class="lead">
+  데이터에서 인공지능으로, 그리고 이제 양자컴퓨팅까지,<br>
+  기술은 쉼 없이 진화하고 있습니다.<br><br>
+
+  하지만 혁신의 속도가 빨라질수록<br>
+  현장에는 더 큰 혼란과 부담이 찾아오기도 합니다.<br>
+  "AI를 도입해야 한다"는 말은 쉽지만,<br>
+  어디에, 어떻게 적용할 것인가는 여전히 어려운 과제입니다.<br><br>
+
+  TG컨설팅은 바로 이 질문에서 시작합니다.<br>
+  기술이 아닌, 사람과 비즈니스의 관점에서 말입니다.<br><br>
+
+  저희는 AI를 목적이 아닌 수단으로 바라봅니다.<br>
+  조직과 업무를 이해하고,<br>
+  진정한 변화를 이끌어낼 수 있는 기술만을 선별합니다.<br><br>
+
+  AI 시대에도 사람이 가장 소중한 자산입니다.<br>
+  TG는 기술과 사람의 조화를 찾고,<br>
+  고객과 함께 성장하는 신뢰할 수 있는 컨설팅 파트너가 되겠습니다.<br><br>
+
+  감사합니다.<br><br>
+
+  전원영<br>
+  TG컨설팅 대표이사
+						</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-7 order-1 order-lg-2">
+                    <div class="image-grid">
+                        <div class="grid-item grid-large" data-aos="fade-up" data-aos-delay="200">
+                            <img src="/img/ceo.png" class="img-fluid" alt="">
+                        </div>
+                        <div class="stats-card" data-aos="fade-up" data-aos-delay="300">
+                            <div class="stat-item">
+                                <h4>15+</h4>
+                                <p>년 경력</p>
+                            </div>
+                        </div>
+                        <div class="stats-card" data-aos="fade-up" data-aos-delay="400">
+                            <div class="stat-item">
+                                <h4>1,000+</h4>
+                                <p>프로젝트 완료</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Why Us Section -->
+    <!-- <section id="why-us" class="why-us section">
+
+        Section Title
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Why Us</h2>
+            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit. Sed ut perspiciatis
+                unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam</p>
+        </div>End Section Title
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row">
+
+                <div class="col-lg-5">
+                    <div class="content">
+
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                            laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                            architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas.</p>
+                        <div class="stats-wrapper">
+                            <div class="stat-item">
+                                <div class="stat-number purecounter" data-purecounter-start="0"
+                                     data-purecounter-end="25" data-purecounter-duration="0">25
+                                </div>
+                                <div class="stat-label">Years Experience</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number purecounter" data-purecounter-start="0"
+                                     data-purecounter-end="850" data-purecounter-duration="0">850
+                                </div>
+                                <div class="stat-label">Clients Served</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number purecounter" data-purecounter-start="0"
+                                     data-purecounter-end="98" data-purecounter-duration="0">98
+                                </div>
+                                <div class="stat-label">Success Rate</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="features-grid">
+
+                        <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
+                            <div class="feature-icon">
+                                <i class="bi bi-shield-check"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Industry Expertise</h4>
+                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                                    consequuntur magni dolores eos qui ratione.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item" data-aos="fade-up" data-aos-delay="250">
+                            <div class="feature-icon">
+                                <i class="bi bi-graph-up-arrow"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Proven Track Record</h4>
+                                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                                    voluptatum deleniti atque corrupti quos.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
+                            <div class="feature-icon">
+                                <i class="bi bi-people"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Dedicated Team</h4>
+                                <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe
+                                    eveniet ut et voluptates repudiandae sint.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item" data-aos="fade-up" data-aos-delay="350">
+                            <div class="feature-icon">
+                                <i class="bi bi-award"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Quality Assurance</h4>
+                                <p>Et harum quidem rerum facilis est et expedita distinctio nam libero tempore, cum
+                                    soluta nobis est eligendi optio cumque.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
+                            <div class="feature-icon">
+                                <i class="bi bi-headset"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>24/7 Support</h4>
+                                <p>Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus
+                                    maiores alias consequatur aut perferendis.</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item" data-aos="fade-up" data-aos-delay="450">
+                            <div class="feature-icon">
+                                <i class="bi bi-lock"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Security First</h4>
+                                <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil
+                                    molestiae consequatur vel illum qui dolorem.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>/Why Us Section -->
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section">
+
+        <div class="container">
+
+            <div class="row align-items-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-8">
+                    <div class="content">
+                        <h2>더 자세한 정보가 필요하신가요?</h2>
+                        <p>TG의 회사소개서를 확인하세요. 지금까지의 여정을 소개합니다.</p>
+                        <ul class="benefits-list">
+                            <li>
+                                <i class="bi bi-check-circle"></i>
+                                <span>사업 소개</span>
+                            </li>
+                            <li>
+                                <i class="bi bi-check-circle"></i>
+                                <span>TG 스토리</span>
+                            </li>
+                            <li>
+                                <i class="bi bi-check-circle"></i>
+                                <span>조직 구성</span>
+                            </li>
+                            <li>
+                                <i class="bi bi-check-circle"></i>
+                                <span>포트폴리오</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="cta-actions">
+                        <a href="/file/회사소개서(TG).pdf" class="btn-primary">회사소개서 다운로드</a>
+                        <a href="/file/Company Profile(TG).pdf" class="btn-secondary">Download Company Profile</a>
+                        <!--<div class="trust-indicators">
+                            <p class="clients-served"><strong>1,200+</strong> Businesses Served</p>
+                            <div class="rating">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <span>4.9/5 Client Satisfaction</span>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section><!-- /Call To Action Section -->
+
+    <!-- Clients Section -->
+    <!--<section id="clients" class="clients section light-background">
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row gy-4">
+                <div class="col-xl-2 col-lg-3 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="client-item">
+                        <img src="/img/clients/clients-1.webp" class="img-fluid" alt="Client 1">
+                    </div>
+                </div>&lt;!&ndash; End Client Item &ndash;&gt;
+
+                <div class="col-xl-2 col-lg-3 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="client-item">
+                        <img src="/img/clients/clients-2.webp" class="img-fluid" alt="Client 2">
+                    </div>
+                </div>&lt;!&ndash; End Client Item &ndash;&gt;
+
+                <div class="col-xl-2 col-lg-3 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="client-item">
+                        <img src="/img/clients/clients-3.webp" class="img-fluid" alt="Client 3">
+                    </div>
+                </div>&lt;!&ndash; End Client Item &ndash;&gt;
+
+                <div class="col-xl-2 col-lg-3 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="250">
+                    <div class="client-item">
+                        <img src="/img/clients/clients-4.webp" class="img-fluid" alt="Client 4">
+                    </div>
+                </div>&lt;!&ndash; End Client Item &ndash;&gt;
+
+                <div class="col-xl-2 col-lg-3 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="client-item">
+                        <img src="/img/clients/clients-5.webp" class="img-fluid" alt="Client 5">
+                    </div>
+                </div>&lt;!&ndash; End Client Item &ndash;&gt;
+
+                <div class="col-xl-2 col-lg-3 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="350">
+                    <div class="client-item">
+                        <img src="/img/clients/clients-6.webp" class="img-fluid" alt="Client 6">
+                    </div>
+                </div>&lt;!&ndash; End Client Item &ndash;&gt;
+
+            </div>
+
+        </div>
+
+    </section>--><!-- /Clients Section -->
+
+    <!-- News Section -->
+    <section id="news" class="portfolio section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>뉴스</h2>
+            <p>TG의 최신 소식, 공지사항 및 프로젝트 하이라이트를 확인하세요.</p>
+        </div><!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="isotope-layout" id="news-isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+                <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="200">
+                    <li data-filter="*" class="filter-active">전체</li>
+                    <li data-filter=".filter-global">글로벌 & ODA 프로젝트</li>
+                    <li data-filter=".filter-smartcity">스마트시티/팜 & 디지털 혁신</li>
+                    <li data-filter=".filter-forum">포럼 & 이벤트</li>
+                    <li data-filter=".filter-awards">수상 & CSR</li>
+                    <li data-filter=".filter-research">연구 & 전략</li>
+                    <li data-filter=".filter-partnership">파트너십 & 기업</li>
+                </ul>
+
+                <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
+
+                    <!--<div class="col-lg-6 portfolio-item isotope-item filter-global">
+                        <div class="portfolio-wrapper">
+                            <div class="portfolio-image">
+                                <img src="https://tgin.kr/wp-content/uploads/2024/02/20240126_162452-scaled.jpg" alt="Global & ODA Projects"
+                                     class="img-fluid" loading="lazy">
+                                <div class="portfolio-category">Global & ODA Projects</div>
+                            </div>
+                            <div class="portfolio-content">
+                                <div class="portfolio-header">
+                                    <h3>TG Participates in Tanzania Capital Relocation Seminar</h3>
+                                    <span class="portfolio-year">2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 portfolio-item isotope-item filter-global">
+                        <div class="portfolio-wrapper">
+                            <div class="portfolio-image">
+                                <img src="https://tgin.kr/wp-content/uploads/2022/02/20220105%EC%BA%84%EB%B3%B4%EB%94%94%EC%95%84.png" alt="Global & ODA Projects" class="img-fluid"
+                                     loading="lazy">
+                                <div class="portfolio-category">Global & ODA Projects</div>
+                            </div>
+                            <div class="portfolio-content">
+                                <div class="portfolio-header">
+                                    <h3>Cambodia e-Government Cooperation Center Opening Ceremony</h3>
+                                    <span class="portfolio-year">2022</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 portfolio-item isotope-item filter-global">
+                        <div class="portfolio-wrapper">
+                            <div class="portfolio-image">
+                                <img src="https://tgin.kr/wp-content/uploads/kboard_attached/2/202205/628f187ded9c75588930.jpg" alt="Global & ODA Projects" class="img-fluid"
+                                     loading="lazy">
+                                <div class="portfolio-category">Global & ODA Projects</div>
+                            </div>
+                            <div class="portfolio-content">
+                                <div class="portfolio-header">
+                                    <h3>Kick-off Meeting for the Nigeria e-Government Portal and EA Portal Construction Project</h3>
+                                    <span class="portfolio-year">2022</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 portfolio-item isotope-item filter-smartcity">
+                        <div class="portfolio-wrapper">
+                            <div class="portfolio-image">
+                                <img src="	https://tgin.kr/wp-content/uploads/kboard_attached/2/202301/63b376600cc007508623.jpg" alt="Smart City/Farm & Digital Innovation"
+                                     class="img-fluid" loading="lazy">
+                                <div class="portfolio-category">Smart City/Farm & Digital Innovation</div>
+                            </div>
+                            <div class="portfolio-content">
+                                <div class="portfolio-header">
+                                    <h3>AI Smart Agriculture Competition Hosted by the Korea Agency of Education, Promotion and Information Service in Food, Agriculture, Forestry and Fisheries</h3>
+                                    <span class="portfolio-year">2022</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+
+    </section><!-- /News Section -->
+
+    <!-- News Modal -->
+    <div id="newsModal" class="news-modal">
+        <div class="news-modal-content">
+            <span class="news-modal-close" onclick="closeNewsModal()">&times;</span>
+            <img id="newsModalImage" class="news-modal-image" src="" alt="">
+            <div class="news-modal-body">
+                <div id="newsModalCategory" class="news-modal-category"></div>
+                <h2 id="newsModalTitle" class="news-modal-title"></h2>
+                <div id="newsModalYear" class="news-modal-year"></div>
+                <div id="newsModalDescription" class="news-modal-description"></div>
+            </div>
+        </div>
+    </div><!-- /News Modal -->
+
+    <!-- Pricing Section -->
+    <!--<section id="pricing" class="pricing section light-background">
+
+        &lt;!&ndash; Section Title &ndash;&gt;
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Pricing</h2>
+            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit. Sed ut perspiciatis
+                unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam</p>
+        </div>&lt;!&ndash; End Section Title &ndash;&gt;
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row gy-4 justify-content-center">
+
+                &lt;!&ndash; Basic Plan &ndash;&gt;
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="pricing-item">
+                        <div class="pricing-icon">
+                            <i class="bi bi-star"></i>
+                        </div>
+                        <h3>Standard</h3>
+                        <div class="price">
+                            <span class="currency">$</span>9<span class="period">/month</span>
+                        </div>
+                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                            tempor.</p>
+                        <ul class="features-list">
+                            <li>
+                                <i class="bi bi-check2"></i>
+                                Vestibulum ante ipsum primis
+                            </li>
+                            <li>
+                                <i class="bi bi-check2"></i>
+                                Fusce vulputate eleifend
+                            </li>
+                            <li>
+                                <i class="bi bi-check2"></i>
+                                Nullam ac tortor vitae
+                            </li>
+                        </ul>
+                        <a href="#" class="btn-pricing">Buy Now</a>
+                    </div>
+                </div>&lt;!&ndash; End Basic Plan &ndash;&gt;
+
+                &lt;!&ndash; Professional Plan &ndash;&gt;
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="pricing-item featured">
+                        <div class="pricing-badge">Recommended</div>
+                        <div class="pricing-icon">
+                            <i class="bi bi-stars"></i>
+                        </div>
+                        <h3>Professional</h3>
+                        <div class="price">
+                            <span class="currency">$</span>29<span class="period">/month</span>
+                        </div>
+                        <p class="description">Maecenas tempus tellus eget condimentum rhoncus semper.</p>
+                        <ul class="features-list">
+                            <li>
+                                <i class="bi bi-check2"></i>
+                                Donec quam felis ultricies
+                            </li>
+                            <li>
+                                <i class="bi bi-check2"></i>
+                                Aenean massa imperdiet
+                            </li>
+                            <li>
+                                <i class="bi bi-check2"></i>
+                                Cras dapibus vivamus
+                            </li>
+                        </ul>
+                        <a href="#" class="btn-pricing">Buy Now</a>
+                    </div>
+                </div>&lt;!&ndash; End Professional Plan &ndash;&gt;
+
+                &lt;!&ndash; Ultimate Plan &ndash;&gt;
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="pricing-item">
+                        <div class="pricing-icon">
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <h3>Ultimate</h3>
+                        <div class="price">
+                            <span class="currency">$</span>49<span class="period">/month</span>
+                        </div>
+                        <p class="description">Etiam rhoncus maecenas tempus tellus eget condimentum.</p>
+                        <ul class="features-list">
+                            <li>
+                                <i class="bi bi-check2"></i>
+                                Phasellus viverra nulla
+                            </li>
+                            <li>
+                                <i class="bi bi-check2"></i>
+                                Quisque rutrum aenean
+                            </li>
+                            <li>
+                                <i class="bi bi-check2"></i>
+                                Etiam ultricies nisi vel
+                            </li>
+                        </ul>
+                        <a href="#" class="btn-pricing">Buy Now</a>
+                    </div>
+                </div>&lt;!&ndash; End Ultimate Plan &ndash;&gt;
+
+            </div>
+
+        </div>
+
+    </section>--><!-- /Pricing Section -->
+
+    <!-- Faq Section -->
+    <!--<section id="faq" class="faq section">
+
+        &lt;!&ndash; Section Title &ndash;&gt;
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Faq</h2>
+            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit. Sed ut perspiciatis
+                unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam</p>
+        </div>&lt;!&ndash; End Section Title &ndash;&gt;
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+
+                    <div class="faq-wrapper">
+
+                        <div class="faq-item faq-active" data-aos="fade-up" data-aos-delay="150">
+                            <div class="faq-header">
+                                <h4>Vestibulum ac diam sit amet quam vehicula elementum?</h4>
+                                <div class="faq-icon">
+                                    <i class="bi bi-chevron-down"></i>
+                                </div>
+                            </div>
+                            <div class="faq-content">
+                                <div class="content-inner">
+                                    <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec rutrum
+                                        congue leo eget malesuada. Vestibulum ante ipsum primis in faucibus orci luctus
+                                        et ultrices posuere cubilia curae. Praesent sapien massa, convallis a
+                                        pellentesque nec, egestas non nisi.</p>
+                                </div>
+                            </div>
+                        </div>&lt;!&ndash; End FAQ Item &ndash;&gt;
+
+                        <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                            <div class="faq-header">
+                                <h4>Nulla porttitor accumsan tincidunt mauris blandit?</h4>
+                                <div class="faq-icon">
+                                    <i class="bi bi-chevron-down"></i>
+                                </div>
+                            </div>
+                            <div class="faq-content">
+                                <div class="content-inner">
+                                    <p>Nulla porttitor accumsan tincidunt. Mauris blandit aliquet elit, eget tincidunt
+                                        nibh pulvinar a. Cras ultricies ligula sed magna dictum porta. Vivamus suscipit
+                                        tortor eget felis porttitor volutpat. Sed porttitor lectus nibh.</p>
+                                </div>
+                            </div>
+                        </div>&lt;!&ndash; End FAQ Item &ndash;&gt;
+
+                        <div class="faq-item" data-aos="fade-up" data-aos-delay="250">
+                            <div class="faq-header">
+                                <h4>Curabitur aliquet quam id dui posuere blandit proin?</h4>
+                                <div class="faq-icon">
+                                    <i class="bi bi-chevron-down"></i>
+                                </div>
+                            </div>
+                            <div class="faq-content">
+                                <div class="content-inner">
+                                    <p>Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vestibulum ac diam
+                                        sit amet quam vehicula elementum sed sit amet dui. Donec sollicitudin molestie
+                                        malesuada. Pellentesque in ipsum id orci porta dapibus.</p>
+                                </div>
+                            </div>
+                        </div>&lt;!&ndash; End FAQ Item &ndash;&gt;
+
+                        <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                            <div class="faq-header">
+                                <h4>Vivamus magna justo lacinia eget consectetur sed?</h4>
+                                <div class="faq-icon">
+                                    <i class="bi bi-chevron-down"></i>
+                                </div>
+                            </div>
+                            <div class="faq-content">
+                                <div class="content-inner">
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                                        doloremque laudantium. Totam rem aperiam, eaque ipsa quae ab illo inventore
+                                        veritatis et quasi architecto. Nemo enim ipsam voluptatem quia voluptas sit
+                                        aspernatur.</p>
+                                </div>
+                            </div>
+                        </div>&lt;!&ndash; End FAQ Item &ndash;&gt;
+
+                        <div class="faq-item" data-aos="fade-up" data-aos-delay="350">
+                            <div class="faq-header">
+                                <h4>Donec sollicitudin molestie malesuada proin eget?</h4>
+                                <div class="faq-icon">
+                                    <i class="bi bi-chevron-down"></i>
+                                </div>
+                            </div>
+                            <div class="faq-content">
+                                <div class="content-inner">
+                                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+                                        praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
+                                        excepturi sint occaecati. Cupiditate non provident, similique sunt in culpa.</p>
+                                </div>
+                            </div>
+                        </div>&lt;!&ndash; End FAQ Item &ndash;&gt;
+
+                        <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                            <div class="faq-header">
+                                <h4>Pellentesque in ipsum id orci porta dapibus vestibulum?</h4>
+                                <div class="faq-icon">
+                                    <i class="bi bi-chevron-down"></i>
+                                </div>
+                            </div>
+                            <div class="faq-content">
+                                <div class="content-inner">
+                                    <p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec rutrum
+                                        congue leo eget malesuada. Vivamus magna justo, lacinia eget consectetur sed,
+                                        convallis at tellus. Quisque velit nisi, pretium ut lacinia in.</p>
+                                </div>
+                            </div>
+                        </div>&lt;!&ndash; End FAQ Item &ndash;&gt;
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>--><!-- /Faq Section -->
+
+    <!-- Team Section -->
+    <section id="team" class="team section light-background">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>팀</h2>
+            <p>
+            	TG의 전문가들을 만나보세요.<br/>
+				우리 컨설턴트들은 공공 및 글로벌 프로젝트에서 검증된 경험을 바탕으로,<br/>
+				전략, 기술, 사람을 연결하는 실용적인 솔루션을 제공합니다.
+            </p>
+        </div><!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <!-- Management Team (운영진) -->
+            <div class="team-group">
+                <h3 class="team-group-title">경영진</h3>
+                <div class="team-carousel-wrapper">
+                    <button class="carousel-btn prev" onclick="moveCarousel('management', -1)" aria-label="Previous">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <div class="team-carousel" id="management-carousel">
+                        <div class="team-carousel-track">
+                            <div class="carousel-slide">
+                                <div class="team-members-row">
+                                    <div class="team-member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="/img/team/Won Young Jeon.png" class="img-fluid" alt="Won Young Jeon" loading="lazy">
+                                        </div>
+                                        <div class="member-content">
+                                            <h4>전원영</h4>
+                                            <span class="position">대표이사</span>
+                                        </div>
+                                    </div>
+                                    <div class="team-member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="/img/team/Rhin Park.png" class="img-fluid" alt="Rhin Park" loading="lazy">
+                                        </div>
+                                        <div class="member-content">
+                                            <h4>박린</h4>
+                                            <span class="position">부대표</span>
+                                        </div>
+                                    </div>
+	                                <div class="team-member-card">
+	                                    <div class="member-image-wrapper">
+	                                        <img src="/img/team/Jae Soo Lee.jpg" class="img-fluid" alt="Jae Soo Lee" loading="lazy">
+	                                    </div>
+	                                    <div class="member-content">
+	                                        <h4>이재수</h4>
+	                                        <span class="position">부대표</span>
+	                                    </div>
+	                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-btn next" onclick="moveCarousel('management', 1)" aria-label="Next">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                </div>
+            </div><!-- End Management Team -->
+
+            <!-- Board of Directors (이사진) -->
+            <div class="team-group">
+                <h3 class="team-group-title">이사진</h3>
+                <div class="team-carousel-wrapper">
+                    <button class="carousel-btn prev" onclick="moveCarousel('directors', -1)" aria-label="Previous">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <div class="team-carousel" id="directors-carousel">
+                        <div class="team-carousel-track">
+                            <div class="carousel-slide">
+                                <div class="team-members-row">
+                                    <div class="team-member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="/img/team/empty2.png" class="img-fluid" alt="Young Soon Park" loading="lazy">
+                                        </div>
+                                        <div class="member-content">
+                                            <h4>박영순</h4>
+                                            <span class="position">컨설팅 이사</span>
+                                        </div>
+                                    </div>
+                                    <div class="team-member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="/img/team/empty2.png" class="img-fluid" alt="Dong Joo Seo" loading="lazy">
+                                        </div>
+                                        <div class="member-content">
+                                            <h4>서동주</h4>
+                                            <span class="position">컨설팅 이사</span>
+                                        </div>
+                                    </div>
+                                    <div class="team-member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="/img/team/empty2.png" class="img-fluid" alt="Hyun Jong You" loading="lazy">
+                                        </div>
+                                        <div class="member-content">
+                                            <h4>유현종</h4>
+                                            <span class="position">컨설팅 이사</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-slide">
+                                <div class="team-members-row">
+                                    <div class="team-member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="/img/team/Sang Min Ma.jpg" class="img-fluid" alt="Sang Min Ma" loading="lazy">
+                                        </div>
+                                        <div class="member-content">
+                                            <h4>마상민</h4>
+                                            <span class="position">컨설팅 이사</span>
+                                        </div>
+                                    </div>
+                                    <div class="team-member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="/img/team/Dong Geun Bae.png" class="img-fluid" alt="Dong Geun Bae" loading="lazy">
+                                        </div>
+                                        <div class="member-content">
+                                            <h4>배동근</h4>
+                                            <span class="position">개발팀장</span>
+                                        </div>
+                                    </div>
+                                    <div class="team-member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="/img/team/Oh Seok Kwon.jpg" class="img-fluid" alt="Oh Seok Kwon" loading="lazy">
+                                        </div>
+                                        <div class="member-content">
+                                            <h4>권오석</h4>
+                                            <span class="position">컨설팅 이사</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-slide">
+                                <div class="team-members-row">
+                                    <div class="team-member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="/img/team/Seong Won Yoon.jpg" class="img-fluid" alt="Seong Won Yoon" loading="lazy">
+                                        </div>
+                                        <div class="member-content">
+                                            <h4>윤성원</h4>
+                                            <span class="position">컨설팅 이사</span>
+                                        </div>
+                                    </div>
+                                    <div class="team-member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="/img/team/Seong Bok Choi.jpg" class="img-fluid" alt="Seong Bok Choi" loading="lazy">
+                                        </div>
+                                        <div class="member-content">
+                                            <h4>최성복</h4>
+                                            <span class="position">컨설팅 이사</span>
+                                        </div>
+                                    </div>
+                                    <div class="team-member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="/img/team/Jae Hoon Baek.jpg" class="img-fluid" alt="Jae Hoon Baek" loading="lazy">
+                                        </div>
+                                        <div class="member-content">
+                                            <h4>백재훈</h4>
+                                            <span class="position">컨설팅 이사</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-slide">
+                                <div class="team-members-row">
+                                    <div class="team-member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="/img/team/Min Seong Lee.jpg" class="img-fluid" alt="Min Seong Lee" loading="lazy">
+                                        </div>
+                                        <div class="member-content">
+                                            <h4>이민성</h4>
+                                            <span class="position">컨설팅 이사</span>
+                                        </div>
+                                    </div>
+                                    <div class="team-member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="/img/team/Seok Won Lee.jpg" class="img-fluid" alt="Seok Won Lee" loading="lazy">
+                                        </div>
+                                        <div class="member-content">
+                                            <h4>이석원</h4>
+                                            <span class="position">컨설팅 이사</span>
+                                        </div>
+                                    </div>
+                                    <div class="team-member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="/img/team/Chang Hwan Ko.jpg" class="img-fluid" alt="Chang Hwan Ko" loading="lazy">
+                                        </div>
+                                        <div class="member-content">
+                                            <h4>고창환</h4>
+                                            <span class="position">컨설팅 이사</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-slide">
+                                <div class="team-members-row">
+                                    <div class="team-member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="/img/team/empty2.png" class="img-fluid" alt="Cheon Kyung Kim" loading="lazy">
+                                        </div>
+                                        <div class="member-content">
+                                            <h4>김천경</h4>
+                                            <span class="position">컨설팅 이사</span>
+                                        </div>
+                                    </div>
+                                    <div class="team-member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="/img/team/Gwang Min Choi.jpg" class="img-fluid" alt="Gwang Min Choi" loading="lazy">
+                                        </div>
+                                        <div class="member-content">
+                                            <h4>최광민</h4>
+                                            <span class="position">컨설팅 이사</span>
+                                        </div>
+                                    </div>
+                                    <div class="team-member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="/img/team/Jeong Tae Lim.jpg" class="img-fluid" alt="Jeong Tae Lim" loading="lazy">
+                                        </div>
+                                        <div class="member-content">
+                                            <h4>임정태</h4>
+                                            <span class="position">컨설팅 이사</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-slide">
+                                <div class="team-members-row">
+                                    <div class="team-member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="/img/team/Jae Won Bae.jpg" class="img-fluid" alt="Jae Won Bae" loading="lazy">
+                                        </div>
+                                        <div class="member-content">
+                                            <h4>배재원</h4>
+                                            <span class="position">영업 이사</span>
+                                        </div>
+                                    </div>
+                                    <div class="team-member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="/img/team/Kyu Bong Jeon.jpg" class="img-fluid" alt="Kyu Bong Jeon" loading="lazy">
+                                        </div>
+                                        <div class="member-content">
+                                            <h4>전규봉</h4>
+                                            <span class="position">컨설팅 이사</span>
+                                        </div>
+                                    </div>
+                                    <div class="team-member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="/img/team/Won Kyung Kim.jpg" class="img-fluid" alt="Won Kyung Kim" loading="lazy">
+                                        </div>
+                                        <div class="member-content">
+                                            <h4>김원경</h4>
+                                            <span class="position">컨설팅 이사</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-slide">
+                                <div class="team-members-row">
+                                    <div class="team-member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="/img/team/Gwang Jin Kim.jpg" class="img-fluid" alt="Gwang Jin Kim" loading="lazy">
+                                        </div>
+                                        <div class="member-content">
+                                            <h4>김광진</h4>
+                                            <span class="position">데이터팀장</span>
+                                        </div>
+                                    </div>
+                                    <div class="team-member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="/img/team/empty2.png" class="img-fluid" alt="Heung Kwang Park" loading="lazy">
+                                        </div>
+                                        <div class="member-content">
+                                            <h4>박흥광</h4>
+                                            <span class="position">컨설팅 이사</span>
+                                        </div>
+                                    </div>
+                                    <div class="team-member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="/img/team/empty2.png" class="img-fluid" alt="Jeong Ho Kim" loading="lazy">
+                                        </div>
+                                        <div class="member-content">
+                                            <h4>김정호</h4>
+                                            <span class="position">컨설팅 이사</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-slide">
+                                <div class="team-members-row">
+                                    <div class="team-member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="/img/team/empty2.png" class="img-fluid" alt="Jang Kyu Kim" loading="lazy">
+                                        </div>
+                                        <div class="member-content">
+                                            <h4>김장규</h4>
+                                            <span class="position">컨설팅 이사</span>
+                                        </div>
+                                    </div>
+                                    <div class="team-member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="/img/team/empty2.png" class="img-fluid" alt="Jeom Ki Choi" loading="lazy">
+                                        </div>
+                                        <div class="member-content">
+                                            <h4>최점기</h4>
+                                            <span class="position">컨설팅 이사</span>
+                                        </div>
+                                    </div>
+                                    <div class="team-member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="/img/team/empty2.png" class="img-fluid" alt="Dong Wook Lee" loading="lazy">
+                                        </div>
+                                        <div class="member-content">
+                                            <h4>이동욱</h4>
+                                            <span class="position">컨설팅 이사</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-slide">
+                                <div class="team-members-row">
+                                    <div class="team-member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="/img/team/empty2.png" class="img-fluid" alt="Yong Sik Yoon" loading="lazy">
+                                        </div>
+                                        <div class="member-content">
+                                            <h4>윤용식</h4>
+                                            <span class="position">컨설팅 이사</span>
+                                        </div>
+                                    </div>
+                                    <div class="team-member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="/img/team/empty2.png" class="img-fluid" alt="Jong Hwan Sin" loading="lazy">
+                                        </div>
+                                        <div class="member-content">
+                                            <h4>신종환</h4>
+                                            <span class="position">컨설팅 이사</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <button class="carousel-btn next" onclick="moveCarousel('directors', 1)" aria-label="Next">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                </div>
+            </div><!-- End Board of Directors -->
+
+            <!-- Consultants (컨설턴트) -->
+            <div class="team-group">
+                <h3 class="team-group-title">수석 컨설턴트 & 수석 개발</h3>
+                <div class="team-carousel-wrapper">
+                    <button class="carousel-btn prev" onclick="moveCarousel('consultants', -1)" aria-label="Previous">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <div class="team-carousel" id="consultants-carousel">
+                        <div class="team-carousel-track">
+                            <div class="carousel-slide">
+                                <div class="team-members-row">
+                                    <div class="team-member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="/img/team/Jin Seong Kim.jpg" class="img-fluid" alt="Jin Seong Kim" loading="lazy">
+                                        </div>
+                                        <div class="member-content">
+                                            <h4>김진성</h4>
+                                            <span class="position">수석 컨설턴트</span>
+                                        </div>
+                                    </div>
+                                    <div class="team-member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="/img/team/Seo Young Jang.jpg" class="img-fluid" alt="Seo Young Jang" loading="lazy">
+                                        </div>
+                                        <div class="member-content">
+                                            <h4>장서영</h4>
+                                            <span class="position">수석 컨설턴트</span>
+                                        </div>
+                                    </div>
+                                    <div class="team-member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="/img/team/Jae Won Jang.jpg" class="img-fluid" alt="Jae Won Jang" loading="lazy">
+                                        </div>
+                                        <div class="member-content">
+                                            <h4>장재원</h4>
+                                            <span class="position">수석 컨설턴트</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-slide">
+                                <div class="team-members-row">
+                                    <div class="team-member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="/img/team/Jeong Tae Oh.jpg" class="img-fluid" alt="Jeong Tae Oh" loading="lazy">
+                                        </div>
+                                        <div class="member-content">
+                                            <h4>오정태</h4>
+                                            <span class="position">수석 개발</span>
+                                        </div>
+                                    </div>
+                                    <div class="team-member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="/img/team/Hye Jin Lee.jpg" class="img-fluid" alt="Hye Jin Lee" loading="lazy">
+                                        </div>
+                                        <div class="member-content">
+                                            <h4>이혜진</h4>
+                                            <span class="position">수석 컨설턴트</span>
+                                        </div>
+                                    </div>
+                                    <div class="team-member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="/img/team/Hee Cheol Ahn.jpg" class="img-fluid" alt="Hee Cheol Ahn" loading="lazy">
+                                        </div>
+                                        <div class="member-content">
+                                            <h4>안희철</h4>
+                                            <span class="position">수석 컨설턴트</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-slide">
+                                <div class="team-members-row">
+                                    <div class="team-member-card">
+                                        <div class="member-image-wrapper">
+                                            <img src="/img/team/Hyun Wook Jeong.jpg" class="img-fluid" alt="Hyun Wook Jeong" loading="lazy">
+                                        </div>
+                                        <div class="member-content">
+                                            <h4>정현욱</h4>
+                                            <span class="position">수석 컨설턴트</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-btn next" onclick="moveCarousel('consultants', 1)" aria-label="Next">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                </div>
+            </div><!-- End Consultants -->
+
+        </div>
+
+    </section><!-- /Team Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>문의</h2>
+            <p>문의사항이 있으시면 아래 각 분야 담당자에게 연락주시기 바랍니다.
+			   전문적인 검토와 신속한 지원을 제공하겠습니다.</p>
+        </div><!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row gy-4">
+
+                <div class="col-lg-3" style="width: 33%;">
+                    <div class="contact-info">
+
+                        <div class="info-block" data-aos="fade-up" data-aos-delay="300">
+                            <h3>대표이사</h3>
+                            <p>전원영</p>
+                        </div>
+
+                        <div class="info-block" data-aos="fade-up" data-aos-delay="400">
+
+                            <div class="info-item">
+                                <div class="icon">
+                                    <i class="bi bi-envelope"></i>
+                                </div>
+                                <div class="content">
+                                    <h4>Email</h4>
+                                    <p>jwy@tgin.kr</p>
+                                </div>
+                            </div>
+                            
+                            <div class="info-item">
+			                	<div class="icon">
+					                <i class="bi bi-telephone"></i>
+				                </div>
+				                <div class="content">
+					                <h4>Phone</h4>
+					                <p> 010 3922 3532</p>
+				                </div>
+			                </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3" style="width: 33%;">
+                    <div class="contact-info">
+
+                        <div class="info-block" data-aos="fade-up" data-aos-delay="300">
+                            <h3>사업 & 솔루션</h3>
+                            <p>박린</p>
+                        </div>
+
+                        <div class="info-block" data-aos="fade-up" data-aos-delay="400">
+
+                            <div class="info-item">
+                                <div class="icon">
+                                    <i class="bi bi-envelope"></i>
+                                </div>
+                                <div class="content">
+                                    <h4>Email</h4>
+                                    <p>arworks@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3" style="width: 33%;">
+                    <div class="contact-info">
+
+                        <div class="info-block" data-aos="fade-up" data-aos-delay="300">
+                            <h3>경영지원</h3>
+                            <p>이재수</p>
+                        </div>
+
+                        <div class="info-block" data-aos="fade-up" data-aos-delay="400">
+
+                            <div class="info-item">
+                                <div class="icon">
+                                    <i class="bi bi-envelope"></i>
+                                </div>
+                                <div class="content">
+                                    <h4>Email</h4>
+                                    <p>luckylee@tgin.kr</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3164.1984939036533!2d126.88929802647841!3d37.52681797204895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z7J207JWk7JSo65Oc66a87YOA7JuM!5e0!3m2!1sko!2skr!4v1768353411074!5m2!1sko!2skr"
+                            frameborder="0" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+
+    </section><!-- /Contact Section -->
+
+</main>
+
+<div th:replace="~{layout/footer :: footer}"></div>
+
+</body>
+
+</html>

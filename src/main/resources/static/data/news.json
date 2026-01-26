@@ -1,0 +1,380 @@
+[
+  {
+    "category": "Partnership & Corporate",
+    "filter": "filter-partnership",
+    "imagePath": "https://tgin.kr/img/news/202502.jpg",
+    "title": "Zero Trust-Based MOU with KCC I&C",
+    "year": "2025"
+  },
+  {
+    "category": "Forum & Events",
+    "filter": "filter-forum",
+    "imagePath": "https://tgin.kr/img/news/202402.jpg",
+    "title": "Tanzania Capital Relocation Seminar",
+    "year": "2024"
+  },
+  {
+    "category": "Forum & Events",
+    "filter": "filter-forum",
+    "imagePath": "https://tgin.kr/img/news/202410.jpg",
+    "title": "Korea–Inter America Digital Government Forum",
+    "year": "2024"
+  },
+  {
+    "category": "Partnership & Corporate",
+    "filter": "filter-partnership",
+    "imagePath": "https://tgin.kr/img/news/202405.jpg",
+    "title": "Thailand Maitakian Youth School Opening Ceremony with TG",
+    "year": "2024"
+  },
+  {
+    "category": "Smart City/Farm & Digital Innovation",
+    "filter": "filter-smartcity",
+    "imagePath": "https://tgin.kr/img/news/202308 (1).jpg",
+    "title": "Vietnam Da Lat Smart Farm Opening Ceremony",
+    "year": "2023"
+  },
+  {
+    "category": "Forum & Events",
+    "filter": "filter-forum",
+    "imagePath": "https://tgin.kr/img/news/202312.jpg",
+    "title": "Open Source Software Festival Sponsored by TG",
+    "year": "2023"
+  },
+  {
+    "category": "Global & ODA Projects",
+    "filter": "filter-global",
+    "imagePath": "https://tgin.kr/img/news/202111.png",
+    "title": "Cambodia e-Government Cooperation Center Opening Ceremony",
+    "year": "2022"
+  },
+  {
+    "category": "Forum & Events",
+    "filter": "filter-forum",
+    "imagePath": "https://tgin.kr/img/news/202207 (1).jpg",
+    "title": "Public Data 2022 Open Data Forum",
+    "year": "2022"
+  },
+  {
+    "category": "Forum & Events",
+    "filter": "filter-forum",
+    "imagePath": "https://tgin.kr/img/news/202207 (4).jpg",
+    "title": "Open SW-Based On-Book Project Briefing",
+    "year": "2022"
+  },
+  {
+    "category": "Smart City/Farm & Digital Innovation",
+    "filter": "filter-smartcity",
+    "imagePath": "https://tgin.kr/img/news/202301 (1).jpg",
+    "title": "AI Smart Agriculture Competition Hosted by the Korea Agency of Education, Promotion and Information Service in Food, Agriculture, Forestry and Fisheries",
+    "year": "2022"
+  },
+  {
+    "category": "Awards & CSR",
+    "filter": "filter-awards",
+    "imagePath": "https://tgin.kr/img/news/202301 (1).png",
+    "title": "SME Data Utilization Best Practice",
+    "year": "2022"
+  },
+  {
+    "category": "Smart City/Farm & Digital Innovation",
+    "filter": "filter-smartcity",
+    "imagePath": "https://tgin.kr/img/news/202102.jpg",
+    "title": "Malaysia Smart Farm Interim Report",
+    "year": "2021"
+  },
+  {
+    "category": "Awards & CSR",
+    "filter": "filter-awards",
+    "imagePath": "https://tgin.kr/img/news/202108 (1).png",
+    "title": "Smart City SOC-ICT Minister Award",
+    "year": "2021"
+  },
+  {
+    "category": "Smart City/Farm & Digital Innovation",
+    "filter": "filter-smartcity",
+    "imagePath": "https://tgin.kr/img/news/202108 (2).png",
+    "title": "Smart Farm Big Data Consulting",
+    "year": "2021"
+  },
+  {
+    "category": "Global & ODA Projects",
+    "filter": "filter-global",
+    "imagePath": "https://tgin.kr/img/news/202008 (8).png",
+    "title": "Mongolia Public Employment Service ISP",
+    "year": "2020"
+  },
+  {
+    "category": "Global & ODA Projects",
+    "filter": "filter-global",
+    "imagePath": "https://tgin.kr/img/news/202008 (23).png",
+    "title": "India Port Logistics Consulting",
+    "year": "2020"
+  },
+  {
+    "category": "Global & ODA Projects",
+    "filter": "filter-global",
+    "imagePath": "https://tgin.kr/img/news/202008 (17).png",
+    "title": "Cambodia ICT Masterplan",
+    "year": "2020"
+  },
+  {
+    "category": "Global & ODA Projects",
+    "filter": "filter-global",
+    "imagePath": "https://tgin.kr/img/news/202008 (5).png",
+    "title": "Mongolia Worknet Construction Project",
+    "year": "2020"
+  },
+  {
+    "category": "Global & ODA Projects",
+    "filter": "filter-global",
+    "imagePath": "https://tgin.kr/img/news/202008 (1).png",
+    "title": "Mongolia Worknet Construction Project",
+    "year": "2020"
+  },
+  {
+    "category": "Forum & Events",
+    "filter": "filter-forum",
+    "imagePath": "https://tgin.kr/img/news/202008 (68).jpg",
+    "title": "Mongolia Worknet Construction Launch Report Meeting",
+    "year": "2020"
+  },
+  {
+    "category": "Smart City/Farm & Digital Innovation",
+    "filter": "filter-smartcity",
+    "imagePath": "https://tgin.kr/img/news/202008 (86).jpg",
+    "title": "Turkey Smart City Consulting",
+    "year": "2020"
+  },
+  {
+    "category": "Smart City/Farm & Digital Innovation",
+    "filter": "filter-smartcity",
+    "imagePath": "https://tgin.kr/img/news/202008 (65).jpg",
+    "title": "Turkey Smart City Consulting",
+    "year": "2020"
+  },
+  {
+    "category": "Smart City/Farm & Digital Innovation",
+    "filter": "filter-smartcity",
+    "imagePath": "https://tgin.kr/img/news/202008 (38).jpg",
+    "title": "Turkey Smart City Consulting",
+    "year": "2020"
+  },
+  {
+    "category": "Smart City/Farm & Digital Innovation",
+    "filter": "filter-smartcity",
+    "imagePath": "https://tgin.kr/img/news/202008 (11).png",
+    "title": "Turkey Smart City Consulting",
+    "year": "2020"
+  },
+  {
+    "category": "Global & ODA Projects",
+    "filter": "filter-global",
+    "imagePath": "https://tgin.kr/img/news/202008 (50).jpg",
+    "title": "Peru Logistics Consulting",
+    "year": "2019"
+  },
+  {
+    "category": "Global & ODA Projects",
+    "filter": "filter-global",
+    "imagePath": "https://tgin.kr/img/news/202008 (71).jpg",
+    "title": "Kampala e-Government Roadmap Consulting",
+    "year": "2019"
+  },
+  {
+    "category": "Global & ODA Projects",
+    "filter": "filter-global",
+    "imagePath": "https://tgin.kr/img/news/202008 (14).jpg",
+    "title": "Peru Logistics Consulting",
+    "year": "2019"
+  },
+  {
+    "category": "Global & ODA Projects",
+    "filter": "filter-global",
+    "imagePath": "https://tgin.kr/img/news/202008 (11).jpg",
+    "title": "Vietnam People’s Court e-Procedure Consulting",
+    "year": "2019"
+  },
+  {
+    "category": "Global & ODA Projects",
+    "filter": "filter-global",
+    "imagePath": "https://tgin.kr/img/news/202008 (80).jpg",
+    "title": "Completion of World Bank-Supported e-Judgement System in Uzbekistan",
+    "year": "2019"
+  },
+  {
+    "category": "Smart City/Farm & Digital Innovation",
+    "filter": "filter-smartcity",
+    "imagePath": "https://tgin.kr/img/news/202008 (14).png",
+    "title": "Blockchain-Based Public Administration Innovation Consulting",
+    "year": "2019"
+  },
+  {
+    "category": "Global & ODA Projects",
+    "filter": "filter-global",
+    "imagePath": "https://tgin.kr/img/news/202008 (47).jpg",
+    "title": "E-Government Consulting for the Government of Kenya",
+    "year": "2019"
+  },
+  {
+    "category": "Global & ODA Projects",
+    "filter": "filter-global",
+    "imagePath": "https://tgin.kr/img/news/202008 (8).jpg",
+    "title": "Tanzania Resident Information System Evaluation",
+    "year": "2019"
+  },
+  {
+    "category": "Global & ODA Projects",
+    "filter": "filter-global",
+    "imagePath": "https://tgin.kr/img/news/202008 (5).jpg",
+    "title": "Tanzania Resident Information System Evaluation 2",
+    "year": "2019"
+  },
+  {
+    "category": "Global & ODA Projects",
+    "filter": "filter-global",
+    "imagePath": "https://tgin.kr/img/news/202008 (2).jpg",
+    "title": "Tanzania Resident Information System Evaluation 1",
+    "year": "2019"
+  },
+  {
+    "category": "Global & ODA Projects",
+    "filter": "filter-global",
+    "imagePath": "https://tgin.kr/img/news/202008 (2).png",
+    "title": "Madagascar Resident Information System Consulting 1",
+    "year": "2019"
+  },
+  {
+    "category": "Global & ODA Projects",
+    "filter": "filter-global",
+    "imagePath": "https://tgin.kr/img/news/202008 (44).jpg",
+    "title": "Madagascar Resident Information System Consulting 2",
+    "year": "2019"
+  },
+  {
+    "category": "Global & ODA Projects",
+    "filter": "filter-global",
+    "imagePath": "https://tgin.kr/img/news/202008 (41).jpg",
+    "title": "Uganda Capital City e-Government Consulting",
+    "year": "2019"
+  },
+  {
+    "category": "Forum & Events",
+    "filter": "filter-forum",
+    "imagePath": "https://tgin.kr/img/news/202008 (26).jpg",
+    "title": "TG Annual Staff Retreat",
+    "year": "2018"
+  },
+  {
+    "category": "Global & ODA Projects",
+    "filter": "filter-global",
+    "imagePath": "https://tgin.kr/img/news/202008 (1).jpeg",
+    "title": "TG Involved in Planning for Government EA in Jordan",
+    "year": "2018"
+  },
+  {
+    "category": "Global & ODA Projects",
+    "filter": "filter-global",
+    "imagePath": "https://tgin.kr/img/news/202008 (62).jpg",
+    "title": "TG Hosts Iran EA Committee Representatives in Seoul",
+    "year": "2018"
+  },
+  {
+    "category": "Global & ODA Projects",
+    "filter": "filter-global",
+    "imagePath": "https://tgin.kr/img/news/202008 (59).jpg",
+    "title": "TG Launches EAMS Adoption Feasibility Study in Vietnam",
+    "year": "2018"
+  },
+  {
+    "category": "Global & ODA Projects",
+    "filter": "filter-global",
+    "imagePath": "https://tgin.kr/img/news/202008 (56).jpg",
+    "title": "Roadmap Development for Minwon24 in Paraguay",
+    "year": "2018"
+  },
+  {
+    "category": "Forum & Events",
+    "filter": "filter-forum",
+    "imagePath": "https://tgin.kr/img/news/202008 (83).jpg",
+    "title": "TG CEO Shares Business Philosophy and Mission with IssueMaker Newspaper",
+    "year": "2018"
+  },
+  {
+    "category": "Awards & CSR",
+    "filter": "filter-awards",
+    "imagePath": "https://tgin.kr/img/news/202008 (20).png",
+    "title": "Seoul Metropolitan Government Strong SME Certification",
+    "year": "2018"
+  },
+  {
+    "category": "Global & ODA Projects",
+    "filter": "filter-global",
+    "imagePath": "https://tgin.kr/img/news/202008 (23).jpg",
+    "title": "NIA and KOICA Business Meeting for Uzbekistan ICT Officials",
+    "year": "2018"
+  },
+  {
+    "category": "Global & ODA Projects",
+    "filter": "filter-global",
+    "imagePath": "https://tgin.kr/img/news/202008 (20).jpg",
+    "title": "Talks on e-Government with the Ambassador of Zambia",
+    "year": "2018"
+  },
+  {
+    "category": "Global & ODA Projects",
+    "filter": "filter-global",
+    "imagePath": "https://tgin.kr/img/news/202008 (17).jpg",
+    "title": "Paraguay ICT Policy Agency Visit on Minwon24",
+    "year": "2018"
+  },
+  {
+    "category": "Awards & CSR",
+    "filter": "filter-awards",
+    "imagePath": "https://tgin.kr/img/news/202008 (53).jpg",
+    "title": "Minister of the Interior and Safety Award",
+    "year": "2018"
+  },
+  {
+    "category": "Research & Strategy",
+    "filter": "filter-research",
+    "imagePath": "https://tgin.kr/img/news/202008 (89).jpg",
+    "title": "EA Reference Model for Developing Countries",
+    "year": "2018"
+  },
+  {
+    "category": "Global & ODA Projects",
+    "filter": "filter-global",
+    "imagePath": "https://tgin.kr/img/news/202008 (77).jpg",
+    "title": "Vietnamese Ministry of Information and Communication EAMS Consulting",
+    "year": "2018"
+  },
+  {
+    "category": "Global & ODA Projects",
+    "filter": "filter-global",
+    "imagePath": "https://tgin.kr/img/news/202008 (74).jpg",
+    "title": "Knowledge Sharing Program on Minwon24 in Paraguay",
+    "year": "2018"
+  },
+  {
+    "category": "Global & ODA Projects",
+    "filter": "filter-global",
+    "imagePath": "https://tgin.kr/img/news/202008 (32).jpg",
+    "title": "Botswana EA Establishment 1",
+    "year": "2016"
+  },
+  {
+    "category": "Global & ODA Projects",
+    "filter": "filter-global",
+    "imagePath": "https://tgin.kr/img/news/202008 (35).jpg",
+    "title": "Botswana EA Establishment 2",
+    "year": "2016"
+  },
+  {
+    "category": "Global & ODA Projects",
+    "filter": "filter-global",
+    "imagePath": "https://tgin.kr/img/news/202008 (29).jpg",
+    "title": "Vietnam Hanoi EA Seminar",
+    "year": "2016"
+  }
+]
